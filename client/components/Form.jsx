@@ -20,16 +20,16 @@ class Form extends React.Component {
         this.setState({ names: this.state.names})
     }
 
+    addName() {
+        this.setState({names: [...this.state.names, '']})
+    }
+
     handleSubmit = evnt => {
         evnt.preventDefault() //This prevents form submisson beng wiped when submit button is clicked
         console.log(this.state)
     }
 
-    addName() {
-        this.setState({names: [...this.state.names, '']})
-    }
-
-
+   
     render() {
         return (
             <div>
