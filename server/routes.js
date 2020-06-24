@@ -5,12 +5,12 @@ const router = express.Router()
 
 module.exporrts = router
 
-router.get('/createteams', (req, res) => {
-    db.getPeople()
+router.get('/', (req, res) => {
+  db.getPeople()
     .then(people => {
-        res.json(people)
+      res.json(people)
     })
     .catch(err => {
-        res.status(500).send('Database error: ' + err.message)
+      res.status(500).send('Database error: ' + err.message)
     })
 })
