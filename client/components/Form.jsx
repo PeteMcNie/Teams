@@ -1,11 +1,14 @@
 import React from 'react'
 
+import { newPeople } from '../api'
+
 class Form extends React.Component {
   constructor () {
     super()
     this.state = {
       names: []
     }
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
     handleChange = (evnt, index) => {
@@ -25,8 +28,13 @@ class Form extends React.Component {
     }
 
     handleSubmit = evnt => {
+      
       evnt.preventDefault() // This prevents form submisson beng wiped when submit button is clicked
-      console.log(this.state)
+      const newPeopleData = this.state
+      
+      console.log('Handling submit', newPeopleData)
+      newPeople(newPeopleData)
+     
     }
 
     render () {

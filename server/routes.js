@@ -3,7 +3,7 @@ const db = require('./db')
 
 const router = express.Router()
 
-module.exporrts = router
+module.exports = router
 
 router.get('/', (req, res) => {
   db.getPeople()
