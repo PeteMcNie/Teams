@@ -1,3 +1,3 @@
-# Teams - Bulit with React
+# Teams - Built with React
 
 
