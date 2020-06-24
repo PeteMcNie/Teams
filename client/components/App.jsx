@@ -1,10 +1,10 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 
-import Title from './title'
-import Links from './links'
-import CreateTeams from './createteams'
-import Addplayers from './addplayers'
+import Title from './Title'
+import Links from './Links'
+import CreateTeams from './Createteams'
+import Addplayers from './Addplayers'
 
 const App = () => {
   return (

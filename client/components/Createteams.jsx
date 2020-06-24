@@ -2,16 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import Homebutton from './Homebutton'
-import Form from './Form'
 
-const Addplayers = () => {
+const CreateTeams = () => {
   return (
     <div>
-      <div>
-        <Form />
-      </div>
+      <p>Pick team members here</p>
       <div className='link'>
-        <Link to={'/createteams'}>Create Teams</Link>
+        <Link to={'/addplayers'}>Add New Person</Link>
       </div>
       <div>
         <Homebutton />
@@ -20,4 +17,4 @@ const Addplayers = () => {
   )
 }
 
-export default Addplayers
+export default CreateTeams
