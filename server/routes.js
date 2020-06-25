@@ -14,3 +14,8 @@ router.get('/', (req, res) => {
       res.status(500).send('Database error: ' + err.message)
     })
 })
+
+router.post('/', (req, res) => {
+  console.log('post route: ', req.body)
+  db.postPeople()
+})

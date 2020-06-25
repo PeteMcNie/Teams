@@ -8,7 +8,6 @@ class Form extends React.Component {
     this.state = {
       names: []
     }
-    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
     handleChange = (evnt, index) => {
@@ -18,23 +17,23 @@ class Form extends React.Component {
       this.setState({ names: this.state.names })
     }
 
-    handleRemove = (index) => {
+    handleRemove = (evnt, index) => {
+      evnt.preventDefault()
       this.state.names.splice(index, 1)
       this.setState({ names: this.state.names })
     }
 
-    addName () {
+    addName (evnt) {
+      evnt.preventDefault() // Needed becasue of button wanting to submit form by default
       this.setState({ names: [...this.state.names, ''] })
     }
 
     handleSubmit = evnt => {
-      
       evnt.preventDefault() // This prevents form submisson beng wiped when submit button is clicked
       const newPeopleData = this.state
-      
+
       console.log('Handling submit', newPeopleData)
       newPeople(newPeopleData)
-     
     }
 
     render () {
@@ -46,7 +45,7 @@ class Form extends React.Component {
                 return (
                   <div key={index}>
                     <input value={name} onChange={evnt => this.handleChange(evnt, index)} placeholder="Name"/>
-                    <button onClick={() => this.handleRemove(index)}>Remove</button>
+                    <button onClick={(evnt) => this.handleRemove(evnt, index)}>Remove</button>
                   </div>
                 )
               })
