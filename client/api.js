@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-const addPeopleUrl = 'http://localhost:8080/home/v1'
+const addPeopleUrl = 'http://localhost:8080/home/v1' // Server-side route (different from client side)
 
 export function newPeople (newPeopleData) {
   console.log('API data ready to send to server', newPeopleData)

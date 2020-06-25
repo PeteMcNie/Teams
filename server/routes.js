@@ -16,6 +16,10 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  console.log('post route: ', req.body)
-  db.postPeople()
+  // console.log('post route: ', req.body)
+  db.postPeople(req.body)
+    .then(res.status(202))
+    .catch(err => {
+      res.status(500).send(err.message)
+    })
 })

@@ -11,6 +11,11 @@ function getPeople (db = database) {
   return db('people').select()
 }
 
-function postPeople () {
-  
+function postPeople (peopleData, db = database) {
+  console.log('postpeople function: ', peopleData)
+  let peopleToInsert = peopleData.names.map(people => {
+    return { name: people }
+  })
+  console.log('people to insert: ', peopleToInsert)
+  // return db('people')
 }
