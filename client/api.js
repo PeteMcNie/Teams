@@ -11,4 +11,5 @@ export function newPeople (newPeopleData) {
       console.log('client-side: ', response.body)
       return response.body
     })
+    .catch("Error in api.js or before on POSTing")
 }
