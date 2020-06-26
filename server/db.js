@@ -12,10 +12,15 @@ function getPeople (db = database) {
 }
 
 function postPeople (peopleData, db = database) {
-  console.log('postpeople function: ', peopleData)
+  // console.log('postpeople function: ', peopleData)
   let peopleToInsert = peopleData.names.map(people => {
     return { name: people }
   })
-  console.log('people to insert: ', peopleToInsert)
-  // return db('people')
+  // console.log('people to insert: ', peopleToInsert)
+  return db('people')
+    .insert(peopleToInsert)
+    .then(people => {
+      console.log('After POST insert in db.js: ', people)
+      // Not sure what needs to be returned here after data is posted
+    })
 }

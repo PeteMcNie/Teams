@@ -32,7 +32,7 @@ class Form extends React.Component {
       evnt.preventDefault() // This prevents form submisson beng wiped when submit button is clicked
       const newPeopleData = this.state
 
-      console.log('Handling submit', newPeopleData)
+      // console.log('Handling submit', newPeopleData)
       newPeople(newPeopleData)
     }
 
