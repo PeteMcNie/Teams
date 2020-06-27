@@ -3,7 +3,7 @@ import request from 'superagent'
 const peopleUrl = 'http://localhost:8080/home/v1' // Server-side route (different from client side)
 
 export function getPeople () {
-  console.log('getPeople function hit')
+  // console.log('getPeople function hit')
   return request
     .get(peopleUrl)
     .then(response => {
