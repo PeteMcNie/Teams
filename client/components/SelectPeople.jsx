@@ -24,16 +24,20 @@ state = {
         this.setState({ isChecked: evnt.target.checked })
     }
 
-
+    handleSubmit = evnt => {
+        evnt.preventDefault()
+        const selectedPeople = this.state
+        console.log('Selected people: ', selectedPeople)
+    }
 
 
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <ul>
                         {this.state.names.map(el => {
-                             // console.log('SelectPeople render function data: ', el)
+                             // console.log('SelectPeople render function data: ', el.isChecked)
                             return (
                                 <li key={el.id}>
                                     <input  
@@ -46,6 +50,9 @@ state = {
                             )}
                         )}
                     </ul>
+                    <div>
+                        <input type='submit' value='Create Teams!' />
+                    </div>
                 </form>
             </div>
         )
