@@ -6,9 +6,7 @@ class Form extends React.Component {
   constructor () {
     super()
     this.state = {
-      names: [{
-        name: '',
-        isChecked: false}] //Altered this from an array with no fields to two fields, not working
+      names: []
     }
   }
 
@@ -27,13 +25,13 @@ class Form extends React.Component {
 
     addName (evnt) {
       evnt.preventDefault() // Needed becasue of button wanting to submit form by default
-      this.setState({ names: [...this.state.names, ''] })
+      this.setState({ names: [...this.state.names, '']})
     }
 
     handleSubmit = evnt => {
       evnt.preventDefault() // This prevents form submisson beng wiped when submit button is clicked
       const newPeopleData = this.state
-       console.log('Handling submit, check for isChecked field defaulting to false', newPeopleData)
+       // console.log('Handling submit, check for isChecked field defaulting to false', newPeopleData)
       newPeople(newPeopleData)
     }
 
@@ -42,11 +40,10 @@ class Form extends React.Component {
         <div>
           <form onSubmit={this.handleSubmit}>
             {
-              this.state.names.map((name, isChecked, index) => {
+              this.state.names.map((name, index) => {
                 return (
                   <div key={index}>
                     <input value={name} onChange={evnt => this.handleChange(evnt, index)} placeholder="Name"/>
-                    {/* NEED ISCHECKED FIELD HERE???? */}
                     <button onClick={(evnt) => this.handleRemove(evnt, index)}>Remove</button>
                   </div>
                 )

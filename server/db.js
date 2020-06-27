@@ -19,10 +19,10 @@ function getNewPeople (id, db = database) {
 
 function postPeople (newPeople, db = database) {
   // console.log('postpeople function: ', peopleData)
-  let peopleToInsert = newPeople.names.map(people => {
-    return { name: people }
+  let peopleToInsert = newPeople.names.map(person => {
+    return { name: person, isAvailable: false } // isavailable added here, update table columns to include isavailable
   })
-  // console.log('people to insert: ', peopleToInsert)
+   console.log('people to insert: ', peopleToInsert)
   return db('people')
     .insert(peopleToInsert)
     .then(people => {
