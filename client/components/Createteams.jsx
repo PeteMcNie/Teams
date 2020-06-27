@@ -2,11 +2,17 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import Homebutton from './Homebutton'
+import SelectPeople from './SelectPeople'
+
+
 
 const CreateTeams = () => {
   return (
     <div>
       <p>Pick team members here</p>
+      <div>
+        <SelectPeople />
+      </div>
       <div className='link'>
         <Link to={'/addplayers'}>Add New Person</Link>
       </div>
