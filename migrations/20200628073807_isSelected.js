@@ -1,12 +1,12 @@
 
 exports.up = function(knex) {
     return knex.schema.table('people', table => {
-        table.boolean('isSelected')
+        table.boolean('is_selected')
     })
 };
 
 exports.down = function(knex) {
   return knex.schema.table('people', table => {
-      table.dropColumn('isSelected')
+      table.dropColumn('is_selected')
   })
 };
