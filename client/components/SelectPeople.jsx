@@ -4,13 +4,23 @@ import { getPeople } from '../api'
 
 class SelectPeople extends React.Component {
 state = {
-    names: [],
-    isChecked: false
+    names: []
 }
     componentDidMount () {
         getPeople()
         .then(allPeople => {
-            // console.log('All People returned to SelectPeople.jsx: ', allPeople)
+             console.log('All People returned to SelectPeople.jsx: ', allPeople)
+           
+
+            //  const ids = allPeople.forEach(el => { return el.id })
+            //  console.log('ids', ids)
+            //  console.log(allPeople.forEach(el => console.log(el.id)))
+           
+            //  console.log(allPeople.forEach(el => console.log(el.name)))
+           
+            //  console.log(allPeople.forEach(el => console.log(el.isSelected)))
+           
+            
             this.setState(
                 {
                     names: allPeople
@@ -21,7 +31,7 @@ state = {
 
     handleCheck = evnt => {
         console.log('called')
-        this.setState({ isChecked: evnt.target.checked })
+        this.setState({ isSelected: evnt.target.checked })
     }
 
     handleSubmit = evnt => {
@@ -31,20 +41,19 @@ state = {
     }
 
 
-    render() {
+    render() {     
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <ul>
-                        {this.state.names.map(el => {
-                             // console.log('SelectPeople render function data: ', el.isChecked)
+                        {this.state.names.map((el, idx) => {
+                             // console.log('SelectPeople render function data: ', el.name, el.isSelected)
                             return (
                                 <li key={el.id}>
                                     <input  
                                     type='checkbox' 
-                                    checked={el.isChecked} 
-                                    value={el.name}
-                                    onChange={this.handleCheck}
+                                    checked={this.state.isSelected} //Need to find a way to select only one checkbox at a time to change to true/false onChange
+                                    onChange={this.handleCheck.bind(this, idx)}
                                     />  {el.name}
                                 </li>
                             )}
