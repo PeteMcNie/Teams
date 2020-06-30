@@ -4,18 +4,30 @@ import { getPeople } from '../api'
 
 class SelectPeople extends React.Component {
 state = {
-  people: []
+  id: '',
+  name: '',
+  isSelected: false
+  // people: []
 }
 
 componentDidMount () {
   getPeople()
-    .then(allPeople => {
-      this.setState(
-        {
-          people: allPeople
-        }
-      )
+    .then(people => {
+      people.map(el => {
+        this.setState({
+          id: el.id,
+          name: el.name,
+          isSelected: el.isSelected
+        })
+      })
     })
+    // .then(allPeople.map(el => {
+    //   this.setState(
+    //     {
+    //       people: allPeople
+    //     }
+    //   )
+    // })
 }
 
     handleCheck = evnt => {
