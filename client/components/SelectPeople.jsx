@@ -10,17 +10,6 @@ state = {
 componentDidMount () {
   getPeople()
     .then(allPeople => {
-      // console.log('All People returned to SelectPeople.jsx: ', allPeople)
-
-      // const ids = allPeople.map(el => el.id)
-      // console.log('ids', ids)
-
-      // const individualNames = allPeople.map(el => el.name)
-      // console.log('name', individualNames)
-
-      // const areSelected = allPeople.map(el => el.isSelected)
-      // console.log('isSelected', areSelected)
-
       this.setState(
         {
           people: allPeople
@@ -31,7 +20,7 @@ componentDidMount () {
 
     handleCheck = evnt => {
       console.log('called')
-      this.setState({ isSelected: evnt.target.checked })
+
     }
 
     handleSubmit = evnt => {
