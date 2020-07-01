@@ -39,15 +39,6 @@ componentDidMount () {
       console.log('Selected people: ', selectedPeople)
     }
 
-<<<<<<< HEAD
-
-    render() {         
-        return (
-||||||| 7c8a9e0
-
-    render() {     
-        return (
-=======
     render () {
       return (
         <div>
@@ -67,7 +58,6 @@ componentDidMount () {
               }
               )}
             </ul>
->>>>>>> checkboxbranch
             <div>
               <input type='submit' value='Create Teams!' />
             </div>
