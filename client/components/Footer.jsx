@@ -1,8 +1,8 @@
 import React from 'react'
 
 const Footer = () => {
-  const copyright = '1952 Harper & Brothers'
-  const author = 'E. B. White'
+  const copyright = '2020 McNie Brothers'
+  const author = 'P. R. McNie'
 
   return (
     <div className='footer'>

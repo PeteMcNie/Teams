@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   const newPeople = req.body
-  //console.log('newPeople: ', newPeople)
+  // console.log('newPeople: ', newPeople)
 
   db.postPeople(newPeople)
     .then(person => {
@@ -28,3 +28,4 @@ router.post('/', (req, res) => {
       res.status(500).send(err.message)
     })
 })
+

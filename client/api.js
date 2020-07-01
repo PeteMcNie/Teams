@@ -25,5 +25,3 @@ export function newPeople (newPeopleData) {
     })
     .catch("Error in api.js or before on POSTing")
 }
-
-

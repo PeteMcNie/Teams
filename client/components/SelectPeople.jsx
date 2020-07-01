@@ -4,67 +4,76 @@ import { getPeople } from '../api'
 
 class SelectPeople extends React.Component {
 state = {
-    names: []
+  people: [],
+  selectedPeople: []
 }
-    componentDidMount () {
-        getPeople()
-        .then(allPeople => {
-             console.log('All People returned to SelectPeople.jsx: ', allPeople)
-           
 
-            //  const ids = allPeople.forEach(el => { return el.id })
-            //  console.log('ids', ids)
-            //  console.log(allPeople.forEach(el => console.log(el.id)))
-           
-            //  console.log(allPeople.forEach(el => console.log(el.name)))
-           
-            //  console.log(allPeople.forEach(el => console.log(el.isSelected)))
-           
-            
-            this.setState(
-                {
-                    names: allPeople
-                }
-            )
-        })
-    }
+componentDidMount () {
+  getPeople()
+    .then(allPeople => {
+      this.setState(
+        {
+          people: allPeople
+        }
+      )
+    })
+}
 
-    handleCheck = evnt => {
-        console.log('called')
-        this.setState({ isSelected: evnt.target.checked })
+    handleCheck = (evnt, id) => {
+      // console.log('called')
+      const isChecked = evnt.target.checked
+      let selected = [...this.state.selectedPeople]
+      if (isChecked) {
+        selected.push(id)
+      } else {
+        selected = selected.filter(i => id !== i)
+      }
+      this.setState({
+        selectedPeople: selected
+      })
     }
 
     handleSubmit = evnt => {
-        evnt.preventDefault()
-        const selectedPeople = this.state
-        console.log('Selected people: ', selectedPeople)
+      evnt.preventDefault()
+      const selectedPeople = this.state
+      console.log('Selected people: ', selectedPeople)
     }
 
+<<<<<<< HEAD
 
     render() {         
         return (
+||||||| 7c8a9e0
+
+    render() {     
+        return (
+=======
+    render () {
+      return (
+        <div>
+          <form onSubmit={this.handleSubmit}>
+            <ul>
+              {this.state.people.map(person => {
+               // console.log('SelectPeople render function data: ', el.id, el.name, el.isSelected)
+                return (
+                  <li key={person.id}>
+                    <input
+                      type='checkbox'
+                      checked={this.state.selectedPeople.includes(person.id)} // Need to find a way to select only one checkbox at a time to change to true/false onChange
+                      onChange={(evnt) => this.handleCheck(evnt, person.id)}
+                    />  {person.name}
+                  </li>
+                )
+              }
+              )}
+            </ul>
+>>>>>>> checkboxbranch
             <div>
-                <form onSubmit={this.handleSubmit}>
-                    <ul>
-                        {this.state.names.map((el, idx) => {
-                             // console.log('SelectPeople render function data: ', el.name, el.isSelected)
-                            return (
-                                <li key={el.id}>
-                                    <input  
-                                    type='checkbox' 
-                                    checked={this.state.isSelected} //Need to find a way to select only one checkbox at a time to change to true/false onChange
-                                    onChange={this.handleCheck.bind(this, idx)}
-                                    />  {el.name}
-                                </li>
-                            )}
-                        )}
-                    </ul>
-                    <div>
-                        <input type='submit' value='Create Teams!' />
-                    </div>
-                </form>
+              <input type='submit' value='Create Teams!' />
             </div>
-        )
+          </form>
+        </div>
+      )
     }
 }
 
