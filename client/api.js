@@ -25,10 +25,3 @@ export function newPeople (newPeopleData) {
     })
     .catch("Error in api.js or before on POSTing")
 }
-
-
-// export function selectedPeople (selectedPeople) {
-//   console.log(selectedPeople)
-//   return request
-//     .get(`${peopleUrl}/selectedPeople)
-// }

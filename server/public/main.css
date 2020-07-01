@@ -1,11 +1,11 @@
-/* * {
+* {
     border: border-box;
 }
 
 body {
     background-color: #ea9a96;
     font-family: 'Quicksand', sans-serif;
-} */
+}
 
 .title {
  /* border: 1px solid green; */
@@ -22,7 +22,7 @@ body {
     
 }
 
-/* .link {
+.link {
     text-align: center;
     border: 3px solid #4c5788;
     background-color: #303960;
@@ -38,4 +38,14 @@ body {
 a {
     text-decoration: none;
     color: #f8b24f;
-} */
+}
+
+.footer {
+    text-align: center;
+    font-size: 0.7rem;
+    position: absolute;
+    bottom: 30px;
+    left: 30%;
+    margin-right: -70%;
+
+}
