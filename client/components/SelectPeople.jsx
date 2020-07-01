@@ -19,14 +19,14 @@ componentDidMount () {
     })
 }
 
-    handleCheck = (evnt, id) => {
+    handleCheck = (evnt, person) => {
       // console.log('called')
       const isChecked = evnt.target.checked
       let selected = [...this.state.selectedPeople]
       if (isChecked) {
-        selected.push(id)
+        selected.push(person)
       } else {
-        selected = selected.filter(i => id !== i)
+        selected = selected.filter(i => person !== i)
       }
       this.setState({
         selectedPeople: selected
@@ -36,7 +36,7 @@ componentDidMount () {
     handleSubmit = evnt => {
       evnt.preventDefault()
       const selectedPeople = this.state
-      console.log('Selected people: ', selectedPeople)
+      // console.log('Selected people: ', selectedPeople)
     }
 
     render () {
@@ -45,13 +45,13 @@ componentDidMount () {
           <form onSubmit={this.handleSubmit}>
             <ul>
               {this.state.people.map(person => {
-                // console.log('SelectPeople render function data: ', el.id, el.name, el.isSelected)
+                //console.log('SelectPeople render function data: ', person)
                 return (
                   <li key={person.id}>
                     <input
                       type='checkbox'
-                      checked={this.state.selectedPeople.includes(person.id)} // Need to find a way to select only one checkbox at a time to change to true/false onChange
-                      onChange={(evnt) => this.handleCheck(evnt, person.id)}
+                      checked={this.state.selectedPeople.includes(person)} // Need to find a way to select only one checkbox at a time to change to true/false onChange
+                      onChange={(evnt) => this.handleCheck(evnt, person)}
                     />  {person.name}
                   </li>
                 )
