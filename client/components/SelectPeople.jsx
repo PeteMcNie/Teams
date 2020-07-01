@@ -39,22 +39,13 @@ componentDidMount () {
       console.log('Selected people: ', selectedPeople)
     }
 
-<<<<<<< HEAD
-
-    render() {         
-        return (
-||||||| 7c8a9e0
-
-    render() {     
-        return (
-=======
     render () {
       return (
         <div>
           <form onSubmit={this.handleSubmit}>
             <ul>
               {this.state.people.map(person => {
-               // console.log('SelectPeople render function data: ', el.id, el.name, el.isSelected)
+                // console.log('SelectPeople render function data: ', el.id, el.name, el.isSelected)
                 return (
                   <li key={person.id}>
                     <input
@@ -67,7 +58,6 @@ componentDidMount () {
               }
               )}
             </ul>
->>>>>>> checkboxbranch
             <div>
               <input type='submit' value='Create Teams!' />
             </div>
