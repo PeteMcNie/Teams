@@ -28,3 +28,10 @@ router.post('/', (req, res) => {
       res.status(500).send(err.message)
     })
 })
+
+
+router.get('/selectedPeople', (req, res) => {
+  db.getSelectedPeople()
+  // then we want to send the data to a shuffle function
+  // here which is in it different file
+})

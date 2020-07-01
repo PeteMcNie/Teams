@@ -4,35 +4,33 @@ import { getPeople } from '../api'
 
 class SelectPeople extends React.Component {
 state = {
-  id: '',
-  name: '',
-  isSelected: false
-  // people: []
+  people: [],
+  selectedPeople: []
 }
 
 componentDidMount () {
   getPeople()
-    .then(people => {
-      people.map(el => {
-        this.setState({
-          id: el.id,
-          name: el.name,
-          isSelected: el.isSelected
-        })
-      })
+    .then(allPeople => {
+      this.setState(
+        {
+          people: allPeople
+        }
+      )
     })
-    // .then(allPeople.map(el => {
-    //   this.setState(
-    //     {
-    //       people: allPeople
-    //     }
-    //   )
-    // })
 }
 
-    handleCheck = evnt => {
-      console.log('called')
-
+    handleCheck = (evnt, id) => {
+      // console.log('called')
+      const isChecked = evnt.target.checked
+      let selected = [...this.state.selectedPeople]
+      if (isChecked) {
+        selected.push(id)
+      } else {
+        selected = selected.filter(i => id !== i)
+      }
+      this.setState({
+        selectedPeople: selected
+      })
     }
 
     handleSubmit = evnt => {
@@ -46,15 +44,15 @@ componentDidMount () {
         <div>
           <form onSubmit={this.handleSubmit}>
             <ul>
-              {this.state.people.map(el => {
-                console.log('SelectPeople render function data: ', el.id, el.name, el.isSelected)
+              {this.state.people.map(person => {
+               // console.log('SelectPeople render function data: ', el.id, el.name, el.isSelected)
                 return (
-                  <li key={el.id}>
+                  <li key={person.id}>
                     <input
                       type='checkbox'
-                      checked={this.state.isSelected} // Need to find a way to select only one checkbox at a time to change to true/false onChange
-                      onChange={this.handleCheck}
-                    />  {el.name} {el.isSelected}
+                      checked={this.state.selectedPeople.includes(person.id)} // Need to find a way to select only one checkbox at a time to change to true/false onChange
+                      onChange={(evnt) => this.handleCheck(evnt, person.id)}
+                    />  {person.name}
                   </li>
                 )
               }

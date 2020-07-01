@@ -4,7 +4,8 @@ const database = require('knex')(config)
 
 module.exports = {
   getPeople,
-  postPeople
+  postPeople,
+  getSelectedPeople
 }
 
 function getPeople (db = database) {
@@ -30,4 +31,8 @@ function postPeople (newPeople, db = database) {
       // console.log('After POST insert in db.js: ', people[0])
       return getNewPeople(people[0])
     })
+}
+
+function getSelectedPeople (db = database) {
+  
 }

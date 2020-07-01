@@ -27,3 +27,8 @@ export function newPeople (newPeopleData) {
 }
 
 
+// export function selectedPeople (selectedPeople) {
+//   console.log(selectedPeople)
+//   return request
+//     .get(`${peopleUrl}/selectedPeople)
+// }
