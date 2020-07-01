@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { getPeople } from '../api'
+import { sortSelectedPeople } from '../sortFunctions'
 
 class SelectPeople extends React.Component {
 state = {
@@ -36,7 +37,8 @@ componentDidMount () {
     handleSubmit = evnt => {
       evnt.preventDefault()
       const selectedPeople = this.state
-      // console.log('Selected people: ', selectedPeople)
+     console.log('Selected people: ', selectedPeople)
+     sortSelectedPeople(selectedPeople)
     }
 
     render () {
