@@ -63,7 +63,7 @@ componentDidMount () {
               )}
             </ul>
             <div className='link'>
-              <Link to={ {pathname: '/teams', teams: teams} }><input type='submit' value='Create Teams!' /></Link>
+              <Link to={'/teams'}><input type='submit' value='Create Teams!' /></Link>
             </div>
           </form>
         </div>

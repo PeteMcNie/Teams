@@ -1,11 +1,10 @@
-module.exports = {
-  sortSelectedPeople,
-  sortIntoGroups
-}
+import { twoTeams } from './actions'
 
-function sortSelectedPeople (selectedPeople) {
+export default function sortSelectedPeople (selectedPeople) {
   //console.log('Sort Selected people in sortFunction: ', selectedPeople)
-  let currentIndex = selectedPeople.length, tempValue, randomIndex
+  let currentIndex = selectedPeople.length
+  let tempValue
+  let randomIndex
 
   while(0 !== currentIndex) {
     randomIndex = Math.floor(Math.random() * currentIndex)
@@ -28,6 +27,6 @@ function sortIntoGroups (shuffledPeople) {
   console.log('teamTwo: ', teamTwo)
   const teams = { teamOne, teamTwo }
   console.log('teams: ', teams)
-
+  return twoTeams(teams)
   // INSTALLING REACT REDUX TO MAKE STORE AVAILABLE
 }
