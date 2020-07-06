@@ -1,6 +1,9 @@
 const express = require('express')
 const db = require('./db')
 
+const schemas = require('./validation/schema')
+const middleware = require('./validation/middleware')
+
 const router = express.Router()
 
 module.exports = router
@@ -15,7 +18,7 @@ router.get('/', (req, res) => {
     })
 })
 
-router.post('/', (req, res) => {
+router.post('/', middleware(schemas.people), (req, res) => {
   const newPeople = req.body
   // console.log('newPeople: ', newPeople)
 
