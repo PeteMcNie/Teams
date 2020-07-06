@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import { getPeople } from '../api'
@@ -65,8 +64,8 @@ componentDidMount () {
               }
               )}
             </ul>
-            <div className='link'>
-             <input type='submit' value='Create Teams!' />
+            <div>
+              <input type='submit' value='Create Teams!' />
             </div>
           </form>
         </div>
