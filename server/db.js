@@ -20,8 +20,8 @@ function getNewPeople (id, db = database) {
 }
 
 function postPeople (newPeople, db = database) {
-  // console.log('postpeople function: ', peopleData)
-  let peopleToInsert = newPeople.names.map(person => {
+  console.log('postpeople function: ', newPeople)
+  let peopleToInsert = newPeople.map(person => {
     return { name: person, is_selected: false } // isSelected added here, update table columns to include isavailable
   })
   console.log('people to insert: ', peopleToInsert)

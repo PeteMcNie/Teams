@@ -14,11 +14,11 @@ export function getPeople () {
 }
 
 
-export function newPeople (newPeopleData) {
-  console.log('API data ready to send to server', newPeopleData)
+export function newPeople (newTeamMembers) {
+  //console.log('API data ready to send to server', newPeopleData)
   return request
     .post(peopleUrl)
-    .send(newPeopleData)
+    .send(newTeamMembers)
     .then(response => {
       // console.log('client-side: ', response.body)
       return response.body

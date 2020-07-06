@@ -25,14 +25,19 @@ class Form extends React.Component {
 
     addName (evnt) {
       evnt.preventDefault() // Needed becasue of button wanting to submit form by default
-      this.setState({ names: [...this.state.names, '']})
+      this.setState({ names: [...this.state.names, ''] })
     }
 
     handleSubmit = evnt => {
       evnt.preventDefault() // This prevents form submisson beng wiped when submit button is clicked
       const newPeopleData = this.state
-       // console.log('Handling submit, check for isChecked field defaulting to false', newPeopleData)
-      newPeople(newPeopleData)
+      // console.log('Handling submit', newPeopleData)
+
+      const newTeamMembers = newPeopleData.names.filter(name => {
+        return name !== ''
+      })
+      // console.log('Removed empty strings: ', newTeamMembers)
+      newPeople(newTeamMembers)
     }
 
     render () {
