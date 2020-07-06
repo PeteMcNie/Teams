@@ -1,18 +1,24 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-export const Teams = () => {
-  return (
-    <div>
-      <h3>hi</h3>
-    </div>
-  )
+export const Teams = (teams) => {
+  console.log('teams in component: ', teams.teams)
+
+  if (teams.teams) {
+    return (
+      <div>
+        <h3>hi</h3>
+      </div>
+    )
+  } else {
+    return null
+  }
 }
 
 const mapStateToProps = state => {
-  console.log('Teams: ', state)
+  console.log('Teams: ', state.twoTeams.teams)
   return {
-    teams: state
+    teams: state.twoTeams.teams
   }
 }
 

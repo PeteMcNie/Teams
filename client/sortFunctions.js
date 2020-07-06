@@ -23,10 +23,9 @@ function sortIntoGroups (shuffledPeople) {
   const halfOfArray = Math.floor(shuffledPeople.length / 2)
   const teamOne = shuffledPeople.slice(0, halfOfArray)
   const teamTwo = shuffledPeople.slice(halfOfArray, shuffledPeople.length)
-  console.log('teamOne: ', teamOne)
-  console.log('teamTwo: ', teamTwo)
+  // console.log('teamOne: ', teamOne)
+  // console.log('teamTwo: ', teamTwo)
   const teams = { teamOne, teamTwo }
-  console.log('teams: ', teams)
+  // console.log('teams: ', teams)
   return twoTeams(teams)
-  // INSTALLING REACT REDUX TO MAKE STORE AVAILABLE
 }

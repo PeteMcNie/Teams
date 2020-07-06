@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import { getPeople } from '../api'
-import { sortSelectedPeople } from '../sortFunctions'
+import sortSelectedPeople from '../sortFunctions'
+import { twoTeams } from '../actions'
 
 class SelectPeople extends React.Component {
 state = {
@@ -38,9 +40,10 @@ componentDidMount () {
     handleSubmit = evnt => {
       evnt.preventDefault()
       const selected = this.state.selectedPeople
-      // console.log('Selected people in selectedPeople.jsx: ', selectedPeople)
-      sortSelectedPeople(selected)
-
+      // console.log('Selected people in selectedPeople.jsx: ', selected)
+      const teams = sortSelectedPeople(selected)
+      this.props.dispatch(twoTeams(teams))
+      this.props.history.push('/teams')
     }
 
     render () {
@@ -63,7 +66,7 @@ componentDidMount () {
               )}
             </ul>
             <div className='link'>
-              <Link to={'/teams'}><input type='submit' value='Create Teams!' /></Link>
+             <input type='submit' value='Create Teams!' />
             </div>
           </form>
         </div>
@@ -71,4 +74,4 @@ componentDidMount () {
     }
 }
 
-export default SelectPeople
+export default connect()(SelectPeople)
