@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import { getPeople } from '../api'
 import { sortSelectedPeople } from '../sortFunctions'
@@ -36,9 +37,10 @@ componentDidMount () {
 
     handleSubmit = evnt => {
       evnt.preventDefault()
-      const selectedPeople = this.state
-     console.log('Selected people: ', selectedPeople)
-     sortSelectedPeople(selectedPeople)
+      const selected = this.state.selectedPeople
+      // console.log('Selected people in selectedPeople.jsx: ', selectedPeople)
+      sortSelectedPeople(selected)
+
     }
 
     render () {
@@ -47,7 +49,7 @@ componentDidMount () {
           <form onSubmit={this.handleSubmit}>
             <ul>
               {this.state.people.map(person => {
-                //console.log('SelectPeople render function data: ', person)
+                // console.log('SelectPeople render function data: ', person)
                 return (
                   <li key={person.id}>
                     <input
@@ -60,8 +62,8 @@ componentDidMount () {
               }
               )}
             </ul>
-            <div>
-              <input type='submit' value='Create Teams!' />
+            <div className='link'>
+              <Link to={ {pathname: '/teams', teams: teams} }><input type='submit' value='Create Teams!' /></Link>
             </div>
           </form>
         </div>
