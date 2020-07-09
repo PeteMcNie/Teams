@@ -20,7 +20,7 @@ export function newPeople (newTeamMembers) {
     .post(peopleUrl)
     .send(newTeamMembers)
     .then(response => {
-      // console.log('client-side: ', response.body)
+       console.log('client-side: ', response.body)
       return response.body
     })
     .catch("Error in api.js or before on POSTing")

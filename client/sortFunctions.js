@@ -14,7 +14,7 @@ export default function sortSelectedPeople (selectedPeople) {
     selectedPeople[currentIndex] = selectedPeople[randomIndex]
     selectedPeople[randomIndex] = tempValue
   }
-  console.log('People shuffled: ', selectedPeople)
+  // console.log('People shuffled: ', selectedPeople)
   return sortIntoGroups(selectedPeople)
 }
 
