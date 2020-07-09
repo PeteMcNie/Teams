@@ -15,7 +15,7 @@ export function getPeople () {
 
 
 export function newPeople (newTeamMembers) {
-  //console.log('API data ready to send to server', newPeopleData)
+  // console.log('API data ready to send to server', newTeamMembers)
   return request
     .post(peopleUrl)
     .send(newTeamMembers)

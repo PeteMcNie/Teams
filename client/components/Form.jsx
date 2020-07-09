@@ -36,8 +36,8 @@ class Form extends React.Component {
       const newTeamMembers = newPeopleData.names.filter(name => {
         return name !== ''
       })
-      // console.log('Removed empty strings: ', newTeamMembers)
-      newPeople(newTeamMembers)
+      // console.log('Removed empty strings: ', { names: newTeamMembers })
+      newPeople({ names: newTeamMembers })
     }
 
     render () {
