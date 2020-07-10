@@ -1,4 +1,4 @@
-* {
+/* * {
     border: border-box;
 }
 
@@ -8,14 +8,13 @@ body {
 }
 
 .title {
- /* border: 1px solid green; */
  text-align: center;
  margin-top: 30vh;
  font-size: 3.5rem;
  color: #e5e5e5;
  text-shadow: 4px 3px 0px #7A7A7A;
  text-shadow: 3px 5px 2px #474747;
-}
+} */
 
 .links {
     /* border: 1px solid blue; */
@@ -24,7 +23,7 @@ body {
     
 }
 
-.link {
+/* .link {
     text-align: center;
     border: 3px solid #4c5788;
     background-color: #303960;
@@ -59,4 +58,4 @@ a {
     left: 30%;
     margin-right: -70%;
 
-}
+} */

@@ -6,12 +6,12 @@ import SelectPeople from './SelectPeople'
 
 
 
-const CreateTeams = () => {
+const CreateTeams = (props) => {
   return (
     <div>
       <p>Pick team members here</p>
       <div>
-        <SelectPeople />
+        <SelectPeople history={props.history} />
       </div>
       <div className='link'>
         <Link to={'/addplayers'}>Add New Person</Link>
