@@ -37,14 +37,14 @@ componentDidMount () {
     }
 
     handleCheckAll = () => {
-      console.log(this.state)
-      if (this.state.selectedPeople.length < 1) {
-        this.setState({
-          selectedPeople: this.state.people
-        })
-      } else if (this.state.selectedPeople.length > 1 ) {
+      // console.log(this.state)
+      if (this.state.selectedPeople.length) {
         this.setState({
           selectedPeople: []
+        })
+      } else if (this.state.selectedPeople.length -1 < this.state.selectedPeople.length) {
+        this.setState({
+          selectedPeople: this.state.people
         })
       }
     }
