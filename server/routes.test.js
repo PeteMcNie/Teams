@@ -5,11 +5,12 @@ const server = require('./server')
 
 jest.mock('./db', () => {
     return {
-        getPeople: jest.fn()
+        getPeople: jest.fn(),
+        postPeople: jest.fn()
     }
 })
 
-test('/ route returns all people from the db', () => {
+test('GET / route returns all people from the db', () => {
     db.getPeople.mockImplementation(() => Promise.resolve(
         {
             id: 1,
@@ -26,3 +27,15 @@ test('/ route returns all people from the db', () => {
             expect(res.body.name).toEqual('Pete')
         })
 })
+
+test('GET / returns 500 if there is a database error', () => {
+    const err = new Error('Test error')
+    db.getPeople.mockImplementation(() => Promise.reject(err))
+    return request(server)
+        .get('/home/v1/')
+        .expect(500)
+        .then(res => {
+            expect(res.text).toMatch('Database error')
+        })
+})
+
