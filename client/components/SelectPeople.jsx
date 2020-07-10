@@ -36,6 +36,16 @@ componentDidMount () {
       })
     }
 
+    handleCheckAll = evnt => {
+      console.log(evnt)
+      console.log('this.state: ', this.state)
+      console.log(this.state.people)
+      let everyone = this.state.people
+      this.setState({
+        selectedPeople: everyone
+      })
+    }
+
     handleSubmit = evnt => {
       evnt.preventDefault()
       const selected = this.state.selectedPeople
@@ -56,7 +66,7 @@ componentDidMount () {
                   <li key={person.id}>
                     <input
                       type='checkbox'
-                      checked={this.state.selectedPeople.includes(person)} // Need to find a way to select only one checkbox at a time to change to true/false onChange
+                      checked={this.state.selectedPeople.includes(person)} 
                       onChange={(evnt) => this.handleCheck(evnt, person)}
                     />  {person.name}
                   </li>
@@ -64,6 +74,12 @@ componentDidMount () {
               }
               )}
             </ul>
+            <div>
+              <input type='button' onClick={this.handleCheckAll} value='Select All' />
+            </div>
+            <div>
+              <input type='button' onClick={this.handleDeselectAll} value='Deselect All' />
+            </div>
             <div>
               <input type='submit' value='Create Teams!' />
             </div>
