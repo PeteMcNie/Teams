@@ -36,14 +36,17 @@ componentDidMount () {
       })
     }
 
-    handleCheckAll = evnt => {
-      console.log(evnt)
-      console.log('this.state: ', this.state)
-      console.log(this.state.people)
-      let everyone = this.state.people
-      this.setState({
-        selectedPeople: everyone
-      })
+    handleCheckAll = () => {
+      console.log(this.state)
+      if (this.state.selectedPeople.length < 1) {
+        this.setState({
+          selectedPeople: this.state.people
+        })
+      } else if (this.state.selectedPeople.length > 1 ) {
+        this.setState({
+          selectedPeople: []
+        })
+      }
     }
 
     handleSubmit = evnt => {
@@ -75,10 +78,7 @@ componentDidMount () {
               )}
             </ul>
             <div>
-              <input type='button' onClick={this.handleCheckAll} value='Select All' />
-            </div>
-            <div>
-              <input type='button' onClick={this.handleDeselectAll} value='Deselect All' />
+              <input type='button' onClick={this.handleCheckAll} value='Select / Deselect All' />
             </div>
             <div>
               <input type='submit' value='Create Teams!' />
