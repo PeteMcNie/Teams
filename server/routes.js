@@ -11,7 +11,6 @@ module.exports = router
 router.get('/', (req, res) => {
   db.getPeople()
     .then(people => {
-      console.log('TESTING ', people)
       res.json(people)
     })
     .catch(err => {
@@ -21,7 +20,7 @@ router.get('/', (req, res) => {
 
 router.post('/', middleware(schema), (req, res) => {
   const newPeople = req.body
-   // console.log('newPeople: ', newPeople)
+ // console.log('newPeople: ', newPeople)
 
   db.postPeople(newPeople)
     .then(person => {
@@ -29,6 +28,6 @@ router.post('/', middleware(schema), (req, res) => {
       return res.status(202).json(person[0])
     })
     .catch(err => {
-      res.status(500).send(err.message)
+      res.status(500).send('Posting to database error: ' + err.message)
     })
 })
