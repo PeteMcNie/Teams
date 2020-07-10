@@ -11,6 +11,7 @@ module.exports = router
 router.get('/', (req, res) => {
   db.getPeople()
     .then(people => {
+      console.log('TESTING ', people)
       res.json(people)
     })
     .catch(err => {
