@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import { getPeople } from '../api'
-import sortSelectedPeople from '../sortFunctions'
+import { sortSelectedPeople } from '../sortFunctions'
 import { twoTeams } from '../actions'
 
 class SelectPeople extends React.Component {
@@ -54,7 +54,7 @@ componentDidMount () {
       const selected = this.state.selectedPeople
       // console.log('Selected people in selectedPeople.jsx: ', selected)
       const teams = sortSelectedPeople(selected)
-      console.log(teams)
+       console.log(teams)
       this.props.dispatch(twoTeams(teams))
       this.props.history.push('/teams')
     }
