@@ -52,7 +52,7 @@ componentDidMount () {
     handleSubmit = evnt => {
       evnt.preventDefault()
       const selected = this.state.selectedPeople
-      // console.log('Selected people in selectedPeople.jsx: ', selected)
+       console.log('Selected people in selectedPeople.jsx: ', selected)
       const teams = sortSelectedPeople(selected)
        console.log(teams)
       this.props.dispatch(twoTeams(teams))
