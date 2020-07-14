@@ -21,7 +21,7 @@ function getNewPeople (id, db = database) {
 function postPeople (newPeople, db = database) {
   // console.log('postpeople function: ', newPeople)
   let peopleToInsert = newPeople.names.map(person => {
-    return { name: person, is_selected: false } 
+    return { name: person, is_selected: false }
   })
   // console.log('people to insert: ', peopleToInsert)
   return db('people')
@@ -31,4 +31,3 @@ function postPeople (newPeople, db = database) {
       return getNewPeople(people[0])
     })
 }
-

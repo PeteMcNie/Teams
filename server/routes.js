@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
 
 router.post('/', middleware(schema), (req, res) => {
   const newPeople = req.body
- // console.log('newPeople: ', newPeople)
+  // console.log('newPeople: ', newPeople)
 
   db.postPeople(newPeople)
     .then(person => {

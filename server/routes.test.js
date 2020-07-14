@@ -39,7 +39,7 @@ test('GET / returns 500 if there is a database error', () => {
     })
 })
 
-test('POST / returns 202 if the people are successfully posted', done => {
+xtest('POST / returns 202 if the people are successfully posted', done => {
   return request(server)
     .post('/home/v1/')
     .send('Bob')
@@ -51,7 +51,7 @@ test('POST / returns 202 if the people are successfully posted', done => {
     })
 })
 
-test('POST / returns 500 if there is a database error', () => {
+xtest('POST / returns 500 if there is a database error', () => {
   const err = new Error('Test error')
   db.postPeople.mockImplementation(() => Promise.reject(err))
   return request(server)

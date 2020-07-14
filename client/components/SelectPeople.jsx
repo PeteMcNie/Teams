@@ -42,7 +42,7 @@ componentDidMount () {
         this.setState({
           selectedPeople: []
         })
-      } else if (this.state.selectedPeople.length -1 < this.state.selectedPeople.length) {
+      } else if (this.state.selectedPeople.length - 1 < this.state.selectedPeople.length) {
         this.setState({
           selectedPeople: this.state.people
         })
@@ -54,6 +54,7 @@ componentDidMount () {
       const selected = this.state.selectedPeople
       // console.log('Selected people in selectedPeople.jsx: ', selected)
       const teams = sortSelectedPeople(selected)
+      console.log(teams)
       this.props.dispatch(twoTeams(teams))
       this.props.history.push('/teams')
     }
@@ -69,7 +70,7 @@ componentDidMount () {
                   <li key={person.id}>
                     <input
                       type='checkbox'
-                      checked={this.state.selectedPeople.includes(person)} 
+                      checked={this.state.selectedPeople.includes(person)}
                       onChange={(evnt) => this.handleCheck(evnt, person)}
                     />  {person.name}
                   </li>
