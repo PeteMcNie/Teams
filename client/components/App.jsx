@@ -8,6 +8,8 @@ import Addplayers from './Addplayers'
 import Footer from './Footer'
 import Teams from './Teams'
 
+import Dynamic from './Dynamic'
+
 const App = () => {
   return (
     <>
@@ -16,6 +18,7 @@ const App = () => {
       <Route path='/teams' component={Teams} />
       <Route exact path='/' component={Title} />
       <Route exact path='/' component={Links} />
+      <Route path='/dynamic' component={Dynamic} />
       <Footer />
     </>
   )

@@ -10,6 +10,11 @@ const Links = () => {
       <div className='link'>
         <Link to={`/addplayers`}>Add New Person</Link>
       </div>
+
+      <div className='link'>
+        <Link to={`/dynamic`}>Dynamic</Link>
+      </div>
+
     </div>
   )
 }
