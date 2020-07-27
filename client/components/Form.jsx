@@ -1,6 +1,7 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-import { newPeople } from '../api'
+import { addPeople } from '../actions'
 
 class Form extends React.Component {
   constructor () {
@@ -28,16 +29,15 @@ class Form extends React.Component {
       this.setState({ names: [...this.state.names, ''] })
     }
 
-    handleSubmit = evnt => {
+    handleSubmit = (evnt, dispatch) => {
       evnt.preventDefault() // This prevents form submisson beng wiped when submit button is clicked
       const newPeopleData = this.state
       // console.log('Handling submit', newPeopleData)
-
       const newTeamMembers = newPeopleData.names.filter(name => {
         return name !== ''
       })
       console.log('Form.jsx', this.props)
-      newPeople({ names: newTeamMembers })
+      this.props.dispatch(addPeople({ names: newTeamMembers }))
     }
 
     render () {
@@ -67,4 +67,4 @@ class Form extends React.Component {
     }
 }
 
-export default Form
+export default connect()(Form)
