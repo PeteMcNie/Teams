@@ -36,12 +36,12 @@ class Form extends React.Component {
       const newTeamMembers = newPeopleData.names.filter(name => {
         return name !== ''
       })
-      // console.log('Removed empty strings: ', { names: newTeamMembers })
+      console.log('Form.jsx', this.props)
       newPeople({ names: newTeamMembers })
     }
 
     render () {
-      console.log(this.state)
+      // console.log(this.state)
       return (
         <div>
           <form onSubmit={this.handleSubmit}>

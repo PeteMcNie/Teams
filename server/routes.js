@@ -24,7 +24,7 @@ router.post('/', middleware(schema), (req, res) => {
 
   db.postPeople(newPeople)
     .then(person => {
-       console.log('In router.js after posting: ', person)
+      // console.log('In router.js after posting: ', person)
       return res.status(202).json(person[0])
     })
     .catch(err => {

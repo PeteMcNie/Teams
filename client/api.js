@@ -10,7 +10,9 @@ export function getPeople () {
       // console.log('getPeople function returned people', response.body)
       return response.body
     })
-    .catch('Failed to GET people from database')
+    .catch(err => {
+      console.err('Failed to GET people from database', err)
+    })
 }
 
 
@@ -20,8 +22,11 @@ export function newPeople (newTeamMembers) {
     .post(peopleUrl)
     .send(newTeamMembers)
     .then(response => {
-       console.log('client-side: ', response.body)
+      // console.log('client-side: ', response.body)
       return response.body
     })
-    .catch("Error in api.js or before on POSTing")
+    .catch(err => {
+      console.err('Error in api.js or before on POSTing', err)
+    })
+  
 }
