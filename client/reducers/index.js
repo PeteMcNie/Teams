@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux'
 
 import twoTeams from './twoTeamsReducer'
-import addNewPeopleSuccess from './addingNewPeople'
+import addNewPeopleSuccess from './addNewPeopleSuccess'
+import error from './error'
 
 export default combineReducers({
   twoTeams,
-  addNewPeopleSuccess
+  addNewPeopleSuccess,
+  error
 })
