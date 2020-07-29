@@ -3,15 +3,14 @@ import { connect } from 'react-redux'
 
 export const Error = (props) => {
     return (
-        <div>{props.error}</div>
+        <div>Hi {props.error}</div>
     )   
 }
 
 const mapStateToProps = state => {
     return {
-        error: state.error
+        error: state.errorMessage
     }
 }
-
 
 export default connect(mapStateToProps)(Error)

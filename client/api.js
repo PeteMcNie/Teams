@@ -25,6 +25,6 @@ export function newPeople (newPeople) {
       return response.body
     })
     .catch(err => {
-      console.err('Error in api.js or before on POSTing', err)
+      console.error('Error entering new people into database', err)
     })
 }

@@ -41,7 +41,10 @@ export function addPeople (people) {
        // console.log('actions.js', allPeople)
        dispatch(addNewPeopleSuccess(allPeople))
      })
-     .catch(err => dispatch(addNewPeopleError(err.message)))
+     .catch(err => {
+       console.error('hi', err.message)
+       dispatch(addNewPeopleError(err.message))
+      })
   }
 }
 

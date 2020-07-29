@@ -1,6 +1,6 @@
 import { ERROR } from '../actions'
 
-function error (error = null, action) {
+function errorMessage (error = null, action) {
     switch (action.type) {
         case ERROR:
             return action.message
@@ -10,4 +10,4 @@ function error (error = null, action) {
     }
 }
 
-export default error
+export default errorMessage
