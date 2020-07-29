@@ -1,6 +1,6 @@
 import { ADD_NEW_PEOPLE_SUCCESS } from '../actions'
 
-function addNewPeopleSuccess (state = [], action) {
+function newPeopleReducer (state = [], action) {
     switch (action.type) {
         case ADD_NEW_PEOPLE_SUCCESS:
             return action.allPeople
@@ -10,4 +10,4 @@ function addNewPeopleSuccess (state = [], action) {
     }
 }
 
-export default addNewPeopleSuccess
+export default newPeopleReducer

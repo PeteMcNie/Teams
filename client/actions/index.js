@@ -26,7 +26,7 @@ export function addNewPeopleSuccess (allPeople) {
   }
 }
 
-export function addNewPeopleError ({ message }) {
+export function addNewPeopleError (message) {
   return {
     type: ERROR,
     message

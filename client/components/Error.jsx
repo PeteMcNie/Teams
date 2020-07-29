@@ -1,13 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-export const Error = (props) => {
+const Error = (props) => {
     return (
         <div>Hi {props.error}</div>
     )   
 }
 
-const mapStateToProps = state => {
+function mapStateToProps (state) {
     return {
         error: state.errorMessage
     }
