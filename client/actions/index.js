@@ -19,10 +19,10 @@ export function addingNewPeople () {
   }
 }
 
-export function addNewPeopleSuccess (people) {
+export function addNewPeopleSuccess (allPeople) {
   return {
     type: ADD_NEW_PEOPLE_SUCCESS,
-    people
+    allPeople
   }
 }
 
@@ -38,7 +38,7 @@ export function addPeople (people) {
     dispatch(addingNewPeople())
     return newPeople(people)
      .then(allPeople => {
-       console.log('actions.js', allPeople)
+       // console.log('actions.js', allPeople)
        dispatch(addNewPeopleSuccess(allPeople))
      })
      .catch(err => dispatch(addNewPeopleError(err.message)))

@@ -36,7 +36,6 @@ class Form extends React.Component {
       const newTeamMembers = newPeopleData.names.filter(name => {
         return name !== ''
       })
-      console.log('Form.jsx', this.props)
       this.props.dispatch(addPeople({ names: newTeamMembers }))
     }
 
