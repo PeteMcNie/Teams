@@ -42,7 +42,7 @@ export function addPeople (people) {
        dispatch(addNewPeopleSuccess(allPeople))
      })
      .catch(err => {
-       console.error('hi', err.message)
+       // console.error('hi', err.message) BLOCKED ON THE ERROR PROCESS< HOW SHOULD I DEAL WITH THIS? WHAT SHOULD I DISPLAY TO THE CLIENT? WHY IS THE ERROR MESSAGE I AM GETTING SAYING ADD NEW PEOPLE SUCCESS....SOMETHING
        dispatch(addNewPeopleError(err.message))
       })
   }
