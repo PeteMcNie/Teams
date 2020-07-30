@@ -42,7 +42,7 @@ export function addPeople (people) {
        dispatch(addNewPeopleSuccess(allPeople))
      })
      .catch(err => {
-        console.error('hi lane', err.message) 
+       // console.error('hi lane', err.message) 
        dispatch(addNewPeopleError(err.message))
       }) 
   }

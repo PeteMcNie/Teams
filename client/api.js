@@ -11,7 +11,7 @@ export function getPeople () {
       return response.body
     })
     .catch(err => {
-      console.err('Failed to GET people from database', err)
+      console.err('Error in api getpeople ', err)
     })
 }
 
@@ -25,7 +25,7 @@ export function newPeople (newPeople) {
       return response.body
     })
     .catch(err => {
-      console.error('Error entering new people into database', err.response.body)
+      console.error('Error in api newPeople', err.response.body)
       throw err
     })
 }
