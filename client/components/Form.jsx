@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import Error from './Error'
+
 import { addPeople } from '../actions'
 
 class Form extends React.Component {
@@ -54,6 +56,7 @@ class Form extends React.Component {
                 )
               })
             }
+            <Error />
             <div>
               <button onClick={(evnt) => this.addName(evnt)}>Add Person</button>
             </div>
