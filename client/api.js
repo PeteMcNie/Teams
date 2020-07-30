@@ -21,7 +21,7 @@ export function newPeople (newPeople) {
     .post(peopleUrl)
     .send(newPeople)
     .then(response => {
-      // console.log('client-side: ', response.body)
+      // console.log('client-side: ', response)
       return response.body
     })
     .catch(err => {
