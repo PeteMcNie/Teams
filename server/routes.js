@@ -25,9 +25,9 @@ router.post('/', middleware(schema), (req, res) => {
   db.postPeople(newPeople)
     .then(person => {
       // console.log('In router.js after posting: ', person)
-      return res.status(202).json(person[0])
+      return res.status(202).json(person)
     })
     .catch(err => {
-      res.status(500).send('Posting to database error: ' + err.message)
+      res.status(500).send('Posting database error: ' + err.message)
     })
 })

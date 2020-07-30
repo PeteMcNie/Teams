@@ -1,6 +1,9 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-import { newPeople } from '../api'
+import Error from './Error'
+
+import { addPeople } from '../actions'
 
 class Form extends React.Component {
   constructor () {
@@ -28,19 +31,18 @@ class Form extends React.Component {
       this.setState({ names: [...this.state.names, ''] })
     }
 
-    handleSubmit = evnt => {
+    handleSubmit = (evnt, dispatch) => {
       evnt.preventDefault() // This prevents form submisson beng wiped when submit button is clicked
       const newPeopleData = this.state
       // console.log('Handling submit', newPeopleData)
-
       const newTeamMembers = newPeopleData.names.filter(name => {
         return name !== ''
       })
-      // console.log('Removed empty strings: ', { names: newTeamMembers })
-      newPeople({ names: newTeamMembers })
+      this.props.dispatch(addPeople({ names: newTeamMembers }))
     }
 
     render () {
+      // console.log(this.state)
       return (
         <div>
           <form onSubmit={this.handleSubmit}>
@@ -54,6 +56,7 @@ class Form extends React.Component {
                 )
               })
             }
+            <Error />
             <div>
               <button onClick={(evnt) => this.addName(evnt)}>Add Person</button>
             </div>
@@ -66,4 +69,4 @@ class Form extends React.Component {
     }
 }
 
-export default Form
+export default connect()(Form)

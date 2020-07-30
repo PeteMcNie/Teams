@@ -12,14 +12,14 @@ function getPeople (db = database) {
     .select('id', 'name', 'is_selected as isSelected')
 }
 
-function getNewPeople (id, db = database) {
-  return db('people')
-    .where('id', id)
-    .select('id', 'name', 'is_selected as isSelected')
-}
+// function getNewPeople (id, db = database) {
+//   return db('people')
+//     .where('id', id)
+//     .select('id', 'name', 'is_selected as isSelected')
+// }
 
 function postPeople (newPeople, db = database) {
-  // console.log('postpeople function: ', newPeople)
+   // console.log('postpeople function: ', newPeople)
   let peopleToInsert = newPeople.names.map(person => {
     return { name: person, is_selected: false }
   })
@@ -28,6 +28,11 @@ function postPeople (newPeople, db = database) {
     .insert(peopleToInsert)
     .then(people => {
       // console.log('After POST insert in db.js: ', people[0])
-      return getNewPeople(people[0])
+      return getPeople(db)
+    })
+    .catch(err => {
+      // eslint-disable-next-line no-console
+      console.error('Error with postPeople: ', err)
+      throw err
     })
 }

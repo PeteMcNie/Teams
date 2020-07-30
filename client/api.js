@@ -10,17 +10,23 @@ export function getPeople () {
       // console.log('getPeople function returned people', response.body)
       return response.body
     })
-    .catch('Failed to GET people from database')
+    .catch(err => {
+      console.err('Error in api getpeople ', err)
+    })
 }
 
-export function newPeople (newTeamMembers) {
+
+export function newPeople (newPeople) {
   // console.log('API data ready to send to server', newTeamMembers)
   return request
     .post(peopleUrl)
-    .send(newTeamMembers)
+    .send(newPeople)
     .then(response => {
-      console.log('client-side: ', response.body)
+      // console.log('client-side: ', response)
       return response.body
     })
-    .catch('Error in api.js or before on POSTing')
+    .catch(err => {
+      console.error('Error in api newPeople', err.response.body)
+      throw err
+    })
 }
