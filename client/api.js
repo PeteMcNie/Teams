@@ -25,6 +25,7 @@ export function newPeople (newPeople) {
       return response.body
     })
     .catch(err => {
-      console.error('Error entering new people into database', err)
+      console.error('Error entering new people into database', err.response.body)
+      throw err
     })
 }
