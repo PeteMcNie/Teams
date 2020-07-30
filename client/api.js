@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-const peopleUrl = 'http://localhost:8080/home/v1' // Server-side route (different from client side)
+const peopleUrl = 'http://localhost:3000/home/v1' // Server-side route (different from client side)
 
 export function getPeople () {
   // console.log('getPeople function hit')
@@ -14,6 +14,7 @@ export function getPeople () {
       console.err('Error in api getpeople ', err)
     })
 }
+
 
 export function newPeople (newPeople) {
   // console.log('API data ready to send to server', newTeamMembers)

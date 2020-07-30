@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import { getPeople } from '../api'
-import sortSelectedPeople from '../sortFunctions'
+import { sortSelectedPeople } from '../sortFunctions'
 import { twoTeams } from '../actions'
 
 class SelectPeople extends React.Component {
@@ -42,7 +42,7 @@ componentDidMount () {
         this.setState({
           selectedPeople: []
         })
-      } else if (this.state.selectedPeople.length -1 < this.state.selectedPeople.length) {
+      } else if (this.state.selectedPeople.length - 1 < this.state.selectedPeople.length) {
         this.setState({
           selectedPeople: this.state.people
         })
@@ -69,7 +69,7 @@ componentDidMount () {
                   <li key={person.id}>
                     <input
                       type='checkbox'
-                      checked={this.state.selectedPeople.includes(person)} 
+                      checked={this.state.selectedPeople.includes(person)}
                       onChange={(evnt) => this.handleCheck(evnt, person)}
                     />  {person.name}
                   </li>

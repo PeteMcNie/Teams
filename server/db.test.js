@@ -49,5 +49,3 @@ test('postPeople returns the last person entered into the db', () => {
       expect(person).toEqual(expected)
   })
 })
-
-
