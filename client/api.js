@@ -30,3 +30,7 @@ export function newPeople (newPeople) {
       throw err
     })
 }
+
+export function deletePerson (id) {
+  console.log('hello from api', id)
+}

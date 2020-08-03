@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import Loading from './Loading'
 
-import { getPeople } from '../api'
+import { getPeople, deletePerson } from '../api'
 import { sortSelectedPeople } from '../sortFunctions'
 import { twoTeams } from '../actions'
 
@@ -51,6 +51,17 @@ componentDidMount () {
       }
     }
 
+    deletePerson = (evt, id) => {
+      console.log('selectpeople ', evt)
+      console.log('selectpeople ', this.props)
+      console.log('selectpeople ', id)
+      evt.preventDefault()
+      this.props.dispatch(deletePerson(id))
+
+    }
+
+
+
     handleSubmit = evnt => {
       evnt.preventDefault()
       const selected = this.state.selectedPeople
@@ -74,6 +85,7 @@ componentDidMount () {
                       checked={this.state.selectedPeople.includes(person)}
                       onChange={(evnt) => this.handleCheck(evnt, person)}
                     />  {person.name}
+                    <button onClick={evt => this.deletePerson(evt, person.id)}>X</button>
                   </li>
                 )
               }
