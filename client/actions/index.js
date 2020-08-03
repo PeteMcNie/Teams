@@ -27,7 +27,7 @@ export const ERROR = 'ERROR'
 export function addingNewPeople () {
   return {
     type: ADDING_NEW_PEOPLE
-  }
+  } 
 }
 
 export function addNewPeopleSuccess (allPeople) {
@@ -63,7 +63,9 @@ export const DELETING_PERSON = 'DELETING PERSON'
 export const PERSON_DELETED_SUCCESS = 'PERSON_DELETED_SUCCESS'
 
 export function deletePerson (id) {
-  console.log('actions ', id)
+  return (dispatch) => {
+    console.log('actions ', id)
+  }
 }
 
 
