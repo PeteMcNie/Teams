@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import Loading from './Loading'
+
 import { getPeople } from '../api'
 import { sortSelectedPeople } from '../sortFunctions'
 import { twoTeams } from '../actions'
@@ -52,7 +54,7 @@ componentDidMount () {
     handleSubmit = evnt => {
       evnt.preventDefault()
       const selected = this.state.selectedPeople
-       console.log('Selected people in selectedPeople.jsx: ', selected)
+      // console.log('Selected people in selectedPeople.jsx: ', selected)
       const teams = sortSelectedPeople(selected)
       this.props.dispatch(twoTeams(teams))
       this.props.history.push('/teams')
@@ -81,7 +83,7 @@ componentDidMount () {
               <input type='button' onClick={this.handleCheckAll} value='Select / Deselect All' />
             </div>
             <div>
-              <input type='submit' value='Create Teams!' />
+              <input type='submit' value='Create Teams!' /><Loading />
             </div>
           </form>
         </div>
@@ -89,4 +91,10 @@ componentDidMount () {
     }
 }
 
-export default connect()(SelectPeople)
+function mapStateToProps (state) {
+  return {
+    loading: state.loading
+  }
+}
+
+export default connect(mapStateToProps)(SelectPeople)

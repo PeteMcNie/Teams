@@ -1,12 +1,15 @@
-import React from 'React'
+import React from 'react'
 import { connect } from 'react-redux'
 
-const Loading = (props) => {
-
+const Loading = props => {
+    return props.loading
+    ? <img className='loading' src='/images/loading.svg' />
+    : null
 }
+
 function mapStateToProps (state) {
     return {
-        
+        loading: state.loading
     }
 }
 

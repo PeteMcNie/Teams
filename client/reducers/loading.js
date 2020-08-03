@@ -1,5 +1,6 @@
 import {
     ADDING_NEW_PEOPLE,
+    ADD_NEW_PEOPLE_SUCCESS,
     TWO_TEAMS,
     ERROR
 } from '../actions'
@@ -11,6 +12,7 @@ const loading = (state = false, action) => {
 
         case ERROR:
         case TWO_TEAMS:
+        case ADD_NEW_PEOPLE_SUCCESS:
             return false
 
         default: 
