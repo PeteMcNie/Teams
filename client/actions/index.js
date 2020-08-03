@@ -1,4 +1,15 @@
-import { newPeople } from '../api'
+import { getPeople, newPeople } from '../api'
+
+export const GETTING_PEOPLE = 'GETTING_PEOPLE'
+export const GETTING_PEOPLE_SUCCESS = 'GETTING_PEOPLE_SUCCESS'
+
+export function getPeopleAction () {
+  return (dispatch) => {
+    console.log('getPeopleAction hit')
+    dispatch(getPeople())
+  }
+}
+
 
 export const TWO_TEAMS = 'TWO_TEAMS'
 
@@ -46,6 +57,13 @@ export function addPeople (people) {
        dispatch(addNewPeopleError(err.message))
       }) 
   }
+}
+
+export const DELETING_PERSON = 'DELETING PERSON'
+export const PERSON_DELETED_SUCCESS = 'PERSON_DELETED_SUCCESS'
+
+export function deletePerson (id) {
+  console.log('actions ', id)
 }
 
 
