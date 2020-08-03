@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 
 import Loading from './Loading'
 
-import { getPeople, deletePerson } from '../api'
+import { getPeople } from '../api'
 import { sortSelectedPeople } from '../sortFunctions'
-import { twoTeams } from '../actions'
+import { twoTeams, deletePerson } from '../actions'
 
 class SelectPeople extends React.Component {
 state = {
