@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 const Loading = props => {
     return props.loading
-    ? <img src='/images/loading.svg' />
+    ? <img className='loading' src='/images/loading.svg' />
     : null
 }
 

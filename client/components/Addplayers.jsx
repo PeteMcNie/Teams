@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom'
 
 import Homebutton from './Homebutton'
 import Form from './Form'
-import Loading from './Loading'
+// import Loading from './Loading'
 
 const Addplayers = (props) => {
 
-console.log('addplayers ', props)
-const { loading } = props
+//console.log('addplayers ', props)
+//const { loading } = props
 
-if (loading) { 
-  return <Loading />
-}
+  // if (loading) { 
+  //   return <Loading />
+  // }
 
   return (
     <div>
@@ -30,12 +30,12 @@ if (loading) {
   )
 }
 
-function mapStateToProps (state) {
-  return {
-    loading: state.loading
-  }
-}
+// function mapStateToProps (state) {
+//   return {
+//     loading: state.loading
+//   }
+// }
 
 
 
-export default connect(mapStateToProps)(Addplayers)
+export default connect()(Addplayers)

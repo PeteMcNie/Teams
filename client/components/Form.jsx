@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import Error from './Error'
+import Loading from './Loading'
 
 import { addPeople } from '../actions'
 
@@ -42,7 +43,9 @@ class Form extends React.Component {
     }
 
     render () {
-      // console.log(this.state)
+      const { loading } = this.props
+
+      if (loading) {
       return (
         <div>
           <form onSubmit={this.handleSubmit}>
@@ -61,12 +64,43 @@ class Form extends React.Component {
               <button onClick={(evnt) => this.addName(evnt)}>Add Person</button>
             </div>
             <div>
-              <button type='submit'>Submit</button>
+              <button type='submit'>Submit</button><Loading />
             </div>
           </form>
         </div>
       )
+      } else {
+        return (
+          <div>
+            <form onSubmit={this.handleSubmit}>
+              {
+                this.state.names.map((name, index) => {
+                  return (
+                    <div key={index}>
+                      <input value={name} onChange={evnt => this.handleChange(evnt, index)} placeholder="Name"/>
+                      <button onClick={(evnt) => this.handleRemove(evnt, index)}>Remove</button>
+                    </div>
+                  )
+                })
+              }
+              <Error />
+              <div>
+                <button onClick={(evnt) => this.addName(evnt)}>Add Person</button>
+              </div>
+              <div>
+                <button type='submit'>Submit</button>
+              </div>
+            </form>
+          </div>
+        )
+      }
     }
 }
 
-export default connect()(Form)
+function mapStateToProps (state) {
+  return {
+    loading: state.loading
+  }
+}
+
+export default connect(mapStateToProps)(Form)
