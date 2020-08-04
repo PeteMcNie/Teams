@@ -3,10 +3,38 @@ import { getPeople, newPeople } from '../api'
 export const GETTING_PEOPLE = 'GETTING_PEOPLE'
 export const GETTING_PEOPLE_SUCCESS = 'GETTING_PEOPLE_SUCCESS'
 
+export function gettingPeople () {
+  return {
+    type: GETTING_PEOPLE
+  }
+}
+
+export function getPeopleSuccess (people) {
+  return {
+    type: GETTING_PEOPLE_SUCCESS,
+    people
+  }
+}
+
+export function getPeopleError (message) {
+  return {
+    type: ERROR,
+    message
+  }
+}
+
 export function getPeopleAction () {
   return (dispatch) => {
     console.log('getPeopleAction hit')
-    dispatch(getPeople())
+    dispatch(gettingPeople())
+    return getPeople()
+      .then(people => {
+        console.log('actions.js ', people)
+        dispatch(getPeopleSuccess(people))
+      })
+      .catch(err => {
+        dispatch(getPeopleError(err.message))
+      })
   }
 }
 
