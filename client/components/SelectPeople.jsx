@@ -3,9 +3,8 @@ import { connect } from 'react-redux'
 
 import Loading from './Loading'
 
-import { getPeople } from '../api'
 import { sortSelectedPeople } from '../sortFunctions'
-import { twoTeams, deletePerson } from '../actions'
+import { getPeopleAction, twoTeams, deletePerson } from '../actions'
 
 class SelectPeople extends React.Component {
 state = {
@@ -14,7 +13,7 @@ state = {
 }
 
 componentDidMount () {
-  getPeople()
+  getPeopleAction()
     .then(allPeople => {
       this.setState(
         {
@@ -52,8 +51,6 @@ componentDidMount () {
     }
 
     deletePerson = (evt, id) => {
-      console.log('selectpeople ', evt)
-      console.log('selectpeople ', this.props)
       console.log('selectpeople ', id)
       evt.preventDefault()
       this.props.dispatch(deletePerson(id))
