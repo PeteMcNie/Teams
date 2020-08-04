@@ -13,7 +13,8 @@ state = {
 }
 
 componentDidMount () {
-  getPeopleAction()
+  console.log('selectePeople ', this.props)
+  this.props.dispatch(getPeopleAction())
     .then(allPeople => {
       this.setState(
         {
@@ -102,7 +103,8 @@ componentDidMount () {
 
 function mapStateToProps (state) {
   return {
-    loading: state.loading
+    loading: state.loading,
+    people: state.people
   }
 }
 
