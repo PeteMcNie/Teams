@@ -13,15 +13,26 @@ state = {
 }
 
 componentDidMount () {
-  console.log('selectePeople ', this.props)
   this.props.dispatch(getPeopleAction())
-    .then(allPeople => {
-      this.setState(
-        {
-          people: allPeople
-        }
-      )
+    .then(() => {
+      console.log('selectPeople ', this.props)
+      console.log('selectPeople ', this.props.people)
+      this.setState({
+          people: this.props.people
+      })
     })
+
+    //NEED TO FIND A WAY TO LOAD ALL PEOPLE WHEN THE PAGES LOADS
+
+    
+    // .then(people => {
+    //   console.log('selectPeople ', people)
+    //   this.setState(
+    //     {
+    //       people
+    //     }
+    //   )
+    // })
 }
 
     handleCheck = (evnt, person) => {
@@ -70,6 +81,10 @@ componentDidMount () {
     }
 
     render () {
+      if (this.props.loading) {
+        return <Loading />
+      }
+
       return (
         <div>
           <form onSubmit={this.handleSubmit}>
@@ -93,7 +108,7 @@ componentDidMount () {
               <input type='button' onClick={this.handleCheckAll} value='Select / Deselect All' />
             </div>
             <div>
-              <input type='submit' value='Create Teams!' /><Loading />
+              <input type='submit' value='Create Teams!' />
             </div>
           </form>
         </div>
@@ -104,7 +119,7 @@ componentDidMount () {
 function mapStateToProps (state) {
   return {
     loading: state.loading,
-    people: state.people
+    people: state.getPeopleReducer
   }
 }
 

@@ -25,11 +25,9 @@ export function getPeopleError (message) {
 
 export function getPeopleAction () {
   return (dispatch) => {
-    console.log('getPeopleAction hit')
     dispatch(gettingPeople())
     return getPeople()
       .then(people => {
-        console.log('actions.js ', people)
         dispatch(getPeopleSuccess(people))
       })
       .catch(err => {
