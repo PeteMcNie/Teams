@@ -28,6 +28,7 @@ export function getPeopleAction () {
     dispatch(gettingPeople())
     return getPeople()
       .then(people => {
+        // console.log('getPeopleAction ', people)
         dispatch(getPeopleSuccess(people))
       })
       .catch(err => {
