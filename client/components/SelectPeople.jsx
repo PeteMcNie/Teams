@@ -15,23 +15,11 @@ state = {
 componentDidMount () {
   this.props.dispatch(getPeopleAction())
     .then(() => {
-      console.log('selectPeople ', this.props.people)
+    //  console.log('selectPeople ', this.props.people)
       this.setState({
           people: this.props.people
       })
     })
-
-    //NEED TO FIND A WAY TO LOAD ALL PEOPLE WHEN THE PAGES LOADS
-
-
-    // .then(people => {
-    //   console.log('selectPeople ', people)
-    //   this.setState(
-    //     {
-    //       people
-    //     }
-    //   )
-    // })
 }
 
     handleCheck = (evnt, person) => {
@@ -80,7 +68,7 @@ componentDidMount () {
     }
 
     render () {
-      console.log('render selectPeople ', this.props.people)
+
 
       if (this.props.loading) {
         return <Loading />
