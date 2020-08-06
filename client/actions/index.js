@@ -28,7 +28,6 @@ export function getPeopleAction () {
     dispatch(gettingPeople())
     return getPeople()
       .then(people => {
-        // console.log('getPeopleAction ', people)
         dispatch(getPeopleSuccess(people))
       })
       .catch(err => {
@@ -76,11 +75,9 @@ export function addPeople (people) {
     dispatch(addingNewPeople())
     return newPeople(people)
      .then(allPeople => {
-       // console.log('actions.js', allPeople)
        dispatch(addNewPeopleSuccess(allPeople))
      })
-     .catch(err => {
-       // console.error('hi lane', err.message) 
+     .catch(err => { 
        dispatch(addNewPeopleError(err.message))
       }) 
   }
@@ -89,9 +86,38 @@ export function addPeople (people) {
 export const DELETING_PERSON = 'DELETING PERSON'
 export const PERSON_DELETED_SUCCESS = 'PERSON_DELETED_SUCCESS'
 
+export function deletingPerson () {
+  return {
+    type: DELETING_PERSON
+  }
+}
+
+export function deletedPersonSuccess (whatGoesHere) {
+  return {
+    type: PERSON_DELETED_SUCCESS,
+    whatGoesHere
+  }
+}
+
+export function deletePersonError (message) {
+  return {
+    type: ERROR,
+    message
+  }
+}
+
 export function deletePerson (id) {
   return (dispatch) => {
     console.log('actions ', id)
+    dispatch(deletingPerson())
+    return removePerson(id)
+      .then(() => {
+        console.log('???')
+        dispatch(deletedPersonSuccess('???'))
+      })
+      .catch(err => {
+        dispatch(deletePersonError(err.message))
+       }) 
   }
 }
 

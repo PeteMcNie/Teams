@@ -15,7 +15,6 @@ state = {
 componentDidMount () {
   this.props.dispatch(getPeopleAction())
     .then(() => {
-    //  console.log('selectPeople ', this.props.people)
       this.setState({
           people: this.props.people
       })
@@ -23,7 +22,6 @@ componentDidMount () {
 }
 
     handleCheck = (evnt, person) => {
-      // console.log('called')
       const isChecked = evnt.target.checked
       let selected = [...this.state.selectedPeople]
       if (isChecked) {
@@ -37,7 +35,6 @@ componentDidMount () {
     }
 
     handleCheckAll = () => {
-      // console.log(this.state)
       if (this.state.selectedPeople.length) {
         this.setState({
           selectedPeople: []
