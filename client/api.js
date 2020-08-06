@@ -31,6 +31,11 @@ export function newPeople (newPeople) {
     })
 }
 
-export function deletePerson (id) {
+export function removePerson (id) {
   console.log('hello from api', id)
+  return request
+    .delete(`${peopleUrl}/${id}`)
+    .then(response => {
+      console.log('client-side api ', response)
+    })
 }

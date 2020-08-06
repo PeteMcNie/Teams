@@ -31,3 +31,8 @@ router.post('/', middleware(schema), (req, res) => {
       res.status(500).send('Posting database error: ' + err.message)
     })
 })
+
+router.delete('/:id', (req, res) => {
+  const id = req.params.id
+  console.log('routes ', id)
+})
