@@ -72,7 +72,6 @@ componentDidMount () {
           <form onSubmit={this.handleSubmit}>
             <ul>
               {this.props.people.map(person => {
-                // console.log('SelectPeople render function data: ', person)
                 return (
                   <li key={person.id}>
                     <input
