@@ -35,4 +35,11 @@ router.post('/', middleware(schema), (req, res) => {
 router.delete('/:id', (req, res) => {
   const id = req.params.id
   console.log('routes ', id)
+  db.deletePerson(id)
+    .then(() => {
+      res.sendStatus(200)
+    })
+    .catch(err => {
+      res.status(500).send('Error in database: ' + err.message)
+    })
 })
