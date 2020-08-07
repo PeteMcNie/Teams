@@ -49,3 +49,12 @@ test('postPeople returns the last person entered into the db', () => {
       expect(person).toEqual(expected)
   })
 })
+
+test('deletePerson removes person from db', () => {
+  expect.assertions(1)
+
+  return db.deletePerson(2, testDb)
+    .then(people => {
+      expect(people).toBeTruthy()
+    })
+})
