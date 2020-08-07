@@ -32,8 +32,8 @@ class Form extends React.Component {
       this.setState({ names: [...this.state.names, ''] })
     }
 
-    handleSubmit = (evnt, dispatch) => {
-      evnt.preventDefault() // This prevents form submisson beng wiped when submit button is clicked
+    handleSubmit = (evt) => {
+      evt.preventDefault() // This prevents form submisson beng wiped when submit button is clicked
       const newPeopleData = this.state
       // console.log('Handling submit', newPeopleData)
       const newTeamMembers = newPeopleData.names.filter(name => {

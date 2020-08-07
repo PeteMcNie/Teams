@@ -4,7 +4,8 @@ const database = require('knex')(config)
 
 module.exports = {
   getPeople,
-  postPeople
+  postPeople,
+  deletePerson
 }
 
 function getPeople (db = database) {
@@ -35,4 +36,10 @@ function postPeople (newPeople, db = database) {
       console.error('Error with postPeople: ', err)
       throw err
     })
+}
+
+function deletePerson (id, db = database) {
+  return db('people')
+    .where('id', id)
+    .del()
 }

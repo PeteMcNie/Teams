@@ -30,3 +30,16 @@ export function newPeople (newPeople) {
       throw err
     })
 }
+
+export function removePerson (id) {
+  console.log('hello from api', id)
+  return request
+    .delete(`${peopleUrl}/${id}`)
+    .then(response => {
+      // console.log('client-side api ', response)
+      return response
+    })
+    .catch(err => {
+      console.error('Error in api removePerson', err.response)
+    })
+}

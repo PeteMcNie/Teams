@@ -3,9 +3,8 @@ import { connect } from 'react-redux'
 
 import Loading from './Loading'
 
-import { getPeople } from '../api'
 import { sortSelectedPeople } from '../sortFunctions'
-import { twoTeams } from '../actions'
+import { getPeopleAction, twoTeams, deletePerson } from '../actions'
 
 class SelectPeople extends React.Component {
 state = {
@@ -14,18 +13,15 @@ state = {
 }
 
 componentDidMount () {
-  getPeople()
-    .then(allPeople => {
-      this.setState(
-        {
-          people: allPeople
-        }
-      )
+  this.props.dispatch(getPeopleAction())
+    .then(() => {
+      this.setState({
+          people: this.props.people
+      })
     })
 }
 
     handleCheck = (evnt, person) => {
-      // console.log('called')
       const isChecked = evnt.target.checked
       let selected = [...this.state.selectedPeople]
       if (isChecked) {
@@ -39,7 +35,6 @@ componentDidMount () {
     }
 
     handleCheckAll = () => {
-      // console.log(this.state)
       if (this.state.selectedPeople.length) {
         this.setState({
           selectedPeople: []
@@ -51,6 +46,13 @@ componentDidMount () {
       }
     }
 
+    deletePerson = (evt, id) => {
+      evt.preventDefault()
+      this.props.dispatch(deletePerson(id))
+    }
+
+
+
     handleSubmit = evnt => {
       evnt.preventDefault()
       const selected = this.state.selectedPeople
@@ -61,12 +63,15 @@ componentDidMount () {
     }
 
     render () {
+      if (this.props.loading) {
+        return <Loading />
+      }
+
       return (
         <div>
           <form onSubmit={this.handleSubmit}>
             <ul>
-              {this.state.people.map(person => {
-                // console.log('SelectPeople render function data: ', person)
+              {this.props.people.map(person => {
                 return (
                   <li key={person.id}>
                     <input
@@ -74,6 +79,7 @@ componentDidMount () {
                       checked={this.state.selectedPeople.includes(person)}
                       onChange={(evnt) => this.handleCheck(evnt, person)}
                     />  {person.name}
+                    <button onClick={evt => this.deletePerson(evt, person.id)}>X</button>
                   </li>
                 )
               }
@@ -83,7 +89,7 @@ componentDidMount () {
               <input type='button' onClick={this.handleCheckAll} value='Select / Deselect All' />
             </div>
             <div>
-              <input type='submit' value='Create Teams!' /><Loading />
+              <input type='submit' value='Create Teams!' />
             </div>
           </form>
         </div>
@@ -93,7 +99,8 @@ componentDidMount () {
 
 function mapStateToProps (state) {
   return {
-    loading: state.loading
+    loading: state.loading,
+    people: state.getPeopleReducer
   }
 }
 
