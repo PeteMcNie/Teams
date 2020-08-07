@@ -36,6 +36,10 @@ export function removePerson (id) {
   return request
     .delete(`${peopleUrl}/${id}`)
     .then(response => {
-      console.log('client-side api ', response)
+      // console.log('client-side api ', response)
+      return response
+    })
+    .catch(err => {
+      console.error('Error in api removePerson', err.response)
     })
 }
