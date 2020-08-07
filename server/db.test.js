@@ -58,3 +58,12 @@ test('deletePerson removes person from db', () => {
       expect(people).toBeTruthy()
     })
 })
+
+test('deletePerson returns a message if the person is not found', () => {
+  expect.assertions(1)
+  const id = '4000'
+  return db.deletePerson(id, testDb)
+    .then(response => {
+      expect(response).toBeFalsy()
+    })
+})
