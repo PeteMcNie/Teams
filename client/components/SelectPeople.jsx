@@ -47,10 +47,8 @@ componentDidMount () {
     }
 
     deletePerson = (evt, id) => {
-      console.log('selectpeople ', id)
       evt.preventDefault()
       this.props.dispatch(deletePerson(id))
-
     }
 
 
@@ -65,8 +63,6 @@ componentDidMount () {
     }
 
     render () {
-
-
       if (this.props.loading) {
         return <Loading />
       }
@@ -75,7 +71,7 @@ componentDidMount () {
         <div>
           <form onSubmit={this.handleSubmit}>
             <ul>
-              {this.state.people.map(person => {
+              {this.props.people.map(person => {
                 // console.log('SelectPeople render function data: ', person)
                 return (
                   <li key={person.id}>

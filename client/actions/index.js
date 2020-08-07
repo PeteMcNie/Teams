@@ -92,10 +92,9 @@ export function deletingPerson () {
   }
 }
 
-export function deletedPersonSuccess (id) {
+export function deletedPersonSuccess () {
   return {
-    type: PERSON_DELETED_SUCCESS,
-    id
+    type: PERSON_DELETED_SUCCESS
   }
 }
 
@@ -108,11 +107,10 @@ export function deletePersonError (message) {
 
 export function deletePerson (id) {
   return (dispatch) => {
-    console.log('actions ', id)
     dispatch(deletingPerson())
     return removePerson(id)
-      .then(dispatch(deletedPersonSuccess(id)))
-      .then(() => getPeopleAction())
+      .then(dispatch(deletedPersonSuccess(id))) //id of person deleted is available here, not being used currently.
+      .then(dispatch(getPeopleAction()))
       .catch(err => {
         dispatch(deletePersonError(err.message))
        }) 
