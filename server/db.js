@@ -5,6 +5,7 @@ const database = require('knex')(config)
 module.exports = {
   getPeople,
   postPeople,
+  getNewPeople,
   deletePerson
 }
 
@@ -13,11 +14,11 @@ function getPeople (db = database) {
     .select('id', 'name', 'is_selected as isSelected')
 }
 
-// function getNewPeople (id, db = database) {
-//   return db('people')
-//     .where('id', id)
-//     .select('id', 'name', 'is_selected as isSelected')
-// }
+function getNewPeople (id, db = database) {
+  return db('people')
+    .where('id', id)
+    .select('id', 'name', 'is_selected as isSelected')
+}
 
 function postPeople (newPeople, db = database) {
    // console.log('postpeople function: ', newPeople)

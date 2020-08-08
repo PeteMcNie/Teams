@@ -22,7 +22,31 @@ test('getPeople returns all people', () => {
     })
 })
 
-test('postPeople returns the last person entered into the db', () => {
+test('getNewPeople returns a single person object', () => {
+  expect.assertions(1)
+
+  const expected = [{
+    id: 1,
+    name: 'Pete',
+    isSelected: 0
+  }]
+
+  return db.getNewPeople(1, testDb)
+    .then(person => {
+      expect(person).toEqual(expected)
+    })
+})
+
+test('getNewPeople returns null if there is no one in the database', () => {
+  expect.assertions(1)
+
+  return db.getNewPeople(1000, testDb)
+    .then(person => {
+      expect(person).toEqual([])
+    })
+})
+
+test('postPeople returns all the people entered into the db', () => {
   expect.assertions(1)
 
   const newPeople = { names: ['Pete', 'Steve', 'Kim', 'Rikke']}
