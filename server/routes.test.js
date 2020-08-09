@@ -54,19 +54,23 @@ test('POST / returns 202 if the people are successfully posted', done => {
     .send(newPeople)
     .expect(202)
     .then(res => {
-      console.log(res.body) //NEED TO CHECK WHY I CAN"T TEST THE RESPONSE, 'Bob' is an array which may be causing problems
       expect(res.body.names).toEqual(['Pete', 'Sam'])
       done()
     })
 })
 
-xtest('POST / returns 500 if there is a database error', () => {
+test('POST / returns 500 if there is a database error', () => {
   const err = new Error('Test error')
+  const newPeople = {names: ['Pete', 'Sam']}
+
   db.postPeople.mockImplementation(() => Promise.reject(err))
   return request(server)
     .post('/home/v1/')
+    .send(newPeople)
     .expect(500)
     .then(res => {
-      expect(res.text).toMatch('Posting to database error')
+      expect(res.text).toMatch('Posting database error: Test error')
     })
 })
+
+
