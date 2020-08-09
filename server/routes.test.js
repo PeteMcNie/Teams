@@ -73,4 +73,13 @@ test('POST / returns 500 if there is a database error', () => {
     })
 })
 
+test('DELETE /home/v1/ deletes an object with the ID given', () => {
+  const id = '10000'
 
+  db.deletePerson.mockImplementation(() => Promise.resolve({ id: id}))
+
+  return request(server)
+    .delete('/home/v1/:id')
+    .send(id)
+    .expect(200)
+})
