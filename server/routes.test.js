@@ -6,7 +6,8 @@ const server = require('./server')
 jest.mock('./db', () => {
   return {
     getPeople: jest.fn(),
-    postPeople: jest.fn()
+    postPeople: jest.fn(),
+    deletePerson: jest.fn()
   }
 })
 
@@ -39,14 +40,22 @@ test('GET / returns 500 if there is a database error', () => {
     })
 })
 
-xtest('POST / returns 202 if the people are successfully posted', done => {
+test('POST / returns 202 if the people are successfully posted', done => {
+  const newPeople = {names: ['Pete', 'Sam']}
+
+  db.postPeople.mockImplementation(() => Promise.resolve(
+    {
+      ...newPeople
+    }
+  ))
+
   return request(server)
     .post('/home/v1/')
-    .send('Bob')
+    .send(newPeople)
     .expect(202)
-    .end((err, res) => {
-      //  console.log(res.body) //NEED TO CHECK WHY I CAN"T TEST THE RESPONSE, 'Bob' is an array which may be causing problems
-      //  expect(res.body.name).toEqual('Bob')
+    .then(res => {
+      console.log(res.body) //NEED TO CHECK WHY I CAN"T TEST THE RESPONSE, 'Bob' is an array which may be causing problems
+      expect(res.body.names).toEqual(['Pete', 'Sam'])
       done()
     })
 })
