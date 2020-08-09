@@ -77,9 +77,22 @@ test('DELETE /home/v1/ deletes an object with the ID given', () => {
   const id = '10000'
 
   db.deletePerson.mockImplementation(() => Promise.resolve({ id: id}))
-
   return request(server)
     .delete('/home/v1/:id')
     .send(id)
     .expect(200)
+})
+
+test('DELETE /home/v1/ throws an error if the ID is not found', () => {
+  const err = new Error('Test error')
+  const id = '60'
+
+  db.deletePerson.mockImplementation(() => Promise.reject(err))
+  return request(server)
+    .delete('/home/v1/:id')
+    .send(id)
+    .expect(500)
+    .then(res => {
+      expect(res.text).toMatch('Error in database')
+    })
 })

@@ -34,10 +34,10 @@ router.post('/', middleware(schema), (req, res) => {
 
 router.delete('/:id', (req, res) => {
   const id = req.params.id
-  console.log('routes ', id)
+  // console.log('routes ', id)
   db.deletePerson(id)
     .then(() => {
-      console.log('person deleted in router.js')
+    //  console.log('person deleted in router.js')
       res.sendStatus(200)
     })
     .catch(err => {
