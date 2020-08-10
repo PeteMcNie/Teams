@@ -6,7 +6,8 @@ const server = require('./server')
 jest.mock('./db', () => {
   return {
     getPeople: jest.fn(),
-    postPeople: jest.fn()
+    postPeople: jest.fn(),
+    deletePerson: jest.fn()
   }
 })
 
@@ -39,25 +40,59 @@ test('GET / returns 500 if there is a database error', () => {
     })
 })
 
-xtest('POST / returns 202 if the people are successfully posted', done => {
+test('POST / returns 202 if the people are successfully posted', done => {
+  const newPeople = {names: ['Pete', 'Sam']}
+
+  db.postPeople.mockImplementation(() => Promise.resolve(
+    {
+      ...newPeople
+    }
+  ))
+
   return request(server)
     .post('/home/v1/')
-    .send('Bob')
+    .send(newPeople)
     .expect(202)
-    .end((err, res) => {
-      //  console.log(res.body) //NEED TO CHECK WHY I CAN"T TEST THE RESPONSE, 'Bob' is an array which may be causing problems
-      //  expect(res.body.name).toEqual('Bob')
+    .then(res => {
+      expect(res.body.names).toEqual(['Pete', 'Sam'])
       done()
     })
 })
 
-xtest('POST / returns 500 if there is a database error', () => {
+test('POST / returns 500 if there is a database error', () => {
   const err = new Error('Test error')
+  const newPeople = {names: ['Pete', 'Sam']}
+
   db.postPeople.mockImplementation(() => Promise.reject(err))
   return request(server)
     .post('/home/v1/')
+    .send(newPeople)
     .expect(500)
     .then(res => {
-      expect(res.text).toMatch('Posting to database error')
+      expect(res.text).toMatch('Posting database error: Test error')
+    })
+})
+
+test('DELETE /home/v1/ deletes an object with the ID given', () => {
+  const id = '10000'
+
+  db.deletePerson.mockImplementation(() => Promise.resolve({ id: id}))
+  return request(server)
+    .delete('/home/v1/:id')
+    .send(id)
+    .expect(200)
+})
+
+test('DELETE /home/v1/ throws an error if the ID is not found', () => {
+  const err = new Error('Test error')
+  const id = '60'
+
+  db.deletePerson.mockImplementation(() => Promise.reject(err))
+  return request(server)
+    .delete('/home/v1/:id')
+    .send(id)
+    .expect(500)
+    .then(res => {
+      expect(res.text).toMatch('Error in database')
     })
 })
