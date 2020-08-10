@@ -6,6 +6,7 @@ export function sortSelectedPeople (selectedPeople) {
   let tempValue
   let randomIndex
 
+  // eslint-disable-next-line no-console
   while (0 !== currentIndex) {
     randomIndex = Math.floor(Math.random() * currentIndex)
     currentIndex -= 1
