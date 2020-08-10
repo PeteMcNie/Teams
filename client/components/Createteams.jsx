@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom'
 import Homebutton from './Homebutton'
 import SelectPeople from './SelectPeople'
 
-
-
 const CreateTeams = (props) => {
   return (
     <div>

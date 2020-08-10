@@ -7,11 +7,10 @@ import Form from './Form'
 // import Loading from './Loading'
 
 const Addplayers = (props) => {
+// console.log('addplayers ', props)
+  // const { loading } = props
 
-//console.log('addplayers ', props)
-//const { loading } = props
-
-  // if (loading) { 
+  // if (loading) {
   //   return <Loading />
   // }
 
@@ -35,7 +34,5 @@ const Addplayers = (props) => {
 //     loading: state.loading
 //   }
 // }
-
-
 
 export default connect()(Addplayers)

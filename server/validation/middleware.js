@@ -1,5 +1,5 @@
 const middleware = (schema) => {
-   // console.log('schema: ', schema)
+  // console.log('schema: ', schema)
   return (req, res, next) => {
     const { error } = schema.validate(req.body)
     const valid = error == null

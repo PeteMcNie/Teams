@@ -21,8 +21,8 @@ function getNewPeople (id, db = database) {
 }
 
 function postPeople (newPeople, db = database) {
-   // console.log('postpeople function: ', newPeople)
-  let peopleToInsert = newPeople.names.map(person => {
+  // console.log('postpeople function: ', newPeople)
+  const peopleToInsert = newPeople.names.map(person => {
     return { name: person, is_selected: false }
   })
   // console.log('people to insert: ', peopleToInsert)

@@ -18,7 +18,7 @@ class Form extends React.Component {
       // console.log(fieldName)
       // console.log(evnt.target.value)
       this.state.names[index] = evnt.target.value
-      this.setState({ names: this.state.names })
+      this.setState({ names: this.state.names[index] }) 
     }
 
     handleRemove = (evnt, index) => {
@@ -33,7 +33,7 @@ class Form extends React.Component {
     }
 
     handleSubmit = (evt) => {
-      evt.preventDefault() // This prevents form submisson beng wiped when submit button is clicked
+      // evt.preventDefault() // This prevents form submisson beng wiped when submit button is clicked
       const newPeopleData = this.state
       // console.log('Handling submit', newPeopleData)
       const newTeamMembers = newPeopleData.names.filter(name => {
@@ -46,29 +46,29 @@ class Form extends React.Component {
       const { loading } = this.props
 
       if (loading) {
-      return (
-        <div>
-          <form onSubmit={this.handleSubmit}>
-            {
-              this.state.names.map((name, index) => {
-                return (
-                  <div key={index}>
-                    <input value={name} onChange={evnt => this.handleChange(evnt, index)} placeholder="Name"/>
-                    <button onClick={(evnt) => this.handleRemove(evnt, index)}>Remove</button>
-                  </div>
-                )
-              })
-            }
-            <Error />
-            <div>
-              <button onClick={(evnt) => this.addName(evnt)}>Add Person</button>
-            </div>
-            <div>
-              <button type='submit'>Submit</button><Loading />
-            </div>
-          </form>
-        </div>
-      )
+        return (
+          <div>
+            <form onSubmit={this.handleSubmit}>
+              {
+                this.state.names.map((name, index) => {
+                  return (
+                    <div key={index}>
+                      <input value={name} onChange={evnt => this.handleChange(evnt, index)} placeholder="Name"/>
+                      <button onClick={(evnt) => this.handleRemove(evnt, index)}>Remove</button>
+                    </div>
+                  )
+                })
+              }
+              <Error />
+              <div>
+                <button onClick={(evnt) => this.addName(evnt)}>Add Person</button>
+              </div>
+              <div>
+                <button type='submit'>Submit</button><Loading />
+              </div>
+            </form>
+          </div>
+        )
       } else {
         return (
           <div>

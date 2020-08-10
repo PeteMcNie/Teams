@@ -49,9 +49,9 @@ test('getNewPeople returns null if there is no one in the database', () => {
 test('postPeople returns all the people entered into the db', () => {
   expect.assertions(1)
 
-  const newPeople = { names: ['Pete', 'Steve', 'Kim', 'Rikke']}
+  const newPeople = { names: ['Pete', 'Steve', 'Kim', 'Rikke'] }
 
-  const expected =  [
+  const expected = [
     { id: 1, name: 'Pete', isSelected: 0 },
     { id: 2, name: 'Nigel', isSelected: 0 },
     { id: 3, name: 'Andre', isSelected: 0 },
@@ -67,11 +67,11 @@ test('postPeople returns all the people entered into the db', () => {
     { id: 13, name: 'Kim', isSelected: 0 },
     { id: 14, name: 'Rikke', isSelected: 0 }
   ]
-  
+
   return db.postPeople(newPeople, testDb)
     .then(person => {
       expect(person).toEqual(expected)
-  })
+    })
 })
 
 test('deletePerson removes person from db', () => {

@@ -10,6 +10,7 @@
   "author": "EDA",
   "license": "ISC",
   "scripts": {
+    "format": "npx eslint . --fix --ext .js,.jsx",
     "lint": "npx eslint . --ext .js,.jsx --ignore-path .eslintignore",
     "client": "webpack-dev-server --hot --inline",
     "dev": "run-p dev:client dev:server",

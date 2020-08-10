@@ -36,7 +36,6 @@ export function getPeopleAction () {
   }
 }
 
-
 export const TWO_TEAMS = 'TWO_TEAMS'
 
 export const twoTeams = (teams) => {
@@ -53,7 +52,7 @@ export const ERROR = 'ERROR'
 export function addingNewPeople () {
   return {
     type: ADDING_NEW_PEOPLE
-  } 
+  }
 }
 
 export function addNewPeopleSuccess (allPeople) {
@@ -74,12 +73,12 @@ export function addPeople (people) {
   return (dispatch) => {
     dispatch(addingNewPeople())
     return newPeople(people)
-     .then(allPeople => {
-       dispatch(addNewPeopleSuccess(allPeople))
-     })
-     .catch(err => { 
-       dispatch(addNewPeopleError(err.message))
-      }) 
+      .then(allPeople => {
+        dispatch(addNewPeopleSuccess(allPeople))
+      })
+      .catch(err => {
+        dispatch(addNewPeopleError(err.message))
+      })
   }
 }
 
@@ -109,12 +108,10 @@ export function deletePerson (id) {
   return (dispatch) => {
     dispatch(deletingPerson())
     return removePerson(id)
-      .then(dispatch(deletedPersonSuccess(id))) //id of person deleted is available here, not being used currently.
+      .then(dispatch(deletedPersonSuccess(id))) // id of person deleted is available here, not being used currently.
       .then(dispatch(getPeopleAction()))
       .catch(err => {
         dispatch(deletePersonError(err.message))
-       }) 
+      })
   }
 }
-
-
