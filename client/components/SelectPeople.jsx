@@ -79,7 +79,7 @@ componentDidMount () {
                       checked={this.state.selectedPeople.includes(person)}
                       onChange={(evnt) => this.handleCheck(evnt, person)}
                     />  {person.name}
-                    <button onClick={evt => this.deletePerson(evt, person.id)}>X</button>
+                    <button onClick={evt => this.deletePerson(evt, person.id)}><i className="fas fa-trash"></i></button>
                   </li>
                 )
               }
