@@ -29,3 +29,5 @@ export function sortIntoGroups (shuffledPeople) {
   // console.log('teams: ', teams)
   return twoTeams(teams)
 }
+
+// "sqlite3": "https://github.com/mapbox/node-sqlite3/tarball/master",
