@@ -19,7 +19,8 @@
     "start": "run-s build server",
     "build": "webpack",
     "server": "node server",
-    "test": "jest --watchAll"
+    "test": "jest --verbose --noStackTrace",
+    "test:watch": "npm test -- --watchAll"
   },
   "babel": {
     "presets": [
