@@ -5,7 +5,8 @@ import * as types from '../actions'
 describe('error reducer', () => {
   it('should return null if there is no error', () => {
     expect(
-      reducer(undefined, {})).toBeNull()
+      reducer(undefined, {})
+    ).toBeNull()
   })
 
   it('should return null if it is adding new people', () => {
