@@ -40,7 +40,7 @@
       "/tests/cypress/"
     ],
     "setupFiles": [
-      "./tests/setup.js"
+      "<rootDir>/client/testing/setup.js"
     ]
   },
   "dependencies": {

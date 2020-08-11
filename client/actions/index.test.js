@@ -1,22 +1,21 @@
 import configureStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import * as actions from '../actions'
-import fetchMock from 'fetch-mock'
-// import fetch from 'node-fetch'
+// import mock from 'superagent-mock'
 
 const middlewares = [thunk]
 const mockStore = configureStore(middlewares)
 
-xdescribe('thunk action testing', () => {
-  afterEach(() => {
-    fetchMock.restore()
-  })
+describe('thunk action testing', () => {
+  // afterEach(() => {
+  //   mock.unset()
+  // })
 
-  it('creates GETTING_PEOPLE_SUCCESS on a succesful request', () => {
-    fetchMock.getOnce('/home/v1', {
-      body: { people: ['people here'] },
-      headers: { 'content-type': 'application/json' }
-    })
+  xit('creates GETTING_PEOPLE_SUCCESS on a succesful request', () => {
+    // mock.getOnce('/home/v1', {
+    //   body: { people: ['people here'] },
+    //   headers: { 'content-type': 'application/json' }
+    // })
 
     const expectedActions = [
       { type: actions.GETTING_PEOPLE },
