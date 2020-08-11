@@ -46,7 +46,8 @@
     "@hapi/joi": "^17.1.1",
     "express": "^4.17.1",
     "fetch-mock": "^9.10.6",
-    "knex": "^0.21.1"
+    "knex": "^0.21.1",
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",

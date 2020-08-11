@@ -17,8 +17,9 @@ class Form extends React.Component {
     handleChange = (evnt, index) => {
       // console.log(fieldName)
       // console.log(evnt.target.value)
-      this.state.names[index] = evnt.target.value
-      this.setState({ names: this.state.names })
+      const { names } = this.state
+      names[index] = evnt.target.value
+      this.setState({ names })
     }
 
     handleRemove = (evnt, index) => {

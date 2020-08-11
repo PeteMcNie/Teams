@@ -2,20 +2,21 @@ import configureStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import * as actions from '../actions'
 import fetchMock from 'fetch-mock'
+// import fetch from 'node-fetch'
 
 const middlewares = [thunk]
 const mockStore = configureStore(middlewares)
 
 describe('thunk action testing', () => {
-//   afterEach(() => {
-//       fetchMock.restore()
-//   })
+  afterEach(() => {
+    fetchMock.restore()
+  })
 
   it('creates GETTING_PEOPLE_SUCCESS on a succesful request', () => {
-    // fetchMock.getOnce('/home/v1', {
-    //     body: { people: ['people here'] },
-    //     headers: { 'content-type': 'application/json' }
-    // })
+    fetchMock.getOnce('/home/v1', {
+      body: { people: ['people here'] },
+      headers: { 'content-type': 'application/json' }
+    })
 
     const expectedActions = [
       { type: actions.GETTING_PEOPLE },
@@ -24,10 +25,11 @@ describe('thunk action testing', () => {
 
     const store = mockStore({ people: [] })
 
-    return store.dispatch(actions.getPeopleAction()).then(() => {
+    return store.dispatch(actions.getPeopleAction())
+      .then(() => {
       // return of async actions
-      expect(store.getActions()).toEqual(expectedActions)
-    })
+        expect(store.getActions()).toEqual(expectedActions)
+      })
   })
 
   it('getPeopleAction() should create an action gettingPeople while loading', () => {
