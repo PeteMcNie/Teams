@@ -21,7 +21,7 @@ export function newPeople (newPeople) {
     .post(peopleUrl)
     .send(newPeople)
     .then(response => {
-      // console.log('client-side: ', response)
+    // console.log('client-side: ', response)
       return response.body
     })
     .catch(err => {
@@ -31,11 +31,10 @@ export function newPeople (newPeople) {
 }
 
 export function removePerson (id) {
-  console.log('hello from api', id)
   return request
     .delete(`${peopleUrl}/${id}`)
     .then(response => {
-      // console.log('client-side api ', response)
+      console.log('client-side api ', response)
       return response
     })
     .catch(err => {
