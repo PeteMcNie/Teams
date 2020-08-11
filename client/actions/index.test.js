@@ -20,7 +20,7 @@ describe('thunk action testing', () => {
 
     const expectedActions = [
       { type: actions.GETTING_PEOPLE },
-      { type: actions.GETTING_PEOPLE_SUCCESS, body: { people: ['people here'] } }
+      { type: actions.GETTING_PEOPLE_SUCCESS, people: ['people here'] }
     ]
 
     const store = mockStore({ people: [] })
@@ -28,6 +28,7 @@ describe('thunk action testing', () => {
     return store.dispatch(actions.getPeopleAction())
       .then(() => {
       // return of async actions
+      // WRITE TESTS TO INPECT MOCK
         expect(store.getActions()).toEqual(expectedActions)
       })
   })
