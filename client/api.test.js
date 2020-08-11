@@ -1,7 +1,5 @@
 import { getPeople, newPeople, removePerson } from './api'
 
-const request = require('supertest')
-
 jest.mock('./api', () => {
   return {
     getPeople: jest.fn(),
@@ -60,15 +58,14 @@ test('newPeople returns an array with all people objects', () => {
 })
 
 test('removePerson API returns a message that confirms deletion', () => {
-    removePerson.mockImplementation(() => Promise.resolve({
-        body: {
-            id: 4
-        }
-    }))
+  removePerson.mockImplementation(() => Promise.resolve({
+    body: {
+      id: 4
+    }
+  }))
 
-    return removePerson(4)
-        .then(response => {
-            console.log('api test ', response)
-            expect(response.body.id).toBe(4)
-        })
+  return removePerson(4)
+    .then(response => {
+      expect(response.body.id).toBe(4)
+    })
 })
