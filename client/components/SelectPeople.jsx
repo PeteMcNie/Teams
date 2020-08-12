@@ -10,7 +10,7 @@ class SelectPeople extends React.Component {
 state = {
   people: [],
   selectedPeople: [],
-  numberOfTeams: 2
+  numberOfTeams: '2'
 }
 
 componentDidMount () {
