@@ -48,7 +48,6 @@ componentDidMount () {
     }
 
     handleSelect = evt => {
-      console.log('hi')
       this.setState({
         numberOfTeams: evt.target.value
       })
