@@ -1,6 +1,6 @@
 import { twoTeams } from './reducers'
 
-export function shuffleSelectedPeople (selectedPeople) {
+export function shuffleSelectedPeople (selectedPeople, numberOfTeams) {
   // console.log('Sort Selected people in sortFunction: ', selectedPeople)
   let currentIndex = selectedPeople.length
   let tempValue
@@ -15,11 +15,12 @@ export function shuffleSelectedPeople (selectedPeople) {
     selectedPeople[currentIndex] = selectedPeople[randomIndex]
     selectedPeople[randomIndex] = tempValue
   }
-  console.log('sortSelectedPeople ', selectedPeople)
-  return selectedPeople
+  // console.log('sortSelectedPeople ', selectedPeople)
+  return sortIntoTeams(selectedPeople, numberOfTeams)
 }
 
-export function sortIntoGroups (shuffledPeople) {
+export function sortIntoTeams (shuffledPeople, numberOfTeams) {
+  console.log('sortFunction ', shuffledPeople, numberOfTeams)
   // IF STATEMENT TO GO IN HERE IF DIVIDING INTO MORE THAN TWO TEAMS
   const halfOfArray = Math.floor(shuffledPeople.length / 2)
   const teamOne = shuffledPeople.slice(0, halfOfArray)
@@ -27,8 +28,8 @@ export function sortIntoGroups (shuffledPeople) {
   // console.log('teamOne: ', teamOne)
   // console.log('teamTwo: ', teamTwo)
   const teams = { teamOne, teamTwo }
-  // console.log('teams: ', teams)
-  return twoTeams(teams)
+  console.log('teams: ', teams)
+  // return twoTeams(teams)
 }
 
 // "sqlite3": "https://github.com/mapbox/node-sqlite3/tarball/master",
