@@ -20,9 +20,6 @@ export function shuffleSelectedPeople (selectedPeople, numberOfTeams) {
 export function sortIntoTeams (shuffledPeople, numberOfTeams) {
   console.log('sortFunction ', shuffledPeople, numberOfTeams)
 
-
-
-  
   // IF STATEMENT TO GO IN HERE IF DIVIDING INTO MORE THAN TWO TEAMS
   // if (numberOfTeams === '2') {
   //   const halfOfArray = Math.floor(shuffledPeople.length / 2)
