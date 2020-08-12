@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component matchs snapshot 1`] = `
+<div>
+  <div
+    class="footer"
+  >
+    <div>
+      © 
+      2020 McNie Brothers
+    </div>
+    <div>
+      P. R. McNie
+    </div>
+  </div>
+</div>
+`;

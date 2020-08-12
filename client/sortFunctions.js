@@ -6,7 +6,8 @@ export function sortSelectedPeople (selectedPeople) {
   let tempValue
   let randomIndex
 
-  while (0 !== currentIndex) {
+  // eslint-disable-next-line no-console
+  while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex)
     currentIndex -= 1
 
@@ -14,7 +15,6 @@ export function sortSelectedPeople (selectedPeople) {
     selectedPeople[currentIndex] = selectedPeople[randomIndex]
     selectedPeople[randomIndex] = tempValue
   }
-  // console.log('People shuffled: ', selectedPeople)
   return sortIntoGroups(selectedPeople)
 }
 
@@ -29,3 +29,5 @@ export function sortIntoGroups (shuffledPeople) {
   // console.log('teams: ', teams)
   return twoTeams(teams)
 }
+
+// "sqlite3": "https://github.com/mapbox/node-sqlite3/tarball/master",

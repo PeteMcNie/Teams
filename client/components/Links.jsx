@@ -5,10 +5,10 @@ const Links = () => {
   return (
     <div className='links'>
       <div className='link'>
-        <Link to={`/createteams`}>Create Teams</Link>
+        <Link to={'/createteams'}>Create Teams</Link>
       </div>
       <div className='link'>
-        <Link to={`/addplayers`}>Add New Person</Link>
+        <Link to={'/addplayers'}>Add New Person</Link>
       </div>
     </div>
   )

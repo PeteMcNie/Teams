@@ -17,8 +17,9 @@ class Form extends React.Component {
     handleChange = (evnt, index) => {
       // console.log(fieldName)
       // console.log(evnt.target.value)
-      this.state.names[index] = evnt.target.value
-      this.setState({ names: this.state.names })
+      const { names } = this.state
+      names[index] = evnt.target.value
+      this.setState({ names })
     }
 
     handleRemove = (evnt, index) => {
@@ -46,29 +47,29 @@ class Form extends React.Component {
       const { loading } = this.props
 
       if (loading) {
-      return (
-        <div>
-          <form onSubmit={this.handleSubmit}>
-            {
-              this.state.names.map((name, index) => {
-                return (
-                  <div key={index}>
-                    <input value={name} onChange={evnt => this.handleChange(evnt, index)} placeholder="Name"/>
-                    <button onClick={(evnt) => this.handleRemove(evnt, index)}>Remove</button>
-                  </div>
-                )
-              })
-            }
-            <Error />
-            <div>
-              <button onClick={(evnt) => this.addName(evnt)}>Add Person</button>
-            </div>
-            <div>
-              <button type='submit'>Submit</button><Loading />
-            </div>
-          </form>
-        </div>
-      )
+        return (
+          <div>
+            <form onSubmit={this.handleSubmit}>
+              {
+                this.state.names.map((name, index) => {
+                  return (
+                    <div key={index}>
+                      <input value={name} onChange={evnt => this.handleChange(evnt, index)} placeholder="Name"/>
+                      <button onClick={(evnt) => this.handleRemove(evnt, index)}>Remove</button>
+                    </div>
+                  )
+                })
+              }
+              <Error />
+              <div>
+                <button onClick={(evnt) => this.addName(evnt)}>Add Person</button>
+              </div>
+              <div>
+                <button type='submit'>Submit</button><Loading />
+              </div>
+            </form>
+          </div>
+        )
       } else {
         return (
           <div>

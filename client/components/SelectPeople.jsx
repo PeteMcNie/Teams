@@ -16,7 +16,7 @@ componentDidMount () {
   this.props.dispatch(getPeopleAction())
     .then(() => {
       this.setState({
-          people: this.props.people
+        people: this.props.people
       })
     })
 }
@@ -50,8 +50,6 @@ componentDidMount () {
       evt.preventDefault()
       this.props.dispatch(deletePerson(id))
     }
-
-
 
     handleSubmit = evnt => {
       evnt.preventDefault()

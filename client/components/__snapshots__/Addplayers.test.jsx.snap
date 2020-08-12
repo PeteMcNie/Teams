@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Addplayers component matches snapshot 1`] = `
+<div>
+  <div>
+    <div>
+      <div>
+        <form>
+          <div />
+          <div>
+            <button>
+              Add Person
+            </button>
+          </div>
+          <div>
+            <button
+              type="submit"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div
+      class="link"
+    >
+      <a
+        href="/createteams"
+      >
+        Create Teams
+      </a>
+    </div>
+    <div>
+      <div
+        class="link"
+      >
+        <a
+          class="home"
+          href="/"
+        >
+          Home
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

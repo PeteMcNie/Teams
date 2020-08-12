@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error component is falsey when no error is thrown 1`] = `[Function]`;
+
+exports[`Error component is truthy when store changes 1`] = `[Function]`;

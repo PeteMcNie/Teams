@@ -15,14 +15,13 @@ export function getPeople () {
     })
 }
 
-
 export function newPeople (newPeople) {
   // console.log('API data ready to send to server', newTeamMembers)
   return request
     .post(peopleUrl)
     .send(newPeople)
     .then(response => {
-      // console.log('client-side: ', response)
+    // console.log('client-side: ', response)
       return response.body
     })
     .catch(err => {
@@ -32,7 +31,6 @@ export function newPeople (newPeople) {
 }
 
 export function removePerson (id) {
-  console.log('hello from api', id)
   return request
     .delete(`${peopleUrl}/${id}`)
     .then(response => {
