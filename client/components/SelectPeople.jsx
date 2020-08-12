@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Loading from './Loading'
 
 import { shuffleSelectedPeople } from '../sortFunctions'
-import { getPeopleAction, twoTeams, deletePerson } from '../actions'
+import { getPeopleAction, deletePerson } from '../actions'
 
 class SelectPeople extends React.Component {
 state = {
@@ -88,6 +88,20 @@ componentDidMount () {
             </ul>
             <div>
               <input type='button' onClick={this.handleCheckAll} value='Select / Deselect All' />
+            </div>
+            <div>
+              <p>Select number of Teams</p>
+              <select>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
+                <option value='7'>7</option>
+                <option value='8'>8</option>
+                <option value='9'>9</option>
+                <option value='10'>10</option>
+              </select>
             </div>
             <div>
               <input type='submit' value='Create Teams!' />
