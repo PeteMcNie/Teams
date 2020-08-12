@@ -18,9 +18,8 @@ export function shuffleSelectedPeople (selectedPeople, numberOfTeams) {
 }
 
 export function sortIntoTeams (shuffledPeople, numberOfTeams) {
-  console.log('sortFunction ', shuffledPeople, numberOfTeams)
+  // console.log('sortIntoTeams  ', shuffledPeople, numberOfTeams)
 
-  // IF STATEMENT TO GO IN HERE IF DIVIDING INTO MORE THAN TWO TEAMS
   // if (numberOfTeams === '2') {
   //   const halfOfArray = Math.floor(shuffledPeople.length / 2)
   //   const teamOne = shuffledPeople.slice(0, halfOfArray)
@@ -29,27 +28,65 @@ export function sortIntoTeams (shuffledPeople, numberOfTeams) {
   //   // console.log('teamTwo: ', teamTwo)
   //   const teams = { teamOne, teamTwo }
   //   console.log('teams: ', teams)
-  //   return teams
+  // //  return teams
   // } else if (numberOfTeams === '3') {
   //   const thirdOfArray = Math.floor(shuffledPeople.length / 3)
+  //   console.log(thirdOfArray)
   //   const teamOne = shuffledPeople.slice(0, thirdOfArray)
   //   const teamTwo = shuffledPeople.slice(thirdOfArray, shuffledPeople.length - thirdOfArray)
   //   const teamThree = shuffledPeople.slice(shuffledPeople.length - thirdOfArray, shuffledPeople.length)
+
+  //   // CODE DOES NOT STOP TO TAKE THE IF STATEMENT INTO ACCOUNT
+  //   console.log(teamTwo.length, teamOne.length)
+  //   if (teamTwo.length % teamOne.length > 1 || teamTwo.length % teamThree.length > 1) {
+  //     console.log('hello')
+  //     teamOne.push(teamTwo.splice(0, 1))
+  //   }
+
   //   const teams = { teamOne, teamTwo, teamThree }
-  //   return teams
+  //   console.log('teams: ', teams)
+  // //  return teams
   // } else {
   //   return 'Not yet implemented'
   // }
 
-  // const result = []
-  // for (let i = numberOfTeams; i > 0; i--) {
-  //   result.push(shuffledPeople.splice(0, Math.ceil(shuffledPeople.length / i)))
-  //   return result
-  // }
-  const newArray = []
-  const chunkSize = shuffledPeople / numberOfTeams
-  for (let i = 0; i < shuffledPeople.length; i += chunkSize) {
-    newArray.push(shuffledPeople.slice(i, i + chunkSize))
+  const result = []
+  const length = shuffledPeople.length
+  let i = 0
+  let sizeOfArrays
+  let noOfTeams = Number(numberOfTeams)
+  let balanced
+  // console.log('sortIntoTeams  noOfTeams ', noOfTeams)
+
+  if (length % noOfTeams === 0) {
+    sizeOfArrays = Math.floor(length / noOfTeams)
+    console.log('1ST if: sortIntoTeams  sizeOfArrays ', sizeOfArrays)
+    while (i < length) {
+      result.push(shuffledPeople.slice(i, i += sizeOfArrays))
+    }
+  } else if (balanced) {
+    while (i < length) {
+      sizeOfArrays = Math.ceil((length - i) / noOfTeams--)
+     console.log('2ND if: sortIntoTeams  sizeOfArrays ', sizeOfArrays)
+
+      result.push(shuffledPeople.slice(i, i += sizeOfArrays))
+    }
+  } else {
+    if (noOfTeams > 2) {
+      console.log('numberOfTeams is greater than 2')
+      noOfTeams--
+    }
+
+    sizeOfArrays = Math.floor(length / noOfTeams)
+    console.log('3RD if: sortIntoTeams  sizeOfArrays ', sizeOfArrays)
+
+    if (length % sizeOfArrays === 0)
+      sizeOfArrays--
+    while (i < sizeOfArrays * noOfTeams) {
+      result.push(shuffledPeople.slice(i, i += sizeOfArrays))
+    }
+    result.push(shuffledPeople.slice(sizeOfArrays * noOfTeams))
   }
-  return newArray
+  console.log('Result ', result)
+  // return result
 }

@@ -63,10 +63,9 @@ componentDidMount () {
       const selected = this.state.selectedPeople
       const numberOfTeams = this.state.numberOfTeams
       // console.log('Selected people in selectedPeople.jsx: ', selected)
-      console.log('selectPeople ', numberOfTeams)
 
       const teams = shuffleSelectedPeople(selected, numberOfTeams)
-      console.log('selectPeople ', teams)
+      // console.log('selectPeople ', teams)
       // this.props.dispatch(twoTeams(teams))
       // this.props.history.push('/teams')
     }
