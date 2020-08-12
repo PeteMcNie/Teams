@@ -1,6 +1,6 @@
-import { twoTeams } from './actions'
+import { twoTeams } from './reducers'
 
-export function sortSelectedPeople (selectedPeople) {
+export function shuffleSelectedPeople (selectedPeople) {
   // console.log('Sort Selected people in sortFunction: ', selectedPeople)
   let currentIndex = selectedPeople.length
   let tempValue
@@ -15,7 +15,8 @@ export function sortSelectedPeople (selectedPeople) {
     selectedPeople[currentIndex] = selectedPeople[randomIndex]
     selectedPeople[randomIndex] = tempValue
   }
-  return sortIntoGroups(selectedPeople)
+  console.log('sortSelectedPeople ', selectedPeople)
+  return selectedPeople
 }
 
 export function sortIntoGroups (shuffledPeople) {

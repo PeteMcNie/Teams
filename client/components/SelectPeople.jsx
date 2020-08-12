@@ -3,13 +3,14 @@ import { connect } from 'react-redux'
 
 import Loading from './Loading'
 
-import { sortSelectedPeople } from '../sortFunctions'
+import { shuffleSelectedPeople } from '../sortFunctions'
 import { getPeopleAction, twoTeams, deletePerson } from '../actions'
 
 class SelectPeople extends React.Component {
 state = {
   people: [],
-  selectedPeople: []
+  selectedPeople: [],
+  numberOfTeams: 2
 }
 
 componentDidMount () {
@@ -55,9 +56,11 @@ componentDidMount () {
       evnt.preventDefault()
       const selected = this.state.selectedPeople
       // console.log('Selected people in selectedPeople.jsx: ', selected)
-      const teams = sortSelectedPeople(selected)
-      this.props.dispatch(twoTeams(teams))
-      this.props.history.push('/teams')
+
+      const teams = shuffleSelectedPeople(selected)
+      console.log('selectPeople ', teams)
+      // this.props.dispatch(twoTeams(teams))
+      // this.props.history.push('/teams')
     }
 
     render () {
