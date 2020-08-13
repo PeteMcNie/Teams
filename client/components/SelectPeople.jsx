@@ -66,6 +66,7 @@ componentDidMount () {
 
       const teams = shuffleSelectedPeople(selected, numberOfTeams)
       // console.log('selectPeople ', teams)
+
       this.props.dispatch(teamCreator(teams))
       this.props.history.push('/teams')
     }
