@@ -1,6 +1,7 @@
 export function shuffleSelectedPeople (selectedPeople, numberOfTeams) {
   // console.log('Sort Selected people in sortFunction: ', selectedPeople)
-  let currentIndex = selectedPeople.length
+  const peopleToShuffle = [...selectedPeople] // Stops selectedPeople from being changed
+  let currentIndex = peopleToShuffle.length
   let tempValue
   let randomIndex
 
@@ -10,11 +11,10 @@ export function shuffleSelectedPeople (selectedPeople, numberOfTeams) {
     currentIndex -= 1
 
     tempValue = selectedPeople[currentIndex]
-    selectedPeople[currentIndex] = selectedPeople[randomIndex]
-    selectedPeople[randomIndex] = tempValue
+    peopleToShuffle[currentIndex] = peopleToShuffle[randomIndex]
+    peopleToShuffle[randomIndex] = tempValue
   }
-  // console.log('sortSelectedPeople ', selectedPeople)
-  return sortIntoTeams(selectedPeople, numberOfTeams)
+  return sortIntoTeams(peopleToShuffle, numberOfTeams)
 }
 
 export function sortIntoTeams (shuffledPeople, numberOfTeams) {
@@ -24,37 +24,34 @@ export function sortIntoTeams (shuffledPeople, numberOfTeams) {
   let i = 0
   let sizeOfTeams
   let noOfTeams = Number(numberOfTeams)
-  let balanced
+  const balanced = true
 
   if (noOfPeople % noOfTeams === 0) { // If the remainder of array noOfPeople and noOfTeams is 0 then:
-    sizeOfTeams = Math.floor(noOfPeople / noOfTeams) // the sizOfTeams is the noOfPeople divided by noOfTeams eg. 3 = 9 / 3
+    sizeOfTeams = Math.floor(noOfPeople / noOfTeams) // the sizeOfTeams is always rounded DOWN, the noOfPeople divided by noOfTeams eg. 3 = 9 / 3
     console.log('1ST if: sortIntoTeams  sizeOfTeams ', sizeOfTeams)
     while (i < noOfPeople) { // if noOfPeople is greater than 0
-      result.push(shuffledPeople.slice(i, i += sizeOfTeams)) // push into result array, the people from index 0 to the sizeOfTeams plus 0 shuffledPeople array eg. slice(0, 3) 0 = start index, and 3 = end index (end index is not included), this means indexes 0,1,2 are sent.
+      result.push(shuffledPeople.slice(i, i += sizeOfTeams)) // push into result array, the people from index 0 to the sizeOfTeams plus 0 eg. slice(0, 3) 0 = start index, and 3 = end index (end index is not included), this means indexes 0,1,2 are sent.
     }
-  } else if (balanced) {
-    while (i < noOfPeople) {
-      sizeOfTeams = Math.ceil((noOfPeople - i) / noOfTeams--)
-     console.log('2ND if: sortIntoTeams  sizeOfTeams ', sizeOfTeams)
+  } else if (balanced) { // balanced is always true
+    while (i < noOfPeople) { // if noOfPeople is greater than 0
+      sizeOfTeams = Math.ceil((noOfPeople - i) / noOfTeams--) // the sizeOfTeams is rounded UP from noOfPeople - 0 / noOfTeams eg. 4 = 10 / 3 first times through until 3 = 6 / 2
+      console.log('2ND if: sortIntoTeams  sizeOfTeams ', sizeOfTeams)
 
-      result.push(shuffledPeople.slice(i, i += sizeOfTeams))
+      result.push(shuffledPeople.slice(i, i += sizeOfTeams)) // push into result array, the people from index 0 to the sizeOfTeams plus 0 eg. slice(0, 4) 0 = start index, and 4 = end index (end index is not included), this means indexes 0,1,2,3 are sent.
     }
-  } else {
-    if (noOfTeams > 2) {
-      console.log('numberOfTeams is greater than 2')
-      noOfTeams--
-    }
-
-    sizeOfTeams = Math.floor(noOfPeople / noOfTeams)
-    console.log('3RD if: sortIntoTeams  sizeOfTeams ', sizeOfTeams)
-
-    if (noOfPeople % sizeOfTeams === 0)
-      sizeOfTeams--
-    while (i < sizeOfTeams * noOfTeams) {
-      result.push(shuffledPeople.slice(i, i += sizeOfTeams))
-    }
-    result.push(shuffledPeople.slice(sizeOfTeams * noOfTeams))
   }
-  console.log('Result ', result)
-  // return result
+  // } else {
+  //   noOfTeams--
+  //   sizeOfTeams = Math.floor(length / noOfTeams)
+  //   // console.log('3RD if: sortIntoTeams  sizeOfArrays ', sizeOfArrays)
+
+  //   if (noOfPeople % sizeOfTeams === 0)
+  //     sizeOfTeams--
+  //   while (i < sizeOfTeams * noOfTeams) {
+  //     result.push(shuffledPeople.slice(i, i += sizeOfTeams))
+  //   }
+  //   result.push(shuffledPeople.slice(sizeOfTeams * noOfTeams))
+  // }
+  // console.log('Result ', result)
+  return result
 }

@@ -68,7 +68,7 @@ export function addPeople (people) {
         dispatch(addNewPeopleSuccess(allPeople))
       })
       .catch(err => {
-        dispatch(addNewPeopleError(err.message))
+        dispatch(addNewPeopleError(err))
       })
   }
 }

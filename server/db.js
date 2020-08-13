@@ -34,7 +34,7 @@ function postPeople (newPeople, db = database) {
     })
     .catch(err => {
       // eslint-disable-next-line no-console
-      console.error('Error with postPeople: ', err)
+      console.error('Error with postPeople function in db: ', err)
       throw err
     })
 }

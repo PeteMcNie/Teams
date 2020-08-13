@@ -17,11 +17,30 @@ describe('error reducer', () => {
     ).toBeNull()
   })
 
-  it('should return Names entered must have at least... if there is an error adding new people', () => {
+  it('should return the correct error if not enough characters are entered', () => {
     expect(
       reducer([], {
-        type: types.ERROR
+        type: types.ERROR,
+        message: 'Names entered must have at least two characters.'
       })
-    ).toBe('Names entered must have at least two characters.')
+    ).toEqual('Names entered must have at least two characters.')
+  })
+
+  it('should return the correct error if too many characters are entered', () => {
+    expect(
+      reducer([], {
+        type: types.ERROR,
+        message: 'Names entered cannot be longer than 30 characters'
+      })
+    ).toBe('Names entered cannot be longer than 30 characters')
+  })
+
+  it('should return the correct error if special characters or numbers are entered', () => {
+    expect(
+      reducer([], {
+        type: types.ERROR,
+        message: 'Names entered cannot contain numbers or special characters'
+      })
+    ).toBe('Names entered cannot contain numbers or special characters')
   })
 })

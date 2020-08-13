@@ -6,7 +6,6 @@ exports[`Addplayers component matches snapshot 1`] = `
     <div>
       <div>
         <form>
-          <div />
           <div>
             <button>
               Add Person

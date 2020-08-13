@@ -5,12 +5,21 @@ const middleware = (schema) => {
     const valid = error == null
 
     if (valid) {
-      // console.log('Valid')
       next()
     } else {
+      // console.log(error.details[0].type)
       const { details } = error
-      const message = details.map(i => i.message).join(',')
+      let message = details.map(i => i.message).join(',')
 
+      if (error.details[0].type === 'array.includesRequiredUnknowns') {
+        message = 'Names entered must have at least two characters.'
+      } else if (error.details[0].type === 'string.max') {
+        message = 'Names entered cannot be longer than 30 characters'
+      } else if (error.details[0].type === 'string.pattern.base') {
+        message = 'Names entered cannot contain numbers or special characters'
+      } else {
+        message = 'This error type has not been changed'
+      }
       res.status(422).json({ error: message })
     }
   }
