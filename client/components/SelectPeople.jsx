@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Loading from './Loading'
 
 import { shuffleSelectedPeople } from '../sortFunctions'
-import { getPeopleAction, deletePerson } from '../actions'
+import { getPeopleAction, deletePerson, teamCreator } from '../actions'
 
 class SelectPeople extends React.Component {
 state = {
@@ -33,6 +33,7 @@ componentDidMount () {
       this.setState({
         selectedPeople: selected
       })
+      console.log('handleCheck ')
     }
 
     handleCheckAll = () => {
@@ -45,17 +46,20 @@ componentDidMount () {
           selectedPeople: this.state.people
         })
       }
+      console.log('handleCheckAll ')
     }
 
     handleSelect = evt => {
       this.setState({
         numberOfTeams: evt.target.value
       })
+      console.log('handleSelect')
     }
 
     deletePerson = (evt, id) => {
       evt.preventDefault()
       this.props.dispatch(deletePerson(id))
+      console.log('deletePerson')
     }
 
     handleSubmit = evnt => {
@@ -65,15 +69,17 @@ componentDidMount () {
       // console.log('Selected people in selectedPeople.jsx: ', selected)
 
       const teams = shuffleSelectedPeople(selected, numberOfTeams)
-      console.log('selectPeople ', teams)
-      // this.props.dispatch(twoTeams(teams))
-      // this.props.history.push('/teams')
+      // console.log('selectPeople ', teams)
+
+      this.props.dispatch(teamCreator(teams))
+      this.props.history.push('/teams')
     }
 
     render () {
       if (this.props.loading) {
         return <Loading />
       }
+      console.log('re-render ', this.state.selectedPeople)
 
       return (
         <div>

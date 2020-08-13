@@ -1,8 +1,8 @@
-import { TWO_TEAMS } from '../actions'
+import { TEAMS } from '../actions'
 
-function twoTeams (state = {}, action) {
+function newTeams (state = {}, action) {
   switch (action.type) {
-    case TWO_TEAMS:
+    case TEAMS:
       return action.teams
 
     default:
@@ -10,4 +10,4 @@ function twoTeams (state = {}, action) {
   }
 }
 
-export default twoTeams
+export default newTeams
