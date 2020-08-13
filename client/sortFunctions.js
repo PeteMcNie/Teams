@@ -67,7 +67,7 @@ export function sortIntoTeams (shuffledPeople, numberOfTeams) {
   } else if (balanced) {
     while (i < length) {
       sizeOfArrays = Math.ceil((length - i) / noOfTeams--)
-     console.log('2ND if: sortIntoTeams  sizeOfArrays ', sizeOfArrays)
+      console.log('2ND if: sortIntoTeams  sizeOfArrays ', sizeOfArrays)
 
       result.push(shuffledPeople.slice(i, i += sizeOfArrays))
     }
@@ -80,8 +80,8 @@ export function sortIntoTeams (shuffledPeople, numberOfTeams) {
     sizeOfArrays = Math.floor(length / noOfTeams)
     console.log('3RD if: sortIntoTeams  sizeOfArrays ', sizeOfArrays)
 
-    if (length % sizeOfArrays === 0)
-      sizeOfArrays--
+    if (length % sizeOfArrays === 0) sizeOfArrays--
+
     while (i < sizeOfArrays * noOfTeams) {
       result.push(shuffledPeople.slice(i, i += sizeOfArrays))
     }
