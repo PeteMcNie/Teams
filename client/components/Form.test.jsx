@@ -16,7 +16,7 @@ test('if user clicks on add person button expect a textbox to appear', async () 
   expect(screen.getByText('Submit')).toBeInTheDocument()
 })
 
-test('if user clicks on add person button expect a textbox to appear', async () => {
+test('if user clicks on add person and then remove expect the remove button to disappear', async () => {
   renderWithRedux(<Form />)
 
   userEvent.click(screen.getByRole('button', { name: 'Add Person' }))
