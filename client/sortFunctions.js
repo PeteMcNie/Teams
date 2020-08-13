@@ -19,57 +19,25 @@ export function shuffleSelectedPeople (selectedPeople, numberOfTeams) {
 
 export function sortIntoTeams (shuffledPeople, numberOfTeams) {
   // console.log('sortIntoTeams  ', shuffledPeople, numberOfTeams)
-
-  // if (numberOfTeams === '2') {
-  //   const halfOfArray = Math.floor(shuffledPeople.length / 2)
-  //   const teamOne = shuffledPeople.slice(0, halfOfArray)
-  //   const teamTwo = shuffledPeople.slice(halfOfArray, shuffledPeople.length)
-  //   // console.log('teamOne: ', teamOne)
-  //   // console.log('teamTwo: ', teamTwo)
-  //   const teams = { teamOne, teamTwo }
-  //   console.log('teams: ', teams)
-  // //  return teams
-  // } else if (numberOfTeams === '3') {
-  //   const thirdOfArray = Math.floor(shuffledPeople.length / 3)
-  //   console.log(thirdOfArray)
-  //   const teamOne = shuffledPeople.slice(0, thirdOfArray)
-  //   const teamTwo = shuffledPeople.slice(thirdOfArray, shuffledPeople.length - thirdOfArray)
-  //   const teamThree = shuffledPeople.slice(shuffledPeople.length - thirdOfArray, shuffledPeople.length)
-
-  //   // CODE DOES NOT STOP TO TAKE THE IF STATEMENT INTO ACCOUNT
-  //   console.log(teamTwo.length, teamOne.length)
-  //   if (teamTwo.length % teamOne.length > 1 || teamTwo.length % teamThree.length > 1) {
-  //     console.log('hello')
-  //     teamOne.push(teamTwo.splice(0, 1))
-  //   }
-
-  //   const teams = { teamOne, teamTwo, teamThree }
-  //   console.log('teams: ', teams)
-  // //  return teams
-  // } else {
-  //   return 'Not yet implemented'
-  // }
-
   const result = []
-  const length = shuffledPeople.length
+  const noOfPeople = shuffledPeople.length
   let i = 0
-  let sizeOfArrays
+  let sizeOfTeams
   let noOfTeams = Number(numberOfTeams)
   let balanced
-  // console.log('sortIntoTeams  noOfTeams ', noOfTeams)
 
-  if (length % noOfTeams === 0) {
-    sizeOfArrays = Math.floor(length / noOfTeams)
-    console.log('1ST if: sortIntoTeams  sizeOfArrays ', sizeOfArrays)
-    while (i < length) {
-      result.push(shuffledPeople.slice(i, i += sizeOfArrays))
+  if (noOfPeople % noOfTeams === 0) { // If the remainder of array noOfPeople and noOfTeams is 0 then:
+    sizeOfTeams = Math.floor(noOfPeople / noOfTeams) // the sizOfTeams is the noOfPeople divided by noOfTeams eg. 3 = 9 / 3
+    console.log('1ST if: sortIntoTeams  sizeOfTeams ', sizeOfTeams)
+    while (i < noOfPeople) { // if noOfPeople is greater than 0
+      result.push(shuffledPeople.slice(i, i += sizeOfTeams)) // push into result array, the people from index 0 to the sizeOfTeams plus 0 shuffledPeople array eg. slice(0, 3) 0 = start index, and 3 = end index (end index is not included), this means indexes 0,1,2 are sent.
     }
   } else if (balanced) {
-    while (i < length) {
-      sizeOfArrays = Math.ceil((length - i) / noOfTeams--)
-     console.log('2ND if: sortIntoTeams  sizeOfArrays ', sizeOfArrays)
+    while (i < noOfPeople) {
+      sizeOfTeams = Math.ceil((noOfPeople - i) / noOfTeams--)
+     console.log('2ND if: sortIntoTeams  sizeOfTeams ', sizeOfTeams)
 
-      result.push(shuffledPeople.slice(i, i += sizeOfArrays))
+      result.push(shuffledPeople.slice(i, i += sizeOfTeams))
     }
   } else {
     if (noOfTeams > 2) {
@@ -77,15 +45,15 @@ export function sortIntoTeams (shuffledPeople, numberOfTeams) {
       noOfTeams--
     }
 
-    sizeOfArrays = Math.floor(length / noOfTeams)
-    console.log('3RD if: sortIntoTeams  sizeOfArrays ', sizeOfArrays)
+    sizeOfTeams = Math.floor(noOfPeople / noOfTeams)
+    console.log('3RD if: sortIntoTeams  sizeOfTeams ', sizeOfTeams)
 
-    if (length % sizeOfArrays === 0)
-      sizeOfArrays--
-    while (i < sizeOfArrays * noOfTeams) {
-      result.push(shuffledPeople.slice(i, i += sizeOfArrays))
+    if (noOfPeople % sizeOfTeams === 0)
+      sizeOfTeams--
+    while (i < sizeOfTeams * noOfTeams) {
+      result.push(shuffledPeople.slice(i, i += sizeOfTeams))
     }
-    result.push(shuffledPeople.slice(sizeOfArrays * noOfTeams))
+    result.push(shuffledPeople.slice(sizeOfTeams * noOfTeams))
   }
   console.log('Result ', result)
   // return result
