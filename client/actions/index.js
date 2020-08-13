@@ -68,7 +68,6 @@ export function addPeople (people) {
         dispatch(addNewPeopleSuccess(allPeople))
       })
       .catch(err => {
-        console.log('index.js actions ', err)
         dispatch(addNewPeopleError(err))
       })
   }
