@@ -33,6 +33,7 @@ componentDidMount () {
       this.setState({
         selectedPeople: selected
       })
+      console.log('handleCheck ')
     }
 
     handleCheckAll = () => {
@@ -45,17 +46,20 @@ componentDidMount () {
           selectedPeople: this.state.people
         })
       }
+      console.log('handleCheckAll ')
     }
 
     handleSelect = evt => {
       this.setState({
         numberOfTeams: evt.target.value
       })
+      console.log('handleSelect')
     }
 
     deletePerson = (evt, id) => {
       evt.preventDefault()
       this.props.dispatch(deletePerson(id))
+      console.log('deletePerson')
     }
 
     handleSubmit = evnt => {
@@ -65,7 +69,7 @@ componentDidMount () {
       // console.log('Selected people in selectedPeople.jsx: ', selected)
 
       const teams = shuffleSelectedPeople(selected, numberOfTeams)
-      console.log('selectPeople ', teams)
+      // console.log('selectPeople ', teams)
 
       this.props.dispatch(teamCreator(teams))
       this.props.history.push('/teams')
@@ -75,6 +79,7 @@ componentDidMount () {
       if (this.props.loading) {
         return <Loading />
       }
+      console.log('re-render ', this.state.selectedPeople)
 
       return (
         <div>
