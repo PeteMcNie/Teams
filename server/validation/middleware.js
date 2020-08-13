@@ -17,6 +17,8 @@ const middleware = (schema) => {
         message = 'Names entered cannot be longer than 30 characters'
       } else if (error.details[0].type === 'string.pattern.base') {
         message = 'Names entered cannot contain numbers or special characters'
+      } else {
+        message = 'This error type has not been changed'
       }
       res.status(422).json({ error: message })
     }
