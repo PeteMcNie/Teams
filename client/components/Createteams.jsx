@@ -7,7 +7,7 @@ import SelectPeople from './SelectPeople'
 const CreateTeams = (props) => {
   return (
     <div>
-      <p>Pick team members here</p>
+      <p>Pick team members</p>
       <div>
         <SelectPeople history={props.history} />
       </div>

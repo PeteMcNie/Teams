@@ -3,13 +3,14 @@ import { connect } from 'react-redux'
 
 import Loading from './Loading'
 
-import { sortSelectedPeople } from '../sortFunctions'
-import { getPeopleAction, twoTeams, deletePerson } from '../actions'
+import { shuffleSelectedPeople } from '../sortFunctions'
+import { getPeopleAction, deletePerson } from '../actions'
 
 class SelectPeople extends React.Component {
 state = {
   people: [],
-  selectedPeople: []
+  selectedPeople: [],
+  numberOfTeams: '2'
 }
 
 componentDidMount () {
@@ -46,6 +47,12 @@ componentDidMount () {
       }
     }
 
+    handleSelect = evt => {
+      this.setState({
+        numberOfTeams: evt.target.value
+      })
+    }
+
     deletePerson = (evt, id) => {
       evt.preventDefault()
       this.props.dispatch(deletePerson(id))
@@ -54,10 +61,13 @@ componentDidMount () {
     handleSubmit = evnt => {
       evnt.preventDefault()
       const selected = this.state.selectedPeople
+      const numberOfTeams = this.state.numberOfTeams
       // console.log('Selected people in selectedPeople.jsx: ', selected)
-      const teams = sortSelectedPeople(selected)
-      this.props.dispatch(twoTeams(teams))
-      this.props.history.push('/teams')
+
+      const teams = shuffleSelectedPeople(selected, numberOfTeams)
+      console.log('selectPeople ', teams)
+      // this.props.dispatch(twoTeams(teams))
+      // this.props.history.push('/teams')
     }
 
     render () {
@@ -85,6 +95,20 @@ componentDidMount () {
             </ul>
             <div>
               <input type='button' onClick={this.handleCheckAll} value='Select / Deselect All' />
+            </div>
+            <div>
+              <p>Select number of Teams</p>
+              <select value={this.state.numberOfTeams} onChange={this.handleSelect}>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
+                <option value='7'>7</option>
+                <option value='8'>8</option>
+                <option value='9'>9</option>
+                <option value='10'>10</option>
+              </select>
             </div>
             <div>
               <input type='submit' value='Create Teams!' />

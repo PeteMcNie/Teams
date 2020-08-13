@@ -93,6 +93,6 @@ test('DELETE /home/v1/ throws an error if the ID is not found', () => {
     .send(id)
     .expect(500)
     .then(res => {
-      expect(res.text).toMatch('Error in database')
+      expect(res.text).toMatch('Deleting database error')
     })
 })

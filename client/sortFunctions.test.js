@@ -1,6 +1,6 @@
 import { sortSelectedPeople } from './sortFunctions'
 
-test('sortSelectedPeople returns an object with two arrays inside', () => {
+xtest('sortSelectedPeople returns an object with two arrays inside', () => {
   const object = [
     { id: 1, name: 'bob' },
     { id: 2, name: 'pete' },

@@ -36,15 +36,6 @@ export function getPeopleAction () {
   }
 }
 
-export const TWO_TEAMS = 'TWO_TEAMS'
-
-export const twoTeams = (teams) => {
-  return {
-    type: TWO_TEAMS,
-    teams
-  }
-}
-
 export const ADDING_NEW_PEOPLE = 'ADDING_NEW_PEOPLE'
 export const ADD_NEW_PEOPLE_SUCCESS = 'ADD_NEW_PEOPLE_SUCCESS'
 export const ERROR = 'ERROR'
@@ -77,7 +68,7 @@ export function addPeople (people) {
         dispatch(addNewPeopleSuccess(allPeople))
       })
       .catch(err => {
-        dispatch(addNewPeopleError(err.message))
+        dispatch(addNewPeopleError(err))
       })
   }
 }
@@ -113,5 +104,14 @@ export function deletePerson (id) {
       .catch(err => {
         dispatch(deletePersonError(err.message))
       })
+  }
+}
+
+export const TWO_TEAMS = 'TWO_TEAMS'
+
+export const twoTeams = (teams) => {
+  return {
+    type: TWO_TEAMS,
+    teams
   }
 }

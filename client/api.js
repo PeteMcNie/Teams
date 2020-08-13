@@ -25,8 +25,7 @@ export function newPeople (newPeople) {
       return response.body
     })
     .catch(err => {
-      console.error('Error in api newPeople', err.response.body)
-      throw err
+      throw err.response.body
     })
 }
 

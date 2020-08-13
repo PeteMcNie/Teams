@@ -2,9 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 const Error = (props) => {
-  return (
-    <div>{props.error}</div>
-  )
+  if (props.error) {
+    return (
+      <div>{props.error.error}</div>
+    )
+  } else {
+    return null
+  }
 }
 
 function mapStateToProps (state) {
