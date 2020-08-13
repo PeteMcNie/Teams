@@ -107,11 +107,11 @@ export function deletePerson (id) {
   }
 }
 
-export const TWO_TEAMS = 'TWO_TEAMS'
+export const TEAMS = 'TEAMS'
 
-export const twoTeams = (teams) => {
+export const teamCreator = (teams) => {
   return {
-    type: TWO_TEAMS,
+    type: TEAMS,
     teams
   }
 }

@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Loading from './Loading'
 
 import { shuffleSelectedPeople } from '../sortFunctions'
-import { getPeopleAction, deletePerson } from '../actions'
+import { getPeopleAction, deletePerson, teamCreator } from '../actions'
 
 class SelectPeople extends React.Component {
 state = {
@@ -65,9 +65,9 @@ componentDidMount () {
       // console.log('Selected people in selectedPeople.jsx: ', selected)
 
       const teams = shuffleSelectedPeople(selected, numberOfTeams)
-      console.log('selectPeople ', teams)
-      // this.props.dispatch(twoTeams(teams))
-      // this.props.history.push('/teams')
+      // console.log('selectPeople ', teams)
+      this.props.dispatch(teamCreator(teams))
+      this.props.history.push('/teams')
     }
 
     render () {

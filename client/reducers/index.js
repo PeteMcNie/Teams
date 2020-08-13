@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux'
 
-import twoTeams from './twoTeamsReducer'
+import newTeams from './twoTeamsReducer'
 import newPeopleReducer from './newPeopleReducer'
 import error from './error'
 import loading from './loading'
 import getPeopleReducer from './getPeopleReducer'
 
 export default combineReducers({
-  twoTeams,
+  newTeams,
   newPeopleReducer,
   error,
   loading,
