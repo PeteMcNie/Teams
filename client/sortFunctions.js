@@ -10,7 +10,7 @@ export function shuffleSelectedPeople (selectedPeople, numberOfTeams) {
     randomIndex = Math.floor(Math.random() * currentIndex)
     currentIndex -= 1
 
-    tempValue = selectedPeople[currentIndex]
+    tempValue = peopleToShuffle[currentIndex]
     peopleToShuffle[currentIndex] = peopleToShuffle[randomIndex]
     peopleToShuffle[randomIndex] = tempValue
   }

@@ -493,7 +493,7 @@ export const Teams = (teams) => {
     )
   } else {
     console.log('More than X teams')
-    return null
+    return <Link to={'/createTeams'}>Back to Create Teams</Link>
   }
 }
 
