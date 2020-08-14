@@ -8,7 +8,6 @@ import { getPeopleAction, deletePerson, teamCreator } from '../actions'
 
 class SelectPeople extends React.Component {
 state = {
- // people: [],
   selectedPeople: [],
   numberOfTeams: '2'
 }
@@ -33,7 +32,6 @@ componentDidMount () {
       this.setState({
         selectedPeople: selected
       })
-      console.log('handleCheck ')
     }
 
     handleCheckAll = () => {
@@ -46,19 +44,16 @@ componentDidMount () {
           selectedPeople: this.state.people
         })
       }
-      console.log('handleCheckALL ')
     }
 
     handleSelect = evt => {
       this.setState({
         numberOfTeams: evt.target.value
       })
-      console.log('handleSelect')
     }
 
     deletePerson = (evt, id) => {
       evt.preventDefault()
-
       this.props.dispatch(deletePerson(id)) // CHECK IF NEED TO DELETE GET_PEOPLE IN DELETE REDUCER
       this.props.dispatch(getPeopleAction())
         .then(() => {
@@ -70,8 +65,6 @@ componentDidMount () {
 
     handleSubmit = evnt => {
       evnt.preventDefault()
-
-      console.log('handleSubmit state.selectedPeople ', this.state.selectedPeople)
 
       const selected = this.state.selectedPeople
       const numberOfTeams = this.state.numberOfTeams
