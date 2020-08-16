@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading component displays if loading is true 1`] = `
+<DocumentFragment>
+  <img
+    class="loading"
+    src="/images/loading.svg"
+  />
+</DocumentFragment>
+`;
+
+exports[`Loading component does not display if loading is false 1`] = `<DocumentFragment />`;
