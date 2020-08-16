@@ -58,7 +58,7 @@ componentDidMount () {
       this.props.dispatch(getPeopleAction())
         .then(() => {
           this.setState({
-            selectedPeople: this.state.people
+            people: this.props.people
           })
         })
     }
