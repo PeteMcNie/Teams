@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateTeams component matched snapshot 1`] = `
+<div>
+  <div>
+    <p>
+      Pick team members
+    </p>
+    <div>
+      <img
+        class="loading"
+        src="/images/loading.svg"
+      />
+    </div>
+    <div
+      class="link"
+    >
+      <a
+        href="/addplayers"
+      >
+        Add New People
+      </a>
+    </div>
+    <div>
+      <div
+        class="link"
+      >
+        <a
+          class="home"
+          href="/"
+        >
+          Home
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
