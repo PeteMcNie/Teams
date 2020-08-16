@@ -140,7 +140,6 @@ describe('sortFunctions sort people into the correct amount of teams', () => {
     const tenTeams = 10
     const arrays = shuffleSelectedPeople(expected, tenTeams)
 
-    console.log('tests ', arrays)
     expect(arrays).toHaveLength(10)
     expect(arrays[0]).toHaveLength(3)
     expect(arrays[9]).toHaveLength(2)
