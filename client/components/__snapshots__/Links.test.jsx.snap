@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Links component matches snapshot 1`] = `
+<div>
+  <div
+    class="links"
+  >
+    <div
+      class="link"
+    >
+      <a
+        href="/createteams"
+      >
+        Create Teams
+      </a>
+    </div>
+    <div
+      class="link"
+    >
+      <a
+        href="/addplayers"
+      >
+        Add New Person
+      </a>
+    </div>
+  </div>
+</div>
+`;

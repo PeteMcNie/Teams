@@ -4,7 +4,7 @@ import { renderWithRedux } from '../testing/utils'
 
 import Homebutton from './Homebutton'
 
-test('Homebutton matches snapshot', () => {
+test('Homebutton component matches snapshot', () => {
   const { container } = renderWithRedux(<Homebutton />)
   expect(container).toMatchSnapshot()
 })
