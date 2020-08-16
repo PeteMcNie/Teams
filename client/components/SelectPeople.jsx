@@ -91,8 +91,6 @@ componentWillUnmount () {
         return <Loading />
       }
 
-      console.log('Render: this.props.people', this.props.people)
-
       return (
         <div>
           <form onSubmit={this.handleSubmit}>
