@@ -50,6 +50,9 @@ class Form extends React.Component {
         return (
           <div>
             <form onSubmit={this.handleSubmit}>
+              <div>
+                <button onClick={(evnt) => this.addName(evnt)}>Add Person</button>
+              </div>
               {
                 this.state.names.map((name, index) => {
                   return (
@@ -61,9 +64,6 @@ class Form extends React.Component {
                 })
               }
               <Error />
-              <div>
-                <button onClick={(evnt) => this.addName(evnt)}>Add Person</button>
-              </div>
               <div>
                 <button type='submit'>Submit</button><Loading />
               </div>
@@ -74,6 +74,9 @@ class Form extends React.Component {
         return (
           <div>
             <form onSubmit={this.handleSubmit}>
+              <div>
+                <button onClick={(evnt) => this.addName(evnt)}>Add Person</button>
+              </div>
               {
                 this.state.names.map((name, index) => {
                   return (
@@ -85,9 +88,6 @@ class Form extends React.Component {
                 })
               }
               <Error />
-              <div>
-                <button onClick={(evnt) => this.addName(evnt)}>Add Person</button>
-              </div>
               <div>
                 <button type='submit'>Submit</button>
               </div>

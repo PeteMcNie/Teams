@@ -127,7 +127,6 @@ componentDidMount () {
 }
 
 function mapStateToProps (state) {
-  console.log('msop ', state.getPeopleReducer)
   return {
     loading: state.loading,
     people: state.getPeopleReducer
