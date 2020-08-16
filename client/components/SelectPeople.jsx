@@ -7,18 +7,27 @@ import { shuffleSelectedPeople } from '../sortFunctions'
 import { getPeopleAction, deletePerson, teamCreator } from '../actions'
 
 class SelectPeople extends React.Component {
+_isMounted = false
+
 state = {
   selectedPeople: [],
   numberOfTeams: '2'
 }
 
 componentDidMount () {
+  this._isMounted = true
   this.props.dispatch(getPeopleAction())
     .then(() => {
-      this.setState({
-        people: this.props.people
-      })
+      if (this._isMounted) {
+        this.setState({
+          people: this.props.people
+        })
+      }
     })
+}
+
+componentWillUnmount () {
+  this._isMounted = false
 }
 
     handleCheck = (evnt, person) => {
@@ -54,7 +63,7 @@ componentDidMount () {
 
     deletePerson = (evt, id) => {
       evt.preventDefault()
-      this.props.dispatch(deletePerson(id)) // CHECK IF NEED TO DELETE GET_PEOPLE IN DELETE REDUCER
+      this.props.dispatch(deletePerson(id))
       this.props.dispatch(getPeopleAction())
         .then(() => {
           this.setState({
