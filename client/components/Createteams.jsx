@@ -12,7 +12,7 @@ const CreateTeams = (props) => {
         <SelectPeople history={props.history} />
       </div>
       <div className='link'>
-        <Link to={'/addplayers'}>Add New Person</Link>
+        <Link to={'/addplayers'}>Add New People</Link>
       </div>
       <div>
         <Homebutton />

@@ -58,7 +58,7 @@ componentDidMount () {
       this.props.dispatch(getPeopleAction())
         .then(() => {
           this.setState({
-            selectedPeople: this.props.people
+            selectedPeople: this.state.people
           })
         })
     }
@@ -81,6 +81,8 @@ componentDidMount () {
       if (this.props.loading) {
         return <Loading />
       }
+
+      console.log('Render: this.props.people', this.props.people)
 
       return (
         <div>

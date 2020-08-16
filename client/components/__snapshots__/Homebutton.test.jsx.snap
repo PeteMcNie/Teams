@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Homebutton matches snapshot 1`] = `
+exports[`Homebutton component matches snapshot 1`] = `
 <div>
   <div
     class="link"
