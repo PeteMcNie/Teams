@@ -87,7 +87,6 @@ componentWillUnmount () {
     }
 
     render () {
-      console.log('FOR TEST ', this.props.people)
       if (this.props.loading) {
         return <Loading />
       } else {

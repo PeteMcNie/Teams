@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectPeople component matchs snapshot 1`] = `
+<div>
+  <div>
+    <form>
+      <ul />
+      <div>
+        <input
+          type="button"
+          value="Select / Deselect All"
+        />
+      </div>
+      <div>
+        <p>
+          Select number of Teams
+        </p>
+        <select
+          name="amount"
+        >
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+          <option
+            value="4"
+          >
+            4
+          </option>
+          <option
+            value="5"
+          >
+            5
+          </option>
+          <option
+            value="6"
+          >
+            6
+          </option>
+          <option
+            value="7"
+          >
+            7
+          </option>
+          <option
+            value="8"
+          >
+            8
+          </option>
+          <option
+            value="9"
+          >
+            9
+          </option>
+          <option
+            value="10"
+          >
+            10
+          </option>
+        </select>
+      </div>
+      <div>
+        <input
+          type="submit"
+          value="Create Teams!"
+        />
+      </div>
+    </form>
+  </div>
+</div>
+`;

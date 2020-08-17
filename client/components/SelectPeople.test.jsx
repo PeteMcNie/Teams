@@ -20,6 +20,11 @@ jest.mock('../actions', () => {
   }
 })
 
+test('SelectPeople component matchs snapshot', () => {
+  const { container } = renderWithRedux(<SelectPeople />)
+  expect(container).toMatchSnapshot()
+})
+
 test('Select People component renders users', async () => {
   renderWithRedux(<SelectPeople />, { initialState: { getPeopleReducer } })
 
