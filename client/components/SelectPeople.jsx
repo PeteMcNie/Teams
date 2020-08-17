@@ -44,11 +44,11 @@ componentWillUnmount () {
     }
 
     handleCheckAll = () => {
-      if (this.state.selectedPeople.length) {
+      if (this.state.selectedPeople.length === this.state.people.length) {
         this.setState({
           selectedPeople: []
         })
-      } else if (this.state.selectedPeople.length - 1 < this.state.selectedPeople.length) {
+      } else {
         this.setState({
           selectedPeople: this.state.people
         })

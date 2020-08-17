@@ -28,7 +28,7 @@ test('if user checks an individual checkbox it displays as checked', async () =>
   userEvent.selectOptions(screen.queryAllByRole('combobox', 'amount')[0], '2')
 
   const person = await screen.getByText('Pete')
-  // expect(people[0]).toBe('Pete')
+
   expect(person).toBeInTheDocument()
 
   expect(screen.getByRole('button', { name: 'Select / Deselect All' })).toBeInTheDocument()
