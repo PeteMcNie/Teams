@@ -1,11 +1,9 @@
 import React from 'react'
 
 import { renderWithRedux } from '../testing/utils'
-import { screen, waitFor } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
+import { screen } from '@testing-library/react'
 
 import '@testing-library/jest-dom'
-import '@testing-library/jest-dom/extend-expect'
 
 import SelectPeople from './SelectPeople'
 
@@ -22,16 +20,29 @@ jest.mock('../actions', () => {
   }
 })
 
-test('if user checks an individual checkbox it displays as checked', async () => {
+test('Select People component renders users', async () => {
   renderWithRedux(<SelectPeople />, { initialState: { getPeopleReducer } })
 
-  userEvent.selectOptions(screen.queryAllByRole('combobox', 'amount')[0], '2')
+  const firstPerson = await screen.getByText('Pete')
+  expect(firstPerson).toBeInTheDocument()
 
-  const person = await screen.getByText('Pete')
+  const secondPerson = await screen.getByText('Nigel')
+  expect(secondPerson).toBeInTheDocument()
 
-  expect(person).toBeInTheDocument()
+  const forthPerson = await screen.getByText('Sergio')
+  expect(forthPerson).toBeInTheDocument()
+})
+
+test('Select People component renders buttons correctly', async () => {
+  renderWithRedux(<SelectPeople />)
 
   expect(screen.getByRole('button', { name: 'Select / Deselect All' })).toBeInTheDocument()
   expect(screen.getByRole('button', { name: 'Submit' })).toBeInTheDocument()
+})
+
+test('Select People component renders the correct options', async () => {
+  renderWithRedux(<SelectPeople />)
+
   expect(screen.getByRole('option', { name: '6' })).toBeInTheDocument()
+  expect(screen.queryByText('11')).not.toBeInTheDocument()
 })
