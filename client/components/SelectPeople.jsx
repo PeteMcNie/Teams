@@ -87,51 +87,53 @@ componentWillUnmount () {
     }
 
     render () {
+      console.log('FOR TEST ', this.props.people)
       if (this.props.loading) {
         return <Loading />
+      } else {
+        return (
+          <div>
+            <form onSubmit={this.handleSubmit}>
+              <ul>
+                {this.props.people.map(person => {
+                  return (
+                    <li key={person.id}>
+                      <input
+                        type='checkbox'
+                        name={person.name}
+                        checked={this.state.selectedPeople.includes(person)}
+                        onChange={(evnt) => this.handleCheck(evnt, person)}
+                      />  {person.name}
+                      <button onClick={evt => this.deletePerson(evt, person.id)}><i className="fas fa-trash"></i></button>
+                    </li>
+                  )
+                }
+                )}
+              </ul>
+              <div>
+                <input type='button' onClick={this.handleCheckAll} value='Select / Deselect All' />
+              </div>
+              <div>
+                <p>Select number of Teams</p>
+                <select name='amount' value={this.state.numberOfTeams} onChange={this.handleSelect}>
+                  <option value='2'>2</option>
+                  <option value='3'>3</option>
+                  <option value='4'>4</option>
+                  <option value='5'>5</option>
+                  <option value='6'>6</option>
+                  <option value='7'>7</option>
+                  <option value='8'>8</option>
+                  <option value='9'>9</option>
+                  <option value='10'>10</option>
+                </select>
+              </div>
+              <div>
+                <input type='submit' value='Create Teams!' />
+              </div>
+            </form>
+          </div>
+        )
       }
-
-      return (
-        <div>
-          <form onSubmit={this.handleSubmit}>
-            <ul>
-              {this.props.people.map(person => {
-                return (
-                  <li key={person.id}>
-                    <input
-                      type='checkbox'
-                      checked={this.state.selectedPeople.includes(person)}
-                      onChange={(evnt) => this.handleCheck(evnt, person)}
-                    />  {person.name}
-                    <button onClick={evt => this.deletePerson(evt, person.id)}><i className="fas fa-trash"></i></button>
-                  </li>
-                )
-              }
-              )}
-            </ul>
-            <div>
-              <input type='button' onClick={this.handleCheckAll} value='Select / Deselect All' />
-            </div>
-            <div>
-              <p>Select number of Teams</p>
-              <select value={this.state.numberOfTeams} onChange={this.handleSelect}>
-                <option value='2'>2</option>
-                <option value='3'>3</option>
-                <option value='4'>4</option>
-                <option value='5'>5</option>
-                <option value='6'>6</option>
-                <option value='7'>7</option>
-                <option value='8'>8</option>
-                <option value='9'>9</option>
-                <option value='10'>10</option>
-              </select>
-            </div>
-            <div>
-              <input type='submit' value='Create Teams!' />
-            </div>
-          </form>
-        </div>
-      )
     }
 }
 
