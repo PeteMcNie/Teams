@@ -1,6 +1,6 @@
 import { TEAMS } from '../actions'
 
-function newTeams (state = {}, action) {
+function newTeams (state = [], action) {
   switch (action.type) {
     case TEAMS:
       return action.teams
