@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`teams component matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      <h3>
+        Team One:
+      </h3>
+      <ul>
+        <li>
+          Pete
+        </li>
+        <li>
+          Steve
+        </li>
+        <li>
+          Jill
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3>
+        Team Two:
+      </h3>
+      <ul>
+        <li>
+          Dan
+        </li>
+        <li>
+          Lucy
+        </li>
+        <li>
+          Court
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3>
+        Team Three:
+      </h3>
+      <ul>
+        <li>
+          Chloe
+        </li>
+        <li>
+          Nigel
+        </li>
+        <li>
+          Nico
+        </li>
+      </ul>
+    </div>
+    <div
+      data-testid="link"
+    >
+      <a
+        href="/createTeams"
+      >
+        Re-shuffle
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;

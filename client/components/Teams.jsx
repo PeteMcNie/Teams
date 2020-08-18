@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 export const Teams = (teams) => {
-  // console.log('teams in component: ', teams.teams)
-
-  if (typeof teams.teams !== 'undefined' && teams.teams.length === 2) {
+  console.log('teams in component: ', teams.teams)
+  if (typeof teams.teams === 'undefined') {
+    return <Link to={'/createTeams'}>Re-shuffle</Link>
+  } else if (teams.teams.length === 2) {
     return (
       <div>
         <div>
@@ -24,10 +25,12 @@ export const Teams = (teams) => {
             })}
           </ul>
         </div>
-        <Link to={'/createTeams'}>Back to Create Teams</Link>
+        <div data-testid='link'>
+          <Link to={'/createTeams'}>Re-shuffle</Link>
+        </div>
       </div>
     )
-  } else if (typeof teams.teams !== 'undefined' && teams.teams.length === 3) {
+  } else if (teams.teams.length === 3) {
     return (
       <div>
         <div>
@@ -54,10 +57,12 @@ export const Teams = (teams) => {
             })}
           </ul>
         </div>
-        <Link to={'/createTeams'}>Back to Create Teams</Link>
+        <div data-testid='link'>
+          <Link to={'/createTeams'}>Re-shuffle</Link>
+        </div>
       </div>
     )
-  } else if (typeof teams.teams !== 'undefined' && teams.teams.length === 4) {
+  } else if (teams.teams.length === 4) {
     return (
       <div>
         <div>
@@ -91,11 +96,13 @@ export const Teams = (teams) => {
               return <li key={person.id}>{person.name}</li>
             })}
           </ul>
+          <div data-testid='link'>
+            <Link to={'/createTeams'}>Re-shuffle</Link>
+          </div>
         </div>
-        <Link to={'/createTeams'}>Back to Create Teams</Link>
       </div>
     )
-  } else if (typeof teams.teams !== 'undefined' && teams.teams.length === 5) {
+  } else if (teams.teams.length === 5) {
     return (
       <div>
         <div>
@@ -138,10 +145,12 @@ export const Teams = (teams) => {
             })}
           </ul>
         </div>
-        <Link to={'/createTeams'}>Back to Create Teams</Link>
+        <div data-testid='link'>
+          <Link to={'/createTeams'}>Re-shuffle</Link>
+        </div>
       </div>
     )
-  } else if (typeof teams.teams !== 'undefined' && teams.teams.length === 6) {
+  } else if (teams.teams.length === 6) {
     return (
       <div>
         <div>
@@ -192,10 +201,12 @@ export const Teams = (teams) => {
             })}
           </ul>
         </div>
-        <Link to={'/createTeams'}>Back to Create Teams</Link>
+        <div data-testid='link'>
+          <Link to={'/createTeams'}>Re-shuffle</Link>
+        </div>
       </div>
     )
-  } else if (typeof teams.teams !== 'undefined' && teams.teams.length === 7) {
+  } else if (teams.teams.length === 7) {
     return (
       <div>
         <div>
@@ -254,7 +265,9 @@ export const Teams = (teams) => {
             })}
           </ul>
         </div>
-        <Link to={'/createTeams'}>Back to Create Teams</Link>
+        <div data-testid='link'>
+          <Link to={'/createTeams'}>Re-shuffle</Link>
+        </div>
       </div>
     )
   } else if (typeof teams.teams !== 'undefined' && teams.teams.length === 8) {
@@ -324,10 +337,12 @@ export const Teams = (teams) => {
             })}
           </ul>
         </div>
-        <Link to={'/createTeams'}>Back to Create Teams</Link>
+        <div data-testid='link'>
+          <Link to={'/createTeams'}>Re-shuffle</Link>
+        </div>
       </div>
     )
-  } else if (typeof teams.teams !== 'undefined' && teams.teams.length === 9) {
+  } else if (teams.teams.length === 9) {
     return (
       <div>
         <div>
@@ -402,10 +417,12 @@ export const Teams = (teams) => {
             })}
           </ul>
         </div>
-        <Link to={'/createTeams'}>Back to Create Teams</Link>
+        <div data-testid='link'>
+          <Link to={'/createTeams'}>Re-shuffle</Link>
+        </div>
       </div>
     )
-  } else if (typeof teams.teams !== 'undefined' && teams.teams.length === 10) {
+  } else if (teams.teams.length === 10) {
     return (
       <div>
         <div>
@@ -488,12 +505,13 @@ export const Teams = (teams) => {
             })}
           </ul>
         </div>
-        <Link to={'/createTeams'}>Back to Create Teams</Link>
+        <div data-testid='link'>
+          <Link to={'/createTeams'}>Re-shuffle</Link>
+        </div>
       </div>
     )
   } else {
-    console.log('More than X teams')
-    return <Link to={'/createTeams'}>Back to Create Teams</Link>
+    return null
   }
 }
 

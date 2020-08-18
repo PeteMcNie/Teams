@@ -8,7 +8,7 @@ const Links = () => {
         <Link to={'/createteams'}>Create Teams</Link>
       </div>
       <div className='link'>
-        <Link to={'/addplayers'}>Add New Person</Link>
+        <Link to={'/addplayers'}>Add New People</Link>
       </div>
     </div>
   )

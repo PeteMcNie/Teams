@@ -100,7 +100,7 @@ export function deletePerson (id) {
     dispatch(deletingPerson())
     return removePerson(id)
       .then(dispatch(deletedPersonSuccess(id))) // id of person deleted is available here, not being used currently.
-      .then(dispatch(getPeopleAction()))
+      // .then(dispatch(getPeopleAction()))
       .catch(err => {
         dispatch(deletePersonError(err.message))
       })

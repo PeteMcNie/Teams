@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component displays correct components 1`] = `
+<div>
+  <div>
+    <h1
+      class="title"
+    >
+      Teams
+    </h1>
+  </div>
+  <div
+    class="links"
+  >
+    <div
+      class="link"
+    >
+      <a
+        href="/createteams"
+      >
+        Create Teams
+      </a>
+    </div>
+    <div
+      class="link"
+    >
+      <a
+        href="/addplayers"
+      >
+        Add New People
+      </a>
+    </div>
+  </div>
+  <div
+    class="footer"
+  >
+    <div>
+      © 
+      2020 McNie Brothers
+    </div>
+    <div>
+      P. R. McNie
+    </div>
+  </div>
+</div>
+`;
