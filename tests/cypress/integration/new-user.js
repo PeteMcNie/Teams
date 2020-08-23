@@ -1,7 +1,11 @@
 /* global cy */
 
-describe('New User tests', () => {
-  it('Visits the Teams web page', () => {
-    cy.visit('https://localhost:3000/home/v1')
+describe('New User loads home page', () => {
+  beforeEach(() => {
+    // reset and seed the database prior to every test
+    cy.exec('npm run db:reset && npm run db:seed')
+  })
+  it('loads successfully', () => {
+    cy.visit('/')
   })
 })
