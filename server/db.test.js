@@ -1,4 +1,4 @@
-const env = require('../server/test.environment')
+const env = require('../tests/test.environment.js')
 const db = require('./db')
 
 let testDb = null

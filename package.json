@@ -17,6 +17,7 @@
     "dev:client": "webpack --watch",
     "dev:server": "nodemon server",
     "start": "run-s build server",
+    "e2e": "cypress run",
     "build": "webpack",
     "server": "node server",
     "test": "jest --verbose --noStackTrace",
