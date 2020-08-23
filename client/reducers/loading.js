@@ -3,7 +3,7 @@ import {
   GETTING_PEOPLE_SUCCESS,
   ADDING_NEW_PEOPLE,
   ADD_NEW_PEOPLE_SUCCESS,
-  TWO_TEAMS,
+  TEAMS,
   ERROR,
   DELETING_PERSON,
   PERSON_DELETED_SUCCESS
@@ -17,7 +17,7 @@ const loading = (state = false, action) => {
       return true
 
     case ERROR:
-    case TWO_TEAMS:
+    case TEAMS:
     case ADD_NEW_PEOPLE_SUCCESS:
     case GETTING_PEOPLE_SUCCESS:
     case PERSON_DELETED_SUCCESS:

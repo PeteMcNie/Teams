@@ -38,7 +38,7 @@ describe('loading reducer', () => {
   it('should return the false if teams have been created', () => {
     expect(
       reducer([], {
-        type: people.TWO_TEAMS
+        type: people.TEAMS
       })
     ).toEqual(false)
   })

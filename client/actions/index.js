@@ -1,4 +1,4 @@
-import { getPeople, newPeople, removePerson } from '../api'
+import { getPeople, newPeople, removePerson } from '../api/api'
 
 export const GETTING_PEOPLE = 'GETTING_PEOPLE'
 export const GETTING_PEOPLE_SUCCESS = 'GETTING_PEOPLE_SUCCESS'
