@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import Loading from './Loading'
 
-import { shuffleSelectedPeople } from '../functions/sortfunctions'
+import { shuffleSelectedPeople } from '../functions/sortFunctions'
 import { getPeopleAction, deletePerson, teamCreator } from '../actions'
 
 class SelectPeople extends React.Component {
