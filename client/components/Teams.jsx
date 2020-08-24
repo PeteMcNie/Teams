@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 export const Teams = (teams) => {
-  console.log('teams in component: ', teams.teams)
+  // console.log('teams in component: ', teams.teams)
   if (typeof teams.teams === 'undefined') {
     return <Link to={'/createTeams'}>Re-shuffle</Link>
   } else if (teams.teams.length === 2) {
