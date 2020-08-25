@@ -15,9 +15,6 @@ describe('Past User visits site', () => {
     cy.get('p')
       .contains('Pick team members')
 
-    cy.get('p')
-      .contains('Select number of Teams')
-
     cy.contains('Create Teams!')
       .should('be.visible')
   })
