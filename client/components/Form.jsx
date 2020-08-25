@@ -57,7 +57,7 @@ class Form extends React.Component {
                 this.state.names.map((name, index) => {
                   return (
                     <div key={index}>
-                      <input value={name} onChange={evnt => this.handleChange(evnt, index)} placeholder="Name"/>
+                      <input type='text' value={name} onChange={evnt => this.handleChange(evnt, index)} placeholder="Name"/>
                       <button onClick={(evnt) => this.handleRemove(evnt, index)}>Remove</button>
                     </div>
                   )

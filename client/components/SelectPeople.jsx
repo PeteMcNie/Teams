@@ -93,7 +93,7 @@ componentWillUnmount () {
         return (
           <div>
             <form onSubmit={this.handleSubmit}>
-              <ul>
+              <ul data-cy='peopleList'>
                 {this.props.people.map(person => {
                   return (
                     <li key={person.id}>

@@ -5,9 +5,10 @@ describe('Past User visits site', () => {
     // reset and seed the database prior to every test
     cy.exec('npm run db:reset && npm run db:seed')
   })
-  it('loads successfully', () => {
+  it('home page loads successfully', () => {
     cy.visit('/')
-
+  })
+  it('visits the create teams page', () => {
     cy.contains('Create Teams')
       .click()
 
@@ -27,13 +28,13 @@ describe('Past User visits site', () => {
     cy.get('input[type=button]')
       .click()
   })
-  // it('Correct number of people', () => {
-  //     cy.get('.person')
-  //       .its('length')
-  //       .should('be', 10)
-  //   })
+  it('Lists the correct number of li elements', () => {
+    cy.get('[data-cy=peopleList]')
+      .children()
+      .should('have.length', 10)
+  })
 
-  it('Drop down list contains number of teams to be selected', () => {
+  it('Drop down list number 4 is selected', () => {
     cy.get('[data-cy=teamNumber')
       .select('4')
   })
