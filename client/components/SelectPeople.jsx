@@ -93,7 +93,7 @@ componentWillUnmount () {
         return (
           <div>
             <form onSubmit={this.handleSubmit}>
-              <ul>
+              <ul data-cy='peopleList'>
                 {this.props.people.map(person => {
                   return (
                     <li key={person.id}>
@@ -114,12 +114,12 @@ componentWillUnmount () {
               </div>
               <div>
                 <p>Select number of Teams</p>
-                <select name='amount' value={this.state.numberOfTeams} onChange={this.handleSelect}>
+                <select data-cy='teamNumber' name='amount' value={this.state.numberOfTeams} onChange={this.handleSelect}>
                   {[2, 3, 4, 5, 6, 7, 8, 9, 10].map(i => <option key={i} value={i}>{i}</option>)}
                 </select>
               </div>
               <div>
-                <input type='submit' value='Create Teams!' />
+                <input data-cy='submit' type='submit' value='Create Teams!' />
               </div>
             </form>
           </div>
