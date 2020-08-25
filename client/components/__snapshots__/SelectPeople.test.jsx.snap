@@ -4,7 +4,9 @@ exports[`SelectPeople component matchs snapshot 1`] = `
 <div>
   <div>
     <form>
-      <ul />
+      <ul
+        data-cy="peopleList"
+      />
       <div>
         <input
           type="button"

@@ -7,24 +7,34 @@ describe('Past User visits site', () => {
   })
   it('Enters site and goes to add new people', () => {
     cy.visit('/')
+
     cy.contains('Add New People')
       .click()
+
     cy.contains('Add Person')
       .click()
+
     cy.contains('Add Person')
       .click()
+
     cy.contains('Add Person')
       .click()
+
     cy.contains('Add Person')
       .click()
+
     cy.contains('Remove')
       .click()
+
     cy.contains('Remove')
       .click()
+
     cy.contains('Submit')
       .click()
+
     cy.contains('Create Teams')
       .click()
+
     cy.get('form').find('[name=Andre]').click()
     cy.get('form').find('[name=Sergio]').click()
     cy.get('form').find('[name=Basti]').click()
@@ -99,14 +109,19 @@ describe('Past User visits site', () => {
 
     cy.contains('Add Person')
       .click()
+
     cy.contains('Add Person')
       .click()
+
     cy.contains('Add Person')
       .click()
+
     cy.contains('Add Person')
       .click()
+
     cy.contains('Add Person')
       .click()
+
     cy.contains('Add Person')
       .click()
 
@@ -151,6 +166,10 @@ describe('Past User visits site', () => {
       .select('8')
 
     cy.get('[data-cy=submit]')
+      .click()
+  })
+  it('Resets the database', () => {
+    cy.contains('Re-shuffle')
       .click()
   })
 })
