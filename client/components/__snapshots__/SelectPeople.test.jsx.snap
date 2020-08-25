@@ -16,6 +16,7 @@ exports[`SelectPeople component matchs snapshot 1`] = `
           Select number of Teams
         </p>
         <select
+          data-cy="teamNumber"
           name="amount"
         >
           <option
@@ -67,6 +68,7 @@ exports[`SelectPeople component matchs snapshot 1`] = `
       </div>
       <div>
         <input
+          data-cy="submit"
           type="submit"
           value="Create Teams!"
         />
