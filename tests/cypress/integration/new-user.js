@@ -1,6 +1,6 @@
 /* global cy */
 
-describe('New User loads home page', () => {
+describe('New User visits site', () => {
   beforeEach(() => {
     // reset and seed the database prior to every test
     cy.exec('npm run db:reset && npm run db:seed')
@@ -65,10 +65,7 @@ describe('New User loads home page', () => {
     cy.contains('Create Teams')
       .click()
 
-    cy.get('.action-checkboxes [disabled]')
-      .check({ force: true }).should('be.checked')
-
-    cy.get('.action-checkboxes [type="checkbox"]').not('[disabled]')
-      .check().should('be.checked')
+    cy.get('form').find('[name=Pablo]')
+      .check()
   })
 })
