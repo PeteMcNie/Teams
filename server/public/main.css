@@ -1,4 +1,4 @@
-/* * {
+ * {
     border: border-box;
 }
 
@@ -14,16 +14,13 @@ body {
  color: #e5e5e5;
  text-shadow: 4px 3px 0px #7A7A7A;
  text-shadow: 3px 5px 2px #474747;
-} */
+} 
 
 .links {
-    /* border: 1px solid blue; */
-    
-    margin-top: 20vh;
-    
+    margin-top: 20vh;  
 }
 
-/* .link {
+.link {
     text-align: center;
     border: 3px solid #4c5788;
     background-color: #303960;
@@ -58,9 +55,58 @@ a {
     left: 30%;
     margin-right: -70%;
 
-} */
+}
 
 .loading {
     width: 20px;
     height: auto;
+}
+
+/* CSS FOR ADD PLAYERS PAGE */
+.centerButton {
+    
+}
+
+.addperson {
+    text-align: center;
+    color: white;
+    border: 3px solid #4c5788;
+    background-color: #303960;
+    border-radius: 5pt;
+    padding: 10px;
+    margin: 30px 10px 10px 10px;
+    font-size: 1.5rem;
+    box-shadow:
+    0 5.9px 14.3px -14px rgba(0, 0, 0, 0.5),
+    0 47px 114px -14px rgba(0, 0, 0, 1);
+}
+
+.nameInput {
+    margin: 5px;
+    padding: 10px 50px 10px 5px;
+    border-radius: 5pt;
+}
+
+.removeInput {
+    padding: 8px;
+    text-align: center;
+    color: white;
+    border: 3px solid #4c5788;
+    background-color: #303960;
+    font-size: 1rem;
+    border-radius: 5pt;
+}
+
+.submitInput {
+    text-align: center;
+    color: white;
+    border: 3px solid #4c5788;
+    background-color: #303960;
+    border-radius: 5pt;
+    padding: 10px;
+    margin: 10px 10px 30px 10px;
+    font-size: 1.5rem;
+    box-shadow:
+    0 5.9px 14.3px -14px rgba(0, 0, 0, 0.5),
+    0 47px 114px -14px rgba(0, 0, 0, 1);
 }
