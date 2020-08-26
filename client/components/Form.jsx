@@ -48,7 +48,7 @@ class Form extends React.Component {
 
       if (loading) {
         return (
-          <div>
+          <div className='form'>
             <form onSubmit={this.handleSubmit}>
               <div className='centerButton'>
                 <button className='addperson' onClick={(evnt) => this.addName(evnt)}>Add Person</button>
@@ -72,9 +72,9 @@ class Form extends React.Component {
         )
       } else {
         return (
-          <div>
+          <div className='form'>
             <form onSubmit={this.handleSubmit}>
-              <div >
+              <div className='centerButton'>
                 <button className='addperson' onClick={(evnt) => this.addName(evnt)}>Add Person</button>
               </div>
               {
