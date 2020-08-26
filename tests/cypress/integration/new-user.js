@@ -55,7 +55,7 @@ describe('New User visits site', () => {
 
   it('Adds new person and selects them for final team', () => {
     cy.get('form').within(() => {
-      cy.get('input:first').should('have.attr', 'placeholder', 'Name')
+      cy.get('input:first').should('have.attr', 'placeholder', 'Enter name...')
     })
       .type('Pablo')
 
