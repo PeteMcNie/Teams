@@ -122,11 +122,14 @@ a {
 /* CSS FOR CREATE TEAMS PAGE */
 .heading {
     font-size: 1.3rem;
-    border: rgb(110, 47, 146) 1px solid;
+    /* border: rgb(110, 47, 146) 1px solid; */
+    padding: 10px 1px 5px 5px;
+    margin: 0px;
+    text-align: center;
 }
 
 .peopleGrid {
-    border: rgb(255, 27, 27) 1px solid;
+    /* border: rgb(255, 27, 27) 1px solid; */
     columns: 2;
     list-style-type: none;
     padding: 5px;
@@ -134,15 +137,16 @@ a {
 
 .people {
     padding: 10px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     border: rgb(56, 187, 30) 1px solid;
 }
 
 .peopleCheckBox {
-    border: rgb(96, 166, 231) 1px solid;
+    border: rgb(96, 166, 231) 5px solid;
 }
 
 .trashBtn {
     border: rgb(255, 27, 27) 1px solid;
-
+    /* margin: 0px 0px 0px 10px; */
+    float: right;
 }
