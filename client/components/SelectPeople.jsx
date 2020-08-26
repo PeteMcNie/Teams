@@ -93,17 +93,18 @@ componentWillUnmount () {
         return (
           <div>
             <form onSubmit={this.handleSubmit}>
-              <ul data-cy='peopleList'>
+              <ul data-cy='peopleList' className='peopleGrid'>
                 {this.props.people.map(person => {
                   return (
-                    <li key={person.id}>
+                    <li className='people' key={person.id}>
                       <input
+                        className='peopleCheckBox'
                         type='checkbox'
                         name={person.name}
                         checked={this.state.selectedPeople.includes(person)}
                         onChange={(evnt) => this.handleCheck(evnt, person)}
                       />  {person.name}
-                      <button onClick={evt => this.deletePerson(evt, person.id)}><i className="fas fa-trash"></i></button>
+                      <button className='trashBtn' onClick={evt => this.deletePerson(evt, person.id)}><i className="fas fa-trash"></i></button>
                     </li>
                   )
                 }
@@ -113,7 +114,7 @@ componentWillUnmount () {
                 <input type='button' onClick={this.handleCheckAll} value='Select / Deselect All' />
               </div>
               <div>
-                <p>Select number of Teams</p>
+                <p className='heading'>Select number of Teams</p>
                 <select data-cy='teamNumber' name='amount' value={this.state.numberOfTeams} onChange={this.handleSelect}>
                   {[2, 3, 4, 5, 6, 7, 8, 9, 10].map(i => <option key={i} value={i}>{i}</option>)}
                 </select>

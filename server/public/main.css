@@ -63,7 +63,7 @@ a {
 
 /* CSS FOR ADD PLAYERS PAGE */
 .form {
-    background-color: rgb(177, 121, 121);
+    background-color: rgb(199, 139, 139);
 }
 .centerButton {
     padding: 2px 35px 2px 35px;
@@ -117,4 +117,32 @@ a {
     color: rgb(209, 49, 49);
     margin: 10px;
     text-align: center;
+}
+
+/* CSS FOR CREATE TEAMS PAGE */
+.heading {
+    font-size: 1.3rem;
+    border: rgb(110, 47, 146) 1px solid;
+}
+
+.peopleGrid {
+    border: rgb(255, 27, 27) 1px solid;
+    columns: 2;
+    list-style-type: none;
+    padding: 5px;
+}
+
+.people {
+    padding: 10px;
+    font-size: 1rem;
+    border: rgb(56, 187, 30) 1px solid;
+}
+
+.peopleCheckBox {
+    border: rgb(96, 166, 231) 1px solid;
+}
+
+.trashBtn {
+    border: rgb(255, 27, 27) 1px solid;
+
 }
