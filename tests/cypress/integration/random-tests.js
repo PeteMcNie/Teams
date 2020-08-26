@@ -62,7 +62,7 @@ describe('Past User visits site', () => {
       .click()
 
     cy.get('form').within(() => {
-      cy.get('input:first').should('have.attr', 'placeholder', 'Name')
+      cy.get('input:first').should('have.attr', 'placeholder', 'Enter name...')
     }).type('0')
 
     cy.contains('Submit')
@@ -75,7 +75,7 @@ describe('Past User visits site', () => {
       .click()
 
     cy.get('form').within(() => {
-      cy.get('input:first').should('have.attr', 'placeholder', 'Name')
+      cy.get('input:first').should('have.attr', 'placeholder', 'Enter name...')
     }).type('pppppppppppppppppppppppppppppppppppppppppppppppppp')
 
     cy.contains('Submit')

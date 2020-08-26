@@ -48,48 +48,48 @@ class Form extends React.Component {
 
       if (loading) {
         return (
-          <div>
+          <div className='form'>
             <form onSubmit={this.handleSubmit}>
-              <div>
-                <button onClick={(evnt) => this.addName(evnt)}>Add Person</button>
+              <div className='centerButton'>
+                <button className='addperson' onClick={(evnt) => this.addName(evnt)}>Add Person</button>
               </div>
               {
                 this.state.names.map((name, index) => {
                   return (
                     <div key={index}>
-                      <input type='text' value={name} onChange={evnt => this.handleChange(evnt, index)} placeholder="Name"/>
-                      <button onClick={(evnt) => this.handleRemove(evnt, index)}>Remove</button>
+                      <input className='nameInput' type='text' value={name} onChange={evnt => this.handleChange(evnt, index)} placeholder="Enter name..."/>
+                      <button className='removeInput' onClick={(evnt) => this.handleRemove(evnt, index)}>Remove</button>
                     </div>
                   )
                 })
               }
               <Error />
               <div>
-                <button type='submit'>Submit</button><Loading />
+                <button className='submitInput' type='submit'>Submit</button><Loading />
               </div>
             </form>
           </div>
         )
       } else {
         return (
-          <div>
+          <div className='form'>
             <form onSubmit={this.handleSubmit}>
-              <div>
-                <button onClick={(evnt) => this.addName(evnt)}>Add Person</button>
+              <div className='centerButton'>
+                <button className='addperson' onClick={(evnt) => this.addName(evnt)}>Add Person</button>
               </div>
               {
                 this.state.names.map((name, index) => {
                   return (
                     <div key={index}>
-                      <input value={name} onChange={evnt => this.handleChange(evnt, index)} placeholder="Name"/>
-                      <button onClick={(evnt) => this.handleRemove(evnt, index)}>Remove</button>
+                      <input className='nameInput' type='text' value={name} onChange={evnt => this.handleChange(evnt, index)} placeholder="Enter name..."/>
+                      <button className='removeInput' onClick={(evnt) => this.handleRemove(evnt, index)}>Remove</button>
                     </div>
                   )
                 })
               }
               <Error />
               <div>
-                <button type='submit'>Submit</button>
+                <button className='submitInput' type='submit'>Submit</button>
               </div>
             </form>
           </div>

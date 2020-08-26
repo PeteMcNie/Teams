@@ -4,15 +4,22 @@ exports[`Addplayers component matches snapshot 1`] = `
 <div>
   <div>
     <div>
-      <div>
+      <div
+        class="form"
+      >
         <form>
-          <div>
-            <button>
+          <div
+            class="centerButton"
+          >
+            <button
+              class="addperson"
+            >
               Add Person
             </button>
           </div>
           <div>
             <button
+              class="submitInput"
               type="submit"
             >
               Submit
