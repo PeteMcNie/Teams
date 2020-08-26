@@ -110,3 +110,9 @@ a {
     0 5.9px 14.3px -14px rgba(0, 0, 0, 0.5),
     0 47px 114px -14px rgba(0, 0, 0, 1);
 }
+
+.errorMessage {
+    color: rgb(209, 49, 49);
+    margin: 10px;
+    text-align: center;
+}

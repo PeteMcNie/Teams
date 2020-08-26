@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 const Error = (props) => {
   if (props.error) {
     return (
-      <div>{props.error.error}</div>
+      <div className='errorMessage'>{props.error.error}</div>
     )
   } else {
     return null
