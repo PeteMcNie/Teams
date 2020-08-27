@@ -66,6 +66,6 @@ describe('New User visits site', () => {
       .click()
 
     cy.get('form').find('[name=Pablo]')
-      .check()
+      .check({ force: true })
   })
 })

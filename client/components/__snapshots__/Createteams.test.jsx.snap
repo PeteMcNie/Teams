@@ -3,7 +3,9 @@
 exports[`CreateTeams component matched snapshot 1`] = `
 <div>
   <div>
-    <p>
+    <p
+      class="heading"
+    >
       Pick team members
     </p>
     <div>
