@@ -3,11 +3,17 @@
 exports[`teams component matches snapshot 1`] = `
 <DocumentFragment>
   <div>
-    <div>
-      <h3>
+    <div
+      class="team"
+    >
+      <h3
+        class="teamHeading"
+      >
         Team One:
       </h3>
-      <ul>
+      <ul
+        class="teamsGrid"
+      >
         <li>
           Pete
         </li>
@@ -19,11 +25,17 @@ exports[`teams component matches snapshot 1`] = `
         </li>
       </ul>
     </div>
-    <div>
-      <h3>
+    <div
+      class="team"
+    >
+      <h3
+        class="teamHeading"
+      >
         Team Two:
       </h3>
-      <ul>
+      <ul
+        class="teamsGrid"
+      >
         <li>
           Dan
         </li>
@@ -35,11 +47,17 @@ exports[`teams component matches snapshot 1`] = `
         </li>
       </ul>
     </div>
-    <div>
-      <h3>
+    <div
+      class="team"
+    >
+      <h3
+        class="teamHeading"
+      >
         Team Three:
       </h3>
-      <ul>
+      <ul
+        class="teamsGrid"
+      >
         <li>
           Chloe
         </li>
@@ -55,6 +73,7 @@ exports[`teams component matches snapshot 1`] = `
       data-testid="link"
     >
       <a
+        class="reshuffle"
         href="/createTeams"
       >
         Re-shuffle
