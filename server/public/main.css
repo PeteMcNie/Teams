@@ -63,7 +63,7 @@ a {
 
 /* CSS FOR ADD PLAYERS PAGE */
 .form {
-    background-color: rgb(177, 121, 121);
+    background-color: rgb(199, 139, 139);
 }
 .centerButton {
     padding: 2px 35px 2px 35px;
@@ -117,4 +117,97 @@ a {
     color: rgb(209, 49, 49);
     margin: 10px;
     text-align: center;
+}
+
+/* CSS FOR CREATE TEAMS PAGE */
+.heading {
+    font-size: 1.3rem;
+    /* border: rgb(110, 47, 146) 1px solid; */
+    padding: 10px 1px 5px 5px;
+    margin: 0px;
+    text-align: center;
+}
+
+.peopleGrid {
+    /* border: rgb(255, 27, 27) 1px solid; */
+    columns: 2;
+    list-style-type: none;
+    padding: 3px;
+}
+
+.people {
+    background-color: rgb(199, 139, 139);
+    padding: 5px 20px 5px -0px;
+    margin: 2px 0px 0px 0px;
+    font-size: 1.2rem;
+    border-radius: 5pt;
+}
+
+.peopleCheckBox {
+    visibility: hidden;
+}
+
+.peopleCheckBox + label {
+    color: black;
+    border-radius: 5pt;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding: 5px 20px 5px -30px;
+}
+
+.peopleCheckBox:checked + label {
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 5pt;
+    /* padding: 5px 20px; */
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(97, 138, 100);
+}
+
+.trashBtn {
+    float: right;
+    padding: 5px;
+    border-radius: 5pt;
+    margin-right: -20px;
+    align-items: center;
+}
+
+.selectAll {
+    text-align: center;
+    color: white;
+    border: 3px solid #4c5788;
+    background-color: #303960;
+    border-radius: 5pt;
+    padding: 10px;
+    margin: 10px 50px;
+    font-size: 1.2rem;
+    box-shadow:
+    0 5.9px 14.3px -14px rgba(0, 0, 0, 0.5),
+    0 47px 114px -14px rgba(0, 0, 0, 1);
+}
+
+.numberOfTeams {
+    text-align: center;
+    color: white;
+    border: 3px solid #4c5788;
+    background-color: #303960;
+    border-radius: 5pt;
+    padding: 10px;
+    margin: 10px 120px;
+    font-size: 1.2rem;
+}
+
+.createTeams {
+    text-align: center;
+    color: white;
+    border: 3px solid #4c5788;
+    background-color: #303960;
+    border-radius: 5pt;
+    padding: 10px;
+    margin: 10px 75px;
+    font-size: 1.2rem;
+    box-shadow:
+    0 5.9px 14.3px -14px rgba(0, 0, 0, 0.5),
+    0 47px 114px -14px rgba(0, 0, 0, 1);
 }

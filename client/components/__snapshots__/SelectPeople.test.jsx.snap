@@ -5,19 +5,24 @@ exports[`SelectPeople component matchs snapshot 1`] = `
   <div>
     <form>
       <ul
+        class="peopleGrid"
         data-cy="peopleList"
       />
       <div>
         <input
+          class="selectAll"
           type="button"
           value="Select / Deselect All"
         />
       </div>
       <div>
-        <p>
+        <p
+          class="heading"
+        >
           Select number of Teams
         </p>
         <select
+          class="numberOfTeams"
           data-cy="teamNumber"
           name="amount"
         >
@@ -70,6 +75,7 @@ exports[`SelectPeople component matchs snapshot 1`] = `
       </div>
       <div>
         <input
+          class="createTeams"
           data-cy="submit"
           type="submit"
           value="Create Teams!"
