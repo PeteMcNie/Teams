@@ -5,9 +5,17 @@ exports[`Footer component matchs snapshot 1`] = `
   <div
     class="footer"
   >
-    <div>
-      © 
-      2020 McNie Brothers
+    <div
+      class="footericons"
+    >
+      <a
+        href="https://github.com/PeteMcNie"
+      >
+        <i
+          class="fab fa-github"
+          id="github"
+        />
+      </a>
     </div>
     <div>
       P. R. McNie

@@ -6,7 +6,9 @@ const Footer = () => {
   return (
     <div className='footer'>
       <div className='footericons'>
-        <i className="fab fa-github"></i>
+        <a href='https://github.com/PeteMcNie'>
+          <i id='github' className="fab fa-github"></i>
+        </a>
       </div>
       <div>{author}</div>
     </div>

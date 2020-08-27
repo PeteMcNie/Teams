@@ -58,6 +58,11 @@ a {
 .footericons {
     font-size: 2rem;
 }
+
+#github {
+    color: black;
+}
+
 .loading {
     width: 20px;
     height: auto;
