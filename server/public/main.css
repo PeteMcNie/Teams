@@ -132,21 +132,82 @@ a {
     /* border: rgb(255, 27, 27) 1px solid; */
     columns: 2;
     list-style-type: none;
-    padding: 5px;
+    padding: 3px;
 }
 
 .people {
-    padding: 10px;
+    background-color: rgb(199, 139, 139);
+    padding: 5px 20px 5px -0px;
+    margin: 2px 0px 0px 0px;
     font-size: 1.2rem;
-    border: rgb(56, 187, 30) 1px solid;
+    border-radius: 5pt;
 }
 
 .peopleCheckBox {
-    border: rgb(96, 166, 231) 5px solid;
+    visibility: hidden;
+}
+
+.peopleCheckBox + label {
+    color: black;
+    border-radius: 5pt;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding: 5px 20px 5px -30px;
+}
+
+.peopleCheckBox:checked + label {
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 5pt;
+    /* padding: 5px 20px; */
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(97, 138, 100);
 }
 
 .trashBtn {
-    border: rgb(255, 27, 27) 1px solid;
-    /* margin: 0px 0px 0px 10px; */
     float: right;
+    padding: 5px;
+    border-radius: 5pt;
+    margin-right: -20px;
+    align-items: center;
+}
+
+.selectAll {
+    text-align: center;
+    color: white;
+    border: 3px solid #4c5788;
+    background-color: #303960;
+    border-radius: 5pt;
+    padding: 10px;
+    margin: 10px 50px;
+    font-size: 1.2rem;
+    box-shadow:
+    0 5.9px 14.3px -14px rgba(0, 0, 0, 0.5),
+    0 47px 114px -14px rgba(0, 0, 0, 1);
+}
+
+.numberOfTeams {
+    text-align: center;
+    color: white;
+    border: 3px solid #4c5788;
+    background-color: #303960;
+    border-radius: 5pt;
+    padding: 10px;
+    margin: 10px 120px;
+    font-size: 1.2rem;
+}
+
+.createTeams {
+    text-align: center;
+    color: white;
+    border: 3px solid #4c5788;
+    background-color: #303960;
+    border-radius: 5pt;
+    padding: 10px;
+    margin: 10px 75px;
+    font-size: 1.2rem;
+    box-shadow:
+    0 5.9px 14.3px -14px rgba(0, 0, 0, 0.5),
+    0 47px 114px -14px rgba(0, 0, 0, 1);
 }

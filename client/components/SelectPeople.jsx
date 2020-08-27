@@ -98,12 +98,14 @@ componentWillUnmount () {
                   return (
                     <li className='people' key={person.id}>
                       <input
+                        id={person.name}
                         className='peopleCheckBox'
                         type='checkbox'
                         name={person.name}
                         checked={this.state.selectedPeople.includes(person)}
                         onChange={(evnt) => this.handleCheck(evnt, person)}
-                      />  {person.name}
+                      />
+                      <label htmlFor={person.name}>{person.name}</label>
                       <button className='trashBtn' onClick={evt => this.deletePerson(evt, person.id)}><i className="fas fa-trash"></i></button>
                     </li>
                   )
@@ -111,16 +113,16 @@ componentWillUnmount () {
                 )}
               </ul>
               <div>
-                <input type='button' onClick={this.handleCheckAll} value='Select / Deselect All' />
+                <input className='selectAll' type='button' onClick={this.handleCheckAll} value='Select / Deselect All' />
               </div>
               <div>
                 <p className='heading'>Select number of Teams</p>
-                <select data-cy='teamNumber' name='amount' value={this.state.numberOfTeams} onChange={this.handleSelect}>
+                <select className='numberOfTeams' data-cy='teamNumber' name='amount' value={this.state.numberOfTeams} onChange={this.handleSelect}>
                   {[2, 3, 4, 5, 6, 7, 8, 9, 10].map(i => <option key={i} value={i}>{i}</option>)}
                 </select>
               </div>
               <div>
-                <input data-cy='submit' type='submit' value='Create Teams!' />
+                <input className='createTeams' data-cy='submit' type='submit' value='Create Teams!' />
               </div>
             </form>
           </div>
