@@ -52,10 +52,12 @@ a {
     font-size: 0.7rem;
     position: absolute;
     bottom: 30px;
-    left: 30%;
-    margin-right: -70%;
+    left: 42%;
 }
 
+.footericons {
+    font-size: 2rem;
+}
 .loading {
     width: 20px;
     height: auto;
