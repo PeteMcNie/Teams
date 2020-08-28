@@ -5,8 +5,8 @@ const Footer = () => {
 
   return (
     <div className='footer'>
-      <div className='footericons'>
-        <a href='https://github.com/PeteMcNie'>
+      <div className='footericons' aria-hidden='false'>
+        <a href='https://github.com/PeteMcNie' alt='Link to Pete McNie github' aria-label='Link to Pete McNie github'>
           <i id='github' className="fab fa-github"></i>
         </a>
       </div>

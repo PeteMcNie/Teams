@@ -24,6 +24,7 @@
     "db:migrate": "npm run knex migrate:latest",
     "db:seed": "npm run knex seed:run",
     "db:delete": "rm -f server/db/dev.sqlite3",
+    "postinstall": "webpack && knex migrate:latest",
     "test": "jest --verbose --noStackTrace",
     "test:watch": "npm test -- --watchAll"
   },
@@ -51,7 +52,9 @@
   "dependencies": {
     "@hapi/joi": "^17.1.1",
     "express": "^4.17.1",
-    "knex": "^0.21.1"
+    "heroku": "^7.42.13",
+    "knex": "^0.21.1",
+    "pg": "^8.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
