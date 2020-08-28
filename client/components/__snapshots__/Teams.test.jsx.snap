@@ -70,6 +70,7 @@ exports[`teams component matches snapshot 1`] = `
       </ul>
     </div>
     <div
+      class="reshufflediv"
       data-testid="link"
     >
       <a

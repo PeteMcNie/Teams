@@ -29,7 +29,7 @@ export const Teams = (teams) => {
             })}
           </ul>
         </div>
-        <div data-testid='link'  className='reshufflediv'>
+        <div data-testid='link' className='reshufflediv'>
           <Link className='reshuffle' to={'/createTeams'}>Re-shuffle</Link>
         </div>
       </div>

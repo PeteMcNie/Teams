@@ -35,9 +35,12 @@ exports[`App component displays correct components 1`] = `
     class="footer"
   >
     <div
+      aria-hidden="false"
       class="footericons"
     >
       <a
+        alt="Link to Pete McNie github"
+        aria-label="Link to Pete McNie github"
         href="https://github.com/PeteMcNie"
       >
         <i
