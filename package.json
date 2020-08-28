@@ -28,6 +28,9 @@
     "test": "jest --verbose --noStackTrace",
     "test:watch": "npm test -- --watchAll"
   },
+  "engines": {
+    "node": "12.x"
+  },
   "babel": {
     "presets": [
       "@babel/preset-env",
