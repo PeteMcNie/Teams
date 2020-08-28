@@ -6,7 +6,7 @@ export const Teams = (teams) => {
   // console.log('teams in component: ', teams.teams)
   if (typeof teams.teams === 'undefined') {
     return (
-      <div data-testid='link'>
+      <div data-testid='link' className='reshufflediv'>
         <Link className='reshuffle' to={'/createTeams'}>Re-shuffle</Link>
       </div>
     )
@@ -29,7 +29,7 @@ export const Teams = (teams) => {
             })}
           </ul>
         </div>
-        <div data-testid='link'>
+        <div data-testid='link' className='reshufflediv'>
           <Link className='reshuffle' to={'/createTeams'}>Re-shuffle</Link>
         </div>
       </div>
@@ -61,7 +61,7 @@ export const Teams = (teams) => {
             })}
           </ul>
         </div>
-        <div data-testid='link'>
+        <div data-testid='link' className='reshufflediv'>
           <Link className='reshuffle' to={'/createTeams'}>Re-shuffle</Link>
         </div>
       </div>
@@ -100,7 +100,7 @@ export const Teams = (teams) => {
               return <li key={person.id}>{person.name}</li>
             })}
           </ul>
-          <div data-testid='link'>
+          <div data-testid='link' className='reshufflediv'>
             <Link className='reshuffle' to={'/createTeams'}>Re-shuffle</Link>
           </div>
         </div>
@@ -149,7 +149,7 @@ export const Teams = (teams) => {
             })}
           </ul>
         </div>
-        <div data-testid='link'>
+        <div data-testid='link' className='reshufflediv'>
           <Link className='reshuffle' to={'/createTeams'}>Re-shuffle</Link>
         </div>
       </div>
@@ -205,7 +205,7 @@ export const Teams = (teams) => {
             })}
           </ul>
         </div>
-        <div data-testid='link'>
+        <div data-testid='link' className='reshufflediv'>
           <Link className='reshuffle' to={'/createTeams'}>Re-shuffle</Link>
         </div>
       </div>
@@ -269,7 +269,7 @@ export const Teams = (teams) => {
             })}
           </ul>
         </div>
-        <div data-testid='link'>
+        <div data-testid='link' className='reshufflediv'>
           <Link className='reshuffle' to={'/createTeams'}>Re-shuffle</Link>
         </div>
       </div>
@@ -341,7 +341,7 @@ export const Teams = (teams) => {
             })}
           </ul>
         </div>
-        <div data-testid='link'>
+        <div data-testid='link' className='reshufflediv'>
           <Link className='reshuffle' to={'/createTeams'}>Re-shuffle</Link>
         </div>
       </div>
@@ -421,7 +421,7 @@ export const Teams = (teams) => {
             })}
           </ul>
         </div>
-        <div data-testid='link'>
+        <div data-testid='link' className='reshufflediv'>
           <Link className='reshuffle' to={'/createTeams'}>Re-shuffle</Link>
         </div>
       </div>
@@ -509,14 +509,14 @@ export const Teams = (teams) => {
             })}
           </ul>
         </div>
-        <div data-testid='link'>
+        <div data-testid='link' className='reshufflediv'>
           <Link className='reshuffle' to={'/createTeams'}>Re-shuffle</Link>
         </div>
       </div>
     )
   } else {
     return (
-      <div data-testid='link'>
+      <div data-testid='link' className='reshufflediv'>
         <Link className='reshuffle' to={'/createTeams'}>Re-shuffle</Link>
       </div>
     )

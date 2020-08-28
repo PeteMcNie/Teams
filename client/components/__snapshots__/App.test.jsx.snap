@@ -34,9 +34,20 @@ exports[`App component displays correct components 1`] = `
   <div
     class="footer"
   >
-    <div>
-      © 
-      2020 McNie Brothers
+    <div
+      aria-hidden="false"
+      class="footericons"
+    >
+      <a
+        alt="Link to Pete McNie github"
+        aria-label="Link to Pete McNie github"
+        href="https://github.com/PeteMcNie"
+      >
+        <i
+          class="fab fa-github"
+          id="github"
+        />
+      </a>
     </div>
     <div>
       P. R. McNie

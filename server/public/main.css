@@ -11,7 +11,7 @@ body {
  text-align: center;
  margin-top: 30vh;
  font-size: 3.5rem;
- color: #e5e5e5;
+ color: #ffffff;
  text-shadow: 4px 3px 0px #7A7A7A;
  text-shadow: 3px 5px 2px #474747;
 } 
@@ -50,10 +50,14 @@ a {
 .footer {
     text-align: center;
     font-size: 0.7rem;
-    position: absolute;
-    bottom: 30px;
-    left: 30%;
-    margin-right: -70%;
+}
+
+.footericons {
+    font-size: 2rem;
+}
+
+#github {
+    color: black;
 }
 
 .loading {
@@ -234,16 +238,18 @@ a {
     font-size: 1.2rem;
 }
 
+.reshufflediv {
+    margin: 30px 10px 30px 10px;
+}
+
 .reshuffle {
     text-align: center;
     color: white;
     border: 3px solid #4c5788;
     background-color: #303960;
     border-radius: 5pt;
-    position: absolute;
-    bottom: 100px;
     padding: 10px;
-    margin: 10px 90px;
+    margin: 10px 80px 10px 80px;
     font-size: 1.2rem;
     box-shadow:
     0 5.9px 14.3px -14px rgba(0, 0, 0, 0.5),
