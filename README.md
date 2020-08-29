@@ -1,6 +1,6 @@
 # Teams
 
-This project was started mid-way through my course with EDA. The project uses technologies we were taught at EDA such as React and Redux.
+This project was started mid-way through my course with EDA. The project uses technologies we were taught at EDA such as React and Redux. For testing I used Jest, react testing library and self-taught myself Cypress so I could learn about this awesome e2e testing library.
 
 ## Overview
 
