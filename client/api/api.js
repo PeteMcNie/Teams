@@ -1,6 +1,7 @@
 import request from 'superagent'
 
-const peopleUrl = 'http://localhost:3000/home/v1' // Server-side route (different from client side)
+// const peopleUrl = 'http://localhost:3000/home/v1' // Server-side route (different from client side) PRE_DEPLOYMENT
+const peopleUrl = '/home/v1' // Server-side route (different from client side) DONT NEED THE ABOVE LINE
 
 export function getPeople () {
   // console.log('getPeople function hit')
