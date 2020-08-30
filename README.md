@@ -11,14 +11,23 @@ This has been a pet project of mine over the past two months. Being a keen socia
 - CI/CD
 - and, so it looks cool, a p5 moving background (I have never used p5 before but I am keen to use this creative library)
 
-## Check it out
+## Testing
+
+I quick word on testing. I am proud of the coverage of my testing and really enjoyed learning about and writing tests for the app. I will be implementing tests in other projects as I create them to gain further understanding of testing liraries. If you would like to see some of my tests in action follow these steps:
+- 1: On the main repo page click on the green 'code' button and clone the repo into your local git 
+- 2: In your terminal run the command 'npm install'
+- 3: In your terminal type the command 'npm run test' (Unit and snapshot tests)
+- 4: In your terminal type the command  'npx cypress open'. A cypress will open in a new window, on the right handside near the top you should see blue words saying 'Run all specs'. Click these words and watch the end-2-end tests run. (e2e tests) You are able to run the same cypress tests in your terminal without openning the cypress window by using the command 'npx cypress run'...you don't get to watch the action though which is half the fun! 
+
+## Deployed here - Check it out
 
 I have finished deploying Teams and you can find her at the url below:
 - https://teamsgenerator.herokuapp.com/
 
-## Getting Started - if you would like to run the app locally
+## Localhost
 
 To run the application follow the steps below:
 - 1: On the main repo page click on the green 'code' button and clone the repo into your local git 
-- 2: Once cloned to your local git, run the appilcation via localhost:3000 using the command 'npm run dev' in your terminal
-- 3: Have fun checking it out and feel free to leave me some feedback! Enjoy :-)
+- 2: In your terminal run the command 'npm install'
+- 3: Once cloned to your local git, run the appilcation via localhost:3000 using the command 'npm run dev' in your terminal
+- 4: Have fun checking it out and feel free to leave me some feedback! Enjoy :-)
