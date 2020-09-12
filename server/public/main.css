@@ -380,25 +380,6 @@ a {
 
 
 @media screen and (max-width: 1440px) {
-    .addperson {
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .addperson {
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .addperson {
-    }
-}
-
-@media screen and (max-width: 425px) {
-    .addperson {
-    }
-}
-@media screen and (max-width: 375px) {
     .createTeams {
         text-align: center;
         color: white;
@@ -406,11 +387,38 @@ a {
         background-color: #303960;
         border-radius: 5pt;
         padding: 10px 20px;
-        margin: 10px 95px;
+        margin: 10px 625px;
         font-size: 1.2rem;
         box-shadow:
         0 5.9px 14.3px -14px rgba(0, 0, 0, 0.5),
         0 47px 114px -14px rgba(0, 0, 0, 1);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .createTeams {
+        padding: 10px;
+        margin: 10px 430px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .createTeams {
+        padding: 10px;
+        margin: 10px 300px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .createTeams {
+        padding: 10px;
+        margin: 10px 135px;
+    }
+}
+@media screen and (max-width: 375px) {
+    .createTeams {
+        padding: 10px;
+        margin: 10px 105px;
     }
 }
 
