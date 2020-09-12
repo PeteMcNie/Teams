@@ -73,6 +73,27 @@ a {
     padding: 2px 35px 2px 35px;
 }
 
+@media screen and (max-width: 1440px) {
+    .addperson {
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .addperson {
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .addperson {
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .addperson {
+    }
+}
+
 @media screen and (max-width: 375px) {
     .addperson {
         text-align: center;
@@ -95,6 +116,25 @@ a {
     }
 }
 
+@media screen and (max-width: 1440px) {
+    .addperson {
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .addperson {
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .addperson {
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .addperson {
+    }
+}
 @media screen and (max-width: 375px) {
     .nameInput {
         margin: 10px 10px 0px 20px;
@@ -120,6 +160,25 @@ a {
     border-radius: 5pt;
 }
 
+@media screen and (max-width: 1440px) {
+    .addperson {
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .addperson {
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .addperson {
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .addperson {
+    }
+}
 @media screen and (max-width: 375px) {
     .submitInput {
         text-align: center;
@@ -203,6 +262,25 @@ a {
     align-items: center;
 }
 
+@media screen and (max-width: 1440px) {
+    .addperson {
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .addperson {
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .addperson {
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .addperson {
+    }
+}
 @media screen and (max-width: 375px) {
     .selectAll {
         text-align: center;
@@ -225,6 +303,25 @@ a {
     }
 }
 
+@media screen and (max-width: 1440px) {
+    .addperson {
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .addperson {
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .addperson {
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .addperson {
+    }
+}
 @media screen and (max-width: 375px) {
     .numberOfTeams {
         text-align: center;
@@ -244,6 +341,25 @@ a {
     }
 }
 
+@media screen and (max-width: 1440px) {
+    .addperson {
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .addperson {
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .addperson {
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .addperson {
+    }
+}
 @media screen and (max-width: 375px) {
     .createTeams {
         text-align: center;
@@ -296,6 +412,25 @@ a {
     margin: 30px 10px 30px 10px;
 }
 
+@media screen and (max-width: 1440px) {
+    .addperson {
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .addperson {
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .addperson {
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .addperson {
+    }
+}
 @media screen and (max-width: 375px) {
     .reshuffle {
         text-align: center;
