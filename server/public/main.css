@@ -171,26 +171,9 @@ a {
     border-radius: 5pt;
 }
 
+/* margin: 10px 70px 30px 70px; */
+
 @media screen and (max-width: 1440px) {
-    .addperson {
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .addperson {
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .addperson {
-    }
-}
-
-@media screen and (max-width: 425px) {
-    .addperson {
-    }
-}
-@media screen and (max-width: 375px) {
     .submitInput {
         text-align: center;
         color: white;
@@ -198,11 +181,35 @@ a {
         background-color: #303960;
         border-radius: 5pt;
         padding: 10px 65px 10px 65px;
-        margin: 10px 70px 30px 70px;
+        margin: 10px 605px 30px 605px;
         font-size: 1.5rem;
         box-shadow:
         0 5.9px 14.3px -14px rgba(0, 0, 0, 0.5),
         0 47px 114px -14px rgba(0, 0, 0, 1);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .submitInput {
+        margin: 10px 395px 30px 395px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .submitInput {
+        margin: 10px 265px 30px 265px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .submitInput {
+        margin: 10px 95px 30px 95px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .submitInput {
+        margin: 10px 70px 30px 70px;
     }
 }
 
