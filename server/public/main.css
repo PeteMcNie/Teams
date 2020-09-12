@@ -119,34 +119,38 @@ a {
     }
 }
 
-
-
-
-
 @media screen and (max-width: 1440px) {
-    .addperson {
+    .nameInput {
+        margin: 10px 10px 0px 530px;
+        padding: 10px 100px 10px 5px;
+        border-radius: 5pt;
     }
 }
 
 @media screen and (max-width: 1024px) {
-    .addperson {
+    .nameInput {
+        margin: 10px 10px 0px 320px;
+        padding: 10px 100px 10px 5px;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .addperson {
+    .nameInput {
+        margin: 10px 10px 0px 200px;
+        padding: 10px 100px 10px 5px;
     }
 }
 
 @media screen and (max-width: 425px) {
-    .addperson {
+    .nameInput {
+        margin: 10px 20px 0px 40px;
+        padding: 10px 70px 10px 5px;
     }
 }
 @media screen and (max-width: 375px) {
     .nameInput {
         margin: 10px 10px 0px 20px;
         padding: 10px 70px 10px 5px;
-        border-radius: 5pt;
     }
 }
 
