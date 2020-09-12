@@ -332,25 +332,6 @@ a {
 
 
 @media screen and (max-width: 1440px) {
-    .addperson {
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .addperson {
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .addperson {
-    }
-}
-
-@media screen and (max-width: 425px) {
-    .addperson {
-    }
-}
-@media screen and (max-width: 375px) {
     .numberOfTeams {
         text-align: center;
         color: white;
@@ -358,8 +339,31 @@ a {
         background-color: #303960;
         border-radius: 5pt;
         padding: 5px;
-        margin: 10px 150px;
+        margin: 10px 680px;
         font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .numberOfTeams {
+        margin: 10px 480px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .numberOfTeams {
+        margin: 10px 350px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .numberOfTeams {
+        margin: 10px 180px;
+    }
+}
+@media screen and (max-width: 375px) {
+    .numberOfTeams {
+        margin: 10px 150px;
     }
 }
 
@@ -368,6 +372,12 @@ a {
         margin: 10px 120px;
     }
 }
+
+
+
+
+
+
 
 @media screen and (max-width: 1440px) {
     .addperson {
