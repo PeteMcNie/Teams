@@ -75,38 +75,41 @@ a {
 
 @media screen and (max-width: 1440px) {
     .addperson {
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .addperson {
-    }
-}
-
-
-@media screen and (max-width: 768px) {
-    .addperson {
-    }
-}
-
-@media screen and (max-width: 425px) {
-    .addperson {
-    }
-}
-
-@media screen and (max-width: 375px) {
-    .addperson {
         text-align: center;
         color: white;
         border: 3px solid #4c5788;
         background-color: #303960;
         border-radius: 5pt;
         padding: 10px 40px;
-        margin: 30px 35px 10px 35px;
+        margin: 30px 570px 10px 570px;
         font-size: 1.5rem;
         box-shadow:
         0 5.9px 14.3px -14px rgba(0, 0, 0, 0.5),
         0 47px 114px -14px rgba(0, 0, 0, 1);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .addperson {
+        margin: 30px 360px 10px 360px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .addperson {
+        margin: 30px 230px 10px 230px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .addperson {
+        margin: 30px 60px 10px 60px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .addperson {
+        margin: 30px 35px 10px 35px;
     }
 }
 
@@ -115,6 +118,10 @@ a {
         margin: 30px 10px 10px 10px;
     }
 }
+
+
+
+
 
 @media screen and (max-width: 1440px) {
     .addperson {
